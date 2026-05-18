@@ -1,207 +1,137 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const NAV_LINKS = [
-  { label: 'Home', to: '/' },
-  { label: 'For Brands', to: '/for-brands' },
-  { label: 'For Investors', to: '/for-investors' },
-  { label: 'Growth Opportunities', to: '/growth-opportunities' },
-  { label: 'Our Approach', to: '/our-approach' },
-  { label: 'Industries', to: '/industries' },
-  { label: 'About', to: '/about' },
-  { label: 'Insights', to: '/insights' },
-];
+const NAV = [
+  { label: 'About',        id: 'about' },
+  { label: 'Services',     id: 'services' },
+  { label: 'Achievements', id: 'achievements' },
+  { label: 'Clients',      id: 'testimonials' },
+  { label: 'Founder',      id: 'founder' },
+  { label: 'Contact',      id: 'contact' },
+]
+
+function goTo(id) {
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen]         = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => { setMenuOpen(false); }, [location.pathname]);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
+    const fn = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
 
   return (
     <>
-      {/* ── Outer strip that pins to top ── */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        padding: scrolled ? '10px 24px' : '16px 24px',
-        transition: 'padding 0.35s ease',
-        pointerEvents: 'none',          /* let clicks fall through the outer gap */
-      }}>
-        {/* ── Floating pill card ── */}
-        <div style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          background: '#fff',
-          borderRadius: '14px',
-          boxShadow: scrolled
-            ? '0 8px 40px rgba(0,0,0,0.14)'
-            : '0 4px 24px rgba(0,0,0,0.09)',
-          border: '1px solid rgba(0,0,0,0.06)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 28px',
-          height: '64px',
-          transition: 'box-shadow 0.35s ease',
-          pointerEvents: 'auto',        /* re-enable on the card */
-        }}>
+      <motion.nav
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.3, ease: [0.22,1,0.36,1] }}
+        style={{
+          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 900,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: `0 clamp(20px, 5vw, 80px)`,
+          height: scrolled ? 68 : 90,
+          background: scrolled ? 'rgba(6,13,24,0.97)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : 'none',
+          transition: 'height 0.4s ease, background 0.4s ease',
+        }}
+      >
+        <img
+          src="/logo-bg.png" alt="Sri Sri Homz"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          data-cursor
+          style={{ height: scrolled ? 44 : 56, transition: 'height 0.4s ease', objectFit: 'contain' }}
+        />
 
-          {/* Logo */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, textDecoration: 'none' }}>
-            <img
-              src="/logo.png"
-              alt="Xpand Bharat"
-              style={{ height: '38px', width: 'auto', objectFit: 'contain', display: 'block' }}
-            />
-          </Link>
-
-          {/* Desktop links */}
-          <div
-            className="xb-desktop-nav"
-            style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center' }}
-          >
-            {NAV_LINKS.map(link => {
-              const active = location.pathname === link.to;
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  style={{
-                    color: active ? 'var(--orange)' : 'var(--navy)',
-                    fontWeight: active ? 600 : 400,
-                    fontSize: '12.5px',
-                    letterSpacing: '0.02em',
-                    padding: '7px 10px',
-                    borderRadius: '6px',
-                    whiteSpace: 'nowrap',
-                    textDecoration: 'none',
-                    fontFamily: "'Outfit', sans-serif",
-                    opacity: active ? 1 : 0.7,
-                    transition: 'color 0.2s, opacity 0.2s',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--orange)'; e.currentTarget.style.opacity = '1'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = active ? 'var(--orange)' : 'var(--navy)'; e.currentTarget.style.opacity = active ? '1' : '0.7'; }}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* CTA + Hamburger */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
-            <Link
-              to="/contact"
-              className="xb-cta-btn"
+        {/* Desktop */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }} className="hidden lg:flex">
+          {NAV.map(n => (
+            <button key={n.id} onClick={() => goTo(n.id)} data-cursor
               style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: 'var(--orange)', color: '#fff',
-                fontFamily: "'Outfit', sans-serif", fontWeight: 600,
-                fontSize: '12px', letterSpacing: '0.06em', textTransform: 'uppercase',
-                padding: '11px 22px', borderRadius: '8px',
-                textDecoration: 'none', whiteSpace: 'nowrap',
-                transition: 'background 0.25s ease',
+                background: 'none', border: 'none',
+                fontFamily: 'Outfit, sans-serif', fontSize: 11,
+                fontWeight: 500, letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: 'rgba(245,240,232,0.72)',
+                transition: 'color 0.3s',
               }}
-              onMouseEnter={e => e.currentTarget.style.background = 'var(--orange-light)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'var(--orange)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#C9A84C'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.72)'}
             >
-              {/* Phone icon inline */}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              Start a Conversation
-            </Link>
-
-            {/* Hamburger */}
-            <button
-              onClick={() => setMenuOpen(v => !v)}
-              aria-label="Menu"
-              className="xb-hamburger"
-              style={{
-                background: 'none', border: '1px solid rgba(0,0,0,0.1)',
-                borderRadius: '8px', cursor: 'pointer',
-                padding: '10px', display: 'flex', flexDirection: 'column',
-                gap: '4px', alignItems: 'center',
-              }}
-            >
-              {[0, 1, 2].map(i => (
-                <span key={i} style={{
-                  display: 'block', height: '2px',
-                  background: 'var(--navy)', borderRadius: '2px',
-                  transition: 'all 0.3s ease',
-                  width: i === 1 ? (menuOpen ? '18px' : '12px') : '18px',
-                  opacity: i === 1 && menuOpen ? 0 : 1,
-                  transform:
-                    i === 0 && menuOpen ? 'rotate(45deg) translateY(6px)'
-                    : i === 2 && menuOpen ? 'rotate(-45deg) translateY(-6px)'
-                    : 'none',
-                }} />
-              ))}
+              {n.label}
             </button>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Full-screen mobile menu ── */}
-      <div style={{
-        position: 'fixed', inset: 0, zIndex: 999,
-        background: '#fff',
-        display: 'flex', flexDirection: 'column', justifyContent: 'center',
-        padding: '40px 48px',
-        opacity: menuOpen ? 1 : 0,
-        pointerEvents: menuOpen ? 'auto' : 'none',
-        transition: 'opacity 0.3s ease',
-      }}>
-        <button onClick={() => setMenuOpen(false)} style={{
-          position: 'absolute', top: '24px', right: '32px',
-          background: 'none', border: 'none', cursor: 'pointer',
-          fontSize: '30px', color: 'var(--navy)', lineHeight: 1,
-        }}>×</button>
-
-        <img src="/logo.png" alt="Xpand Bharat" style={{ height: '38px', width: 'auto', objectFit: 'contain', marginBottom: '48px', display: 'block' }} />
-
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          {[...NAV_LINKS, { label: 'Start a Conversation', to: '/contact' }].map((link) => (
-            <Link key={link.to} to={link.to} style={{
-              color: location.pathname === link.to ? 'var(--orange)' : 'var(--navy)',
-              fontSize: 'clamp(20px, 4vw, 28px)',
-              fontFamily: "'Playfair Display', serif", fontWeight: 600,
-              lineHeight: 1.5, padding: '10px 0',
-              borderBottom: '1px solid var(--border)',
-              textDecoration: 'none', display: 'block',
-              transition: 'color 0.2s',
-            }}>
-              {link.label}
-            </Link>
           ))}
-        </nav>
+          <button onClick={() => goTo('contact')} data-cursor
+            style={{
+              background: 'transparent',
+              border: '1px solid rgba(201,168,76,0.5)',
+              color: '#C9A84C',
+              fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600,
+              letterSpacing: '0.2em', textTransform: 'uppercase',
+              padding: '12px 26px', transition: 'all 0.3s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#C9A84C'; e.currentTarget.style.color = '#060D18' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C9A84C' }}
+          >
+            Book Consultation
+          </button>
+        </div>
 
-        <p style={{ marginTop: '48px', color: 'var(--gray)', fontSize: '13px', fontFamily: "'Outfit', sans-serif" }}>
-          info@xpandbharat.com · Gurgaon, Haryana, India
-        </p>
-      </div>
+        {/* Hamburger */}
+        <button
+          className="lg:hidden"
+          onClick={() => setOpen(v => !v)} data-cursor
+          style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', gap: 5, padding: 8 }}
+        >
+          {[0,1,2].map(i => (
+            <motion.span key={i} animate={{
+              rotate:  open && i===0 ? 45  : open && i===2 ? -45 : 0,
+              y:       open && i===0 ? 8   : open && i===2 ? -8 : 0,
+              opacity: open && i===1 ? 0 : 1,
+            }} style={{ display:'block', width:24, height:1, background:'#C9A84C', transformOrigin:'center' }} />
+          ))}
+        </button>
+      </motion.nav>
 
-      <style>{`
-        @media (min-width: 1140px) { .xb-hamburger { display: none !important; } }
-        @media (max-width: 1139px) { .xb-desktop-nav { display: none !important; } }
-        @media (max-width: 560px)  { .xb-cta-btn    { display: none !important; } }
-      `}</style>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              position: 'fixed', top: 68, left: 0, right: 0, zIndex: 899,
+              background: 'rgba(6,13,24,0.98)', backdropFilter: 'blur(20px)',
+              borderBottom: '1px solid rgba(201,168,76,0.12)',
+              padding: '32px clamp(20px,5vw,80px) 40px',
+              display: 'flex', flexDirection: 'column', gap: 20,
+            }}
+          >
+            {NAV.map(n => (
+              <button key={n.id} onClick={() => { goTo(n.id); setOpen(false) }} data-cursor
+                style={{
+                  background: 'none', border: 'none',
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: 30, fontWeight: 400,
+                  color: 'rgba(245,240,232,0.85)',
+                  textAlign: 'left', transition: 'color 0.3s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#C9A84C'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.85)'}
+              >
+                {n.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
-  );
+  )
 }

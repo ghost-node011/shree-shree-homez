@@ -1,0 +1,422 @@
+import { useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+
+const REAL_ESTATE = [
+  {
+    title: 'Luxury Apartments',
+    desc: 'Premium apartments & builder floors in prime Delhi NCR locations with world-class amenities.',
+    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+    tag: 'Residential',
+  },
+  {
+    title: 'Builder Floors',
+    desc: 'Exclusive independent builder floor developments with bespoke finishes and private terraces.',
+    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+    tag: 'Premium',
+  },
+  {
+    title: 'Commercial Real Estate',
+    desc: 'High-yield commercial properties strategically located for long-term investment returns.',
+    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    tag: 'Commercial',
+  },
+  {
+    title: 'Investment Advisory',
+    desc: 'Data-driven real estate investment consulting to identify opportunities with real appreciation.',
+    img: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=800&q=80',
+    tag: 'Advisory',
+  },
+  {
+    title: 'Distress & Off-Market',
+    desc: 'Exclusive access to below-market and off-market deals not available publicly.',
+    img: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80',
+    tag: 'Exclusive',
+  },
+  {
+    title: 'NRI Investment',
+    desc: 'Specialised end-to-end advisory for NRI investors entering the India premium real estate market.',
+    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    tag: 'Global',
+  },
+  {
+    title: 'Land Opportunities',
+    desc: 'Strategic land acquisition for redevelopment projects and long-term appreciation.',
+    img: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
+    tag: 'Land',
+  },
+  {
+    title: 'Property Advisory',
+    desc: 'End-to-end consultation from site selection through negotiation to registration.',
+    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    tag: 'Consulting',
+  },
+]
+
+const CONSTRUCTION = [
+  {
+    title: 'Independent House',
+    desc: 'Turnkey construction of your dream independent home — foundation to final finish.',
+    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    tag: 'Turnkey',
+  },
+  {
+    title: 'Builder Floor Dev.',
+    desc: 'Full-cycle builder floor development with premium finishes and structural excellence.',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    tag: 'Development',
+  },
+  {
+    title: 'Redevelopment',
+    desc: 'Strategic redevelopment of older properties, maximising land value and modern living.',
+    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    tag: 'Redevelop',
+  },
+  {
+    title: 'Interior & Space',
+    desc: 'Coordinated interior design and space planning — from concept to curated completion.',
+    img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+    tag: 'Interior',
+  },
+  {
+    title: 'Project Management',
+    desc: 'Expert supervision ensuring quality, timelines, and full cost transparency at every stage.',
+    img: 'https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&w=800&q=80',
+    tag: 'Management',
+  },
+  {
+    title: 'Turnkey Solutions',
+    desc: 'Single-point accountability — we handle everything from approvals to final handover.',
+    img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    tag: 'Complete',
+  },
+]
+
+const TABS = [
+  { id: 'realestate',  label: 'Real Estate',  count: '08', data: REAL_ESTATE },
+  { id: 'construction', label: 'Construction', count: '06', data: CONSTRUCTION },
+]
+
+function ServiceCard({ item, index }) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.7, delay: index * 0.06, ease: [0.22,1,0.36,1] }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      data-cursor
+      style={{
+        position: 'relative',
+        overflow: 'hidden',
+        aspectRatio: '3/4',
+        cursor: 'pointer',
+        flexShrink: 0,
+        width: 'clamp(240px, 22vw, 320px)',
+      }}
+    >
+      {/* Photo */}
+      <img
+        src={item.img}
+        alt={item.title}
+        style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          objectFit: 'cover',
+          transition: 'transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)',
+          transform: hovered ? 'scale(1.08)' : 'scale(1)',
+        }}
+      />
+
+      {/* Base overlay */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to top, rgba(6,13,24,0.96) 0%, rgba(6,13,24,0.5) 50%, rgba(6,13,24,0.15) 100%)',
+        transition: 'opacity 0.4s',
+      }} />
+
+      {/* Hover overlay */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'rgba(201,168,76,0.08)',
+        opacity: hovered ? 1 : 0,
+        transition: 'opacity 0.4s',
+      }} />
+
+      {/* Content */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        padding: '28px 24px',
+        display: 'flex', flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
+        {/* Tag top */}
+        <div style={{
+          alignSelf: 'flex-start',
+          background: 'rgba(201,168,76,0.15)',
+          border: '1px solid rgba(201,168,76,0.35)',
+          padding: '5px 12px',
+          fontFamily: 'Outfit, sans-serif',
+          fontSize: 9, fontWeight: 700,
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          color: '#C9A84C',
+        }}>
+          {item.tag}
+        </div>
+
+        {/* Bottom text */}
+        <div>
+          {/* Gold line */}
+          <motion.div
+            animate={{ scaleX: hovered ? 1 : 0.3, opacity: hovered ? 1 : 0.4 }}
+            transition={{ duration: 0.4 }}
+            style={{
+              width: 36, height: 1,
+              background: '#C9A84C',
+              transformOrigin: 'left',
+              marginBottom: 14,
+            }}
+          />
+
+          <h3 style={{
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: 'clamp(20px, 1.8vw, 28px)',
+            fontWeight: 500, lineHeight: 1.15,
+            color: '#F5F0E8', marginBottom: 10,
+          }}>
+            {item.title}
+          </h3>
+
+          <motion.p
+            animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
+            transition={{ duration: 0.35 }}
+            style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontSize: 13, fontWeight: 300,
+              lineHeight: 1.65,
+              color: 'rgba(245,240,232,0.65)',
+            }}
+          >
+            {item.desc}
+          </motion.p>
+
+          {/* Arrow */}
+          <motion.div
+            animate={{ x: hovered ? 0 : -8, opacity: hovered ? 1 : 0 }}
+            transition={{ duration: 0.35 }}
+            style={{
+              marginTop: 16,
+              width: 36, height: 36,
+              border: '1px solid rgba(201,168,76,0.5)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              color: '#C9A84C', fontSize: 16,
+            }}
+          >
+            ↗
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+export default function Services() {
+  const [active, setActive] = useState('realestate')
+  const scrollRef = useRef(null)
+  const current = TABS.find(t => t.id === active)
+
+  const scroll = (dir) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: dir * 340, behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <div style={{
+      background: '#060D18',
+      paddingTop: 120, paddingBottom: 80,
+      position: 'relative', overflow: 'hidden',
+    }}>
+      <div className="hr-gold" />
+      <div style={{ height: 80 }} />
+
+      {/* ── Header row ── */}
+      <div style={{
+        padding: '0 clamp(24px,6vw,100px)',
+        maxWidth: 1400, margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto',
+        gap: 40, alignItems: 'flex-end',
+        marginBottom: 56,
+      }}>
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section-label"
+            style={{ marginBottom: 20 }}
+          >
+            What We Offer
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, delay: 0.08 }}
+            style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 'clamp(48px, 6vw, 90px)',
+              fontWeight: 400, lineHeight: 0.95,
+              letterSpacing: '-0.01em',
+              color: '#F5F0E8', marginBottom: 0,
+            }}
+          >
+            Certified<br />
+            <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>Excellence</span>
+          </motion.h2>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          style={{ maxWidth: 340 }}
+        >
+          <p style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: 15, fontWeight: 300,
+            lineHeight: 1.8,
+            color: 'rgba(245,240,232,0.48)',
+            marginBottom: 24,
+          }}>
+            From finding the perfect investment to building the right structure — end-to-end solutions under one trusted name.
+          </p>
+          {/* Scroll arrows */}
+          <div style={{ display: 'flex', gap: 10 }}>
+            {['←', '→'].map((arrow, i) => (
+              <button
+                key={i}
+                onClick={() => scroll(i === 0 ? -1 : 1)}
+                data-cursor
+                style={{
+                  width: 48, height: 48,
+                  border: '1px solid rgba(201,168,76,0.3)',
+                  background: 'transparent',
+                  color: '#C9A84C', fontSize: 18,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  transition: 'all 0.3s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#C9A84C'; e.currentTarget.style.color = '#060D18' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C9A84C' }}
+              >
+                {arrow}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* ── Tabs ── */}
+      <div style={{
+        padding: '0 clamp(24px,6vw,100px)',
+        maxWidth: 1400, margin: '0 auto',
+        display: 'flex', gap: 0,
+        borderBottom: '1px solid rgba(201,168,76,0.1)',
+        marginBottom: 48,
+      }}>
+        {TABS.map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActive(tab.id)}
+            data-cursor
+            style={{
+              background: 'none', border: 'none',
+              fontFamily: 'Outfit, sans-serif',
+              fontSize: 11, fontWeight: 600,
+              letterSpacing: '0.2em', textTransform: 'uppercase',
+              padding: '14px 0', marginRight: 40,
+              color: active === tab.id ? '#C9A84C' : 'rgba(245,240,232,0.3)',
+              borderBottom: active === tab.id ? '1px solid #C9A84C' : '1px solid transparent',
+              marginBottom: -1,
+              transition: 'all 0.3s',
+              display: 'flex', alignItems: 'center', gap: 10,
+            }}
+          >
+            {tab.label}
+            <span style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: 13, fontStyle: 'italic',
+              color: active === tab.id ? 'rgba(201,168,76,0.6)' : 'rgba(245,240,232,0.15)',
+            }}>
+              {tab.count}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      {/* ── Horizontal scroll cards ── */}
+      <div
+        ref={scrollRef}
+        style={{
+          display: 'flex',
+          gap: 16,
+          overflowX: 'auto',
+          paddingLeft: 'clamp(24px,6vw,100px)',
+          paddingRight: 'clamp(24px,6vw,100px)',
+          paddingBottom: 8,
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        <style>{`div::-webkit-scrollbar { display: none; }`}</style>
+        {current.data.map((item, i) => (
+          <ServiceCard key={`${active}-${i}`} item={item} index={i} />
+        ))}
+        {/* CTA card at end */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          data-cursor
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          style={{
+            flexShrink: 0,
+            width: 'clamp(200px, 18vw, 260px)',
+            aspectRatio: '3/4',
+            background: '#C9A84C',
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'flex-start', justifyContent: 'flex-end',
+            padding: '32px 28px',
+            cursor: 'pointer',
+            transition: 'background 0.3s',
+          }}
+          whileHover={{ backgroundColor: '#DEC172' }}
+        >
+          <div style={{
+            width: 48, height: 48, borderRadius: '50%',
+            background: '#060D18',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: 22, marginBottom: 24,
+          }}>
+            ↗
+          </div>
+          <p style={{
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: 26, fontWeight: 500,
+            color: '#060D18', lineHeight: 1.2,
+          }}>
+            Book a Free Consultation
+          </p>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
