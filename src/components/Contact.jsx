@@ -285,27 +285,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Floating WhatsApp */}
-      <a
-        href="https://wa.me/91XXXXXXXXXX"
-        data-cursor
-        target="_blank" rel="noreferrer"
-        style={{
-          position: 'fixed', bottom: 32, right: 32, zIndex: 800,
-          width: 56, height: 56,
-          background: '#25D366',
-          borderRadius: '50%',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 26,
-          boxShadow: '0 4px 24px rgba(37,211,102,0.4)',
-          textDecoration: 'none',
-          transition: 'transform 0.3s, box-shadow 0.3s',
-        }}
-        onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.12)'; e.currentTarget.style.boxShadow = '0 6px 32px rgba(37,211,102,0.6)' }}
-        onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(37,211,102,0.4)' }}
-      >
-        💬
-      </a>
     </div>
   )
 }
