@@ -62,7 +62,7 @@ export default function Contact() {
       }} />
 
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{
+        <div className="contact-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '80px',

@@ -110,6 +110,7 @@ export default function WhyUs() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22,1,0.36,1] }}
               data-cursor
+              className="whyus-card"
               style={{
                 background: '#060D18',
                 padding: '44px 40px',

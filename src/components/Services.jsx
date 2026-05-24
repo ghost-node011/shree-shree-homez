@@ -1,5 +1,19 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+function useIsMobile() {
+  const [mobile, setMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
+    const fn = () => setMobile(window.innerWidth < 768)
+    window.addEventListener('resize', fn)
+    return () => window.removeEventListener('resize', fn)
+  }, [])
+  return mobile
+}
 
 const REAL_ESTATE = [
   {
@@ -96,7 +110,7 @@ const TABS = [
   { id: 'construction', label: 'Construction', count: '06', data: CONSTRUCTION },
 ]
 
-function ServiceCard({ item, index }) {
+function ServiceCard({ item, index, fullWidth = false }) {
   const [hovered, setHovered] = useState(false)
 
   return (
@@ -114,7 +128,7 @@ function ServiceCard({ item, index }) {
         aspectRatio: '3/4',
         cursor: 'pointer',
         flexShrink: 0,
-        width: 'clamp(240px, 22vw, 320px)',
+        width: fullWidth ? '100%' : 'clamp(240px, 22vw, 320px)',
       }}
     >
       {/* Photo */}
@@ -226,6 +240,7 @@ function ServiceCard({ item, index }) {
 export default function Services() {
   const [active, setActive] = useState('realestate')
   const scrollRef = useRef(null)
+  const isMobile = useIsMobile()
   const current = TABS.find(t => t.id === active)
 
   const scroll = (dir) => {
@@ -251,7 +266,9 @@ export default function Services() {
         gridTemplateColumns: '1fr auto',
         gap: 40, alignItems: 'flex-end',
         marginBottom: 56,
-      }}>
+      }}
+        className="services-header"
+      >
         <div>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -287,6 +304,7 @@ export default function Services() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
+          className="services-arrows"
           style={{ maxWidth: 340 }}
         >
           <p style={{
@@ -361,7 +379,55 @@ export default function Services() {
         ))}
       </div>
 
-      {/* ── Horizontal scroll cards ── */}
+      {/* ── Cards — Swiper on mobile, horizontal scroll on desktop ── */}
+      {isMobile ? (
+        <>
+          <style>{`
+            .services-swiper { padding: 0 24px 48px !important; }
+            .services-swiper .swiper-pagination { bottom: 8px !important; }
+            .services-swiper .swiper-slide { height: auto; }
+          `}</style>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            spaceBetween={16}
+            slidesPerView={1.15}
+            grabCursor={true}
+            className="services-swiper"
+          >
+            {current.data.map((item, i) => (
+              <SwiperSlide key={`${active}-${i}`}>
+                <ServiceCard item={item} index={i} fullWidth />
+              </SwiperSlide>
+            ))}
+            <SwiperSlide>
+              <div
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                style={{
+                  aspectRatio: '3/4',
+                  background: '#C9A84C',
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'flex-start', justifyContent: 'flex-end',
+                  padding: '32px 28px',
+                }}
+              >
+                <div style={{
+                  width: 48, height: 48, borderRadius: '50%',
+                  background: '#060D18',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 22, marginBottom: 24,
+                }}>↗</div>
+                <p style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: 26, fontWeight: 500,
+                  color: '#060D18', lineHeight: 1.2,
+                }}>Book a Free Consultation</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </>
+      ) : (
       <div
         ref={scrollRef}
         style={{
@@ -417,6 +483,7 @@ export default function Services() {
           </p>
         </motion.div>
       </div>
+      )}
     </div>
   )
 }

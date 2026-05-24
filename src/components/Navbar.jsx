@@ -49,8 +49,8 @@ export default function Navbar() {
           style={{ height: scrolled ? 44 : 56, transition: 'height 0.4s ease', objectFit: 'contain' }}
         />
 
-        {/* Desktop */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }} className="hidden lg:flex">
+        {/* Desktop nav */}
+        <div style={{ alignItems: 'center', gap: 32 }} className="nav-desktop">
           {NAV.map(n => (
             <button key={n.id} onClick={() => goTo(n.id)} data-cursor
               style={{
@@ -85,9 +85,9 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="lg:hidden"
+          className="nav-hamburger"
           onClick={() => setOpen(v => !v)} data-cursor
-          style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', gap: 5, padding: 8 }}
+          style={{ background: 'none', border: 'none', flexDirection: 'column', gap: 5, padding: 8 }}
         >
           {[0,1,2].map(i => (
             <motion.span key={i} animate={{

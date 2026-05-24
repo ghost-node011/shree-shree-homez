@@ -61,6 +61,7 @@ export default function Stats() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22,1,0.36,1] }}
+            className="stat-item"
             style={{
               display: 'flex', flexDirection: 'column', gap: 8,
               padding: i < STATS.length - 1 ? '0 40px 0 0' : '0',

@@ -281,9 +281,59 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — MOBILE
 ═══════════════════════════════════════ */
+/* Navbar: desktop links hidden on mobile, hamburger shown */
+.nav-desktop { display: none !important; }
+.nav-hamburger { display: flex !important; }
+@media (min-width: 1024px) {
+  .nav-desktop   { display: flex !important; }
+  .nav-hamburger { display: none !important; }
+}
+
 @media (max-width: 768px) {
-  .section-py { padding-top: 80px; padding-bottom: 80px; }
+  .section-py { padding-top: 72px; padding-bottom: 72px; }
   html, * { cursor: auto !important; }
+
+  /* Hero */
+  .hero-stats          { display: none !important; }
+  .hero-scroll-ind     { display: none !important; }
+  .hero-content        { padding-bottom: 52px !important; padding-left: 20px !important; padding-right: 20px !important; }
+  .hero-ctas           { flex-direction: column !important; gap: 12px !important; }
+  .hero-ctasbtn        { width: 100% !important; justify-content: center !important; }
+
+  /* Stats */
+  .stat-item           { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid rgba(201,168,76,0.1); padding-bottom: 32px !important; }
+  .stat-item:last-child{ border-bottom: none !important; }
+
+  /* Services header */
+  .services-header     { grid-template-columns: 1fr !important; }
+  .services-arrows     { display: none !important; }
+
+  /* Why Us cards */
+  .whyus-card          { padding: 32px 24px !important; }
+
+  /* About frame — clip overflow from decorative border offset */
+  .about-frame-wrap    { overflow: visible !important; padding: 24px !important; }
+
+  /* Founder grid gap */
+  .founder-grid        { gap: 48px !important; }
+
+  /* Contact grid gap */
+  .contact-grid        { gap: 48px !important; }
+
+  /* Footer grid */
+  .footer-grid         { grid-template-columns: 1fr 1fr !important; }
+
+  /* Testimonials */
+  .testimonial-wrap    { padding: 36px 24px !important; }
+
+  /* Philosophy */
+  .philosophy-inner    { padding: 60px 20px !important; flex-direction: column !important; text-align: center !important; align-items: center !important; }
+  .philosophy-quote    { font-size: 26px !important; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid         { grid-template-columns: 1fr !important; }
+  .hero-heading        { font-size: 52px !important; }
 }

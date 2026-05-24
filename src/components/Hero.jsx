@@ -155,7 +155,7 @@ export default function Hero() {
       />
 
       {/* ── MAIN CONTENT (bottom-left layout) ── */}
-      <div style={{
+      <div className="hero-content" style={{
         position: 'relative', zIndex: 10,
         padding: `0 clamp(28px,6vw,100px) clamp(52px,7vh,96px)`,
         paddingLeft: `calc(clamp(28px,6vw,100px) + 28px)`,
@@ -180,9 +180,10 @@ export default function Hero() {
             initial={{ y: '105%' }}
             animate={ready ? { y: '0%' } : {}}
             transition={{ duration: 1.05, delay: 0.65, ease: [0.22,1,0.36,1] }}
+            className="hero-heading"
             style={{
               fontFamily: 'Cormorant Garamond, serif',
-              fontSize: 'clamp(60px, 10vw, 152px)',
+              fontSize: 'clamp(52px, 10vw, 152px)',
               fontWeight: 500, lineHeight: 0.9,
               letterSpacing: '-0.02em',
               color: '#F5F0E8', margin: 0,
@@ -198,9 +199,10 @@ export default function Hero() {
             initial={{ y: '105%' }}
             animate={ready ? { y: '0%' } : {}}
             transition={{ duration: 1.05, delay: 0.82, ease: [0.22,1,0.36,1] }}
+            className="hero-heading"
             style={{
               fontFamily: 'Cormorant Garamond, serif',
-              fontSize: 'clamp(60px, 10vw, 152px)',
+              fontSize: 'clamp(52px, 10vw, 152px)',
               fontWeight: 300, fontStyle: 'italic',
               lineHeight: 0.9,
               letterSpacing: '-0.02em',
@@ -255,6 +257,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={ready ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.6 }}
+        className="hero-stats"
         style={{
           position: 'absolute',
           right: 'clamp(28px,6vw,100px)',
@@ -297,6 +300,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={ready ? { opacity: 1 } : {}}
         transition={{ delay: 2, duration: 1 }}
+        className="hero-scroll-ind"
         style={{
           position: 'absolute', right: 28, top: '50%',
           transform: 'translateY(-50%)',

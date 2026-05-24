@@ -8,7 +8,7 @@ export default function Founder() {
       position: 'relative', overflow: 'hidden',
     }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{
+        <div className="founder-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '80px',
