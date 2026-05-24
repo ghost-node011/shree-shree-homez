@@ -15,15 +15,26 @@ function goTo(id) {
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
+const isMobileDevice = () => window.innerWidth < 1024
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
+  const [mobile, setMobile]     = useState(isMobileDevice())
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onResize = () => setMobile(isMobileDevice())
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onResize, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
+
+  /* On mobile always 60px; on desktop 90→68 */
+  const navH = mobile ? 60 : (scrolled ? 68 : 90)
 
   return (
     <>
@@ -34,10 +45,10 @@ export default function Navbar() {
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 900,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: `0 clamp(20px, 5vw, 80px)`,
-          height: scrolled ? 68 : 90,
-          background: scrolled ? 'rgba(6,13,24,0.97)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          padding: `0 clamp(16px, 5vw, 80px)`,
+          height: navH,
+          background: scrolled || open ? 'rgba(6,13,24,0.97)' : 'transparent',
+          backdropFilter: scrolled || open ? 'blur(20px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : 'none',
           transition: 'height 0.4s ease, background 0.4s ease',
         }}
@@ -46,7 +57,7 @@ export default function Navbar() {
           src="/logo-bg.png" alt="Sri Sri Homz"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           data-cursor
-          style={{ height: scrolled ? 44 : 56, transition: 'height 0.4s ease', objectFit: 'contain' }}
+          style={{ height: mobile ? 38 : (scrolled ? 44 : 56), transition: 'height 0.4s ease', objectFit: 'contain' }}
         />
 
         {/* Desktop nav */}
@@ -83,18 +94,24 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger — 44×44 touch target */}
         <button
           className="nav-hamburger"
           onClick={() => setOpen(v => !v)} data-cursor
-          style={{ background: 'none', border: 'none', flexDirection: 'column', gap: 5, padding: 8 }}
+          style={{
+            background: 'none', border: 'none',
+            width: 44, height: 44,
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center',
+            gap: 5, padding: 0, flexShrink: 0,
+          }}
         >
           {[0,1,2].map(i => (
             <motion.span key={i} animate={{
               rotate:  open && i===0 ? 45  : open && i===2 ? -45 : 0,
               y:       open && i===0 ? 8   : open && i===2 ? -8 : 0,
               opacity: open && i===1 ? 0 : 1,
-            }} style={{ display:'block', width:24, height:1, background:'#C9A84C', transformOrigin:'center' }} />
+            }} style={{ display:'block', width:22, height:1.5, background:'#C9A84C', transformOrigin:'center', borderRadius:1 }} />
           ))}
         </button>
       </motion.nav>
@@ -102,12 +119,12 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
             style={{
-              position: 'fixed', top: 68, left: 0, right: 0, zIndex: 899,
+              position: 'fixed', top: navH, left: 0, right: 0, zIndex: 899,
               background: 'rgba(6,13,24,0.98)', backdropFilter: 'blur(20px)',
               borderBottom: '1px solid rgba(201,168,76,0.12)',
               padding: '32px clamp(20px,5vw,80px) 40px',
