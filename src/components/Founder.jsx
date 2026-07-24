@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function Founder() {
+  const [photoFailed, setPhotoFailed] = useState(false)
   return (
     <div style={{
       background: 'linear-gradient(160deg, #060D18 0%, #0A1628 100%)',
@@ -30,44 +32,62 @@ export default function Founder() {
                 pointerEvents: 'none',
               }} />
 
-              {/* Photo placeholder */}
-              <div style={{
-                aspectRatio: '3/4',
-                background: 'linear-gradient(160deg, #0F2040 0%, #0A1628 100%)',
-                border: '1px solid rgba(201,168,76,0.15)',
-                display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center',
-                gap: 16, position: 'relative',
-              }}>
-                {/* Avatar silhouette */}
+              {/* ── Founder photo ──
+                  Drop the professional photo at /public/founder.jpg and it renders here.
+                  Falls back to the avatar placeholder until that file exists.
+              ── */}
+              {!photoFailed ? (
+                <img
+                  src="/founder.jpg"
+                  alt="Yashank Arora — Founder, Sri Sri Homz"
+                  onError={() => setPhotoFailed(true)}
+                  style={{
+                    aspectRatio: '3/4',
+                    width: '100%',
+                    objectFit: 'cover',
+                    border: '1px solid rgba(201,168,76,0.15)',
+                    display: 'block',
+                  }}
+                />
+              ) : (
                 <div style={{
-                  width: 90, height: 90, borderRadius: '50%',
-                  background: 'rgba(201,168,76,0.1)',
-                  border: '1px solid rgba(201,168,76,0.25)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 36,
+                  aspectRatio: '3/4',
+                  background: 'linear-gradient(160deg, #0F2040 0%, #0A1628 100%)',
+                  border: '1px solid rgba(201,168,76,0.15)',
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'center', justifyContent: 'center',
+                  gap: 16, position: 'relative',
                 }}>
-                  👤
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <p style={{
-                    fontFamily: 'Cormorant Garamond, serif',
-                    fontSize: 22, fontWeight: 500,
-                    color: '#F5F0E8', marginBottom: 6,
+                  {/* Avatar silhouette */}
+                  <div style={{
+                    width: 90, height: 90, borderRadius: '50%',
+                    background: 'rgba(201,168,76,0.1)',
+                    border: '1px solid rgba(201,168,76,0.25)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: 36,
                   }}>
-                    Yashank Arora
-                  </p>
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: 10, fontWeight: 600,
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(201,168,76,0.7)',
-                  }}>
-                    Founder, Sri Sri Homz
-                  </p>
+                    👤
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <p style={{
+                      fontFamily: 'Cormorant Garamond, serif',
+                      fontSize: 22, fontWeight: 500,
+                      color: '#F5F0E8', marginBottom: 6,
+                    }}>
+                      Yashank Arora
+                    </p>
+                    <p style={{
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: 10, fontWeight: 600,
+                      letterSpacing: '0.2em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(201,168,76,0.7)',
+                    }}>
+                      Founder, Sri Sri Homz
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Bottom label */}
               <div style={{

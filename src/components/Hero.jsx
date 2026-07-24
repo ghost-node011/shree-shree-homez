@@ -64,7 +64,7 @@ export default function Hero() {
       }}>
         {/* Background image — replace URL with your own photo */}
         <img
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85"
           alt=""
           aria-hidden="true"
           style={{
@@ -212,23 +212,6 @@ export default function Hero() {
             Homz
           </motion.h1>
         </div>
-
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={ready ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.15, ease: [0.22,1,0.36,1] }}
-          style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: 'clamp(12px, 1.3vw, 17px)',
-            fontWeight: 300, letterSpacing: '0.3em',
-            textTransform: 'uppercase',
-            color: 'rgba(245,240,232,0.55)',
-            marginBottom: 44,
-          }}
-        >
-          Divine Home &nbsp;·&nbsp; Divine People
-        </motion.p>
 
         {/* CTA buttons */}
         <motion.div

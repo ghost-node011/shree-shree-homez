@@ -313,8 +313,12 @@ h1, h2, h3, h4 {
   /* Why Us cards */
   .whyus-card          { padding: 32px 24px !important; }
 
-  /* About frame — clip overflow from decorative border offset */
-  .about-frame-wrap    { overflow: visible !important; padding: 24px !important; }
+  /* About: banner goes taller/narrower, caption stacks instead of sitting side by side */
+  .about-banner         { aspect-ratio: 4 / 5 !important; }
+  .about-banner-caption { flex-direction: column !important; align-items: flex-start !important; }
+  .about-trust-row      { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 28px 0 !important; }
+  .about-trust-row > div{ padding: 0 !important; border-left: none !important; border-bottom: 1px solid rgba(201,168,76,0.12); padding-bottom: 20px !important; }
+  .about-trust-row > div:nth-last-child(-n+2) { border-bottom: none !important; padding-bottom: 0 !important; }
 
   /* Founder grid gap */
   .founder-grid        { gap: 48px !important; }

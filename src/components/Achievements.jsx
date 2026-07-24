@@ -19,7 +19,7 @@ const AWARDS = [
     brand:    'Prestige Group',
     award:    'Prestige Group Recognition',
     desc:     'Awarded as a symbol of strong partnership, trust, and contribution towards premium real estate growth.',
-    year:     '2024',
+    year:     '2025',
     category: 'Strong Partnership',
   },
   {

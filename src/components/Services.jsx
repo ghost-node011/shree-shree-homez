@@ -76,7 +76,7 @@ const CONSTRUCTION = [
   {
     title: 'Builder Floor Dev.',
     desc: 'Full-cycle builder floor development with premium finishes and structural excellence.',
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
     tag: 'Development',
   },
   {
