@@ -27,7 +27,7 @@ function Counter({ value, suffix, active }) {
 
   return (
     <span style={{
-      fontFamily: 'Cormorant Garamond, serif',
+      fontFamily: 'Caudex, serif',
       fontSize: 'clamp(44px, 4.5vw, 72px)',
       fontWeight: 400,
       color: '#C9A84C',

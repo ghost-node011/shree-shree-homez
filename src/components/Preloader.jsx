@@ -88,7 +88,7 @@ export default function Preloader({ onDone }) {
 
           {/* Counter */}
           <p style={{
-            fontFamily: 'Cormorant Garamond, serif',
+            fontFamily: 'Caudex, serif',
             fontSize: 13, letterSpacing: '0.4em',
             color: 'rgba(201,168,76,0.65)',
             position: 'relative', zIndex: 1,

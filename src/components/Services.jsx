@@ -196,7 +196,7 @@ function ServiceCard({ item, index, fullWidth = false }) {
           />
 
           <h3 style={{
-            fontFamily: 'Cormorant Garamond, serif',
+            fontFamily: 'Caudex, serif',
             fontSize: 'clamp(20px, 1.8vw, 28px)',
             fontWeight: 500, lineHeight: 1.15,
             color: '#F5F0E8', marginBottom: 10,
@@ -287,7 +287,7 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.08 }}
             style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(48px, 6vw, 90px)',
               fontWeight: 400, lineHeight: 0.95,
               letterSpacing: '-0.01em',
@@ -369,7 +369,7 @@ export default function Services() {
           >
             {tab.label}
             <span style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 13, fontStyle: 'italic',
               color: active === tab.id ? 'rgba(201,168,76,0.6)' : 'rgba(245,240,232,0.15)',
             }}>
@@ -419,7 +419,7 @@ export default function Services() {
                   fontSize: 22, marginBottom: 24,
                 }}>↗</div>
                 <p style={{
-                  fontFamily: 'Cormorant Garamond, serif',
+                  fontFamily: 'Caudex, serif',
                   fontSize: 26, fontWeight: 500,
                   color: '#060D18', lineHeight: 1.2,
                 }}>Book a Free Consultation</p>
@@ -475,7 +475,7 @@ export default function Services() {
             ↗
           </div>
           <p style={{
-            fontFamily: 'Cormorant Garamond, serif',
+            fontFamily: 'Caudex, serif',
             fontSize: 26, fontWeight: 500,
             color: '#060D18', lineHeight: 1.2,
           }}>

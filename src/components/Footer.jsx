@@ -116,7 +116,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Sri Sri Homz. All rights reserved.
         </p>
         <p style={{
-          fontFamily: 'Cormorant Garamond, serif', fontSize: 14,
+          fontFamily: 'Caudex, serif', fontSize: 14,
           fontStyle: 'italic', color: 'rgba(201,168,76,0.4)',
         }}>
           Divine Home. Divine People.

@@ -45,7 +45,7 @@ export default function Philosophy() {
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 1.1, ease: [0.22,1,0.36,1] }}
         style={{
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Caudex, serif',
           fontSize: 'clamp(28px, 3.5vw, 54px)',
           fontWeight: 300,
           fontStyle: 'italic',

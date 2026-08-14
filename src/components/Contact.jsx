@@ -86,7 +86,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 'clamp(34px, 4vw, 56px)',
                 fontWeight: 400, lineHeight: 1.1,
                 color: '#F5F0E8', marginBottom: 12,
@@ -202,7 +202,7 @@ export default function Contact() {
               }}
             >
               <p style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 24, fontWeight: 400,
                 color: '#F5F0E8', marginBottom: 8,
               }}>

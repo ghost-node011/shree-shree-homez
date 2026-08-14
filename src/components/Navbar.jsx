@@ -5,7 +5,7 @@ const NAV = [
   { label: 'About',        id: 'about' },
   { label: 'Services',     id: 'services' },
   { label: 'Achievements', id: 'achievements' },
-  { label: 'Clients',      id: 'testimonials' },
+  { label: 'Reviews',      id: 'reviews' },
   { label: 'Founder',      id: 'founder' },
   { label: 'Contact',      id: 'contact' },
 ]
@@ -135,7 +135,7 @@ export default function Navbar() {
               <button key={n.id} onClick={() => { goTo(n.id); setOpen(false) }} data-cursor
                 style={{
                   background: 'none', border: 'none',
-                  fontFamily: 'Cormorant Garamond, serif',
+                  fontFamily: 'Caudex, serif',
                   fontSize: 30, fontWeight: 400,
                   color: 'rgba(245,240,232,0.85)',
                   textAlign: 'left', transition: 'color 0.3s',

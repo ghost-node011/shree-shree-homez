@@ -70,7 +70,7 @@ export default function Achievements() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(36px, 4vw, 62px)',
               fontWeight: 400, color: '#F5F0E8',
               marginBottom: 20,
@@ -152,7 +152,7 @@ export default function Achievements() {
               </div>
 
               <h3 style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 24, fontWeight: 500,
                 color: '#F5F0E8', marginBottom: 8,
                 lineHeight: 1.2,

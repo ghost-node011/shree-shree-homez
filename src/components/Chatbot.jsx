@@ -473,7 +473,7 @@ export default function Chatbot() {
                 fontSize: 20, flexShrink: 0,
               }}>🏠</div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 16, fontWeight: 500, color: '#F5F0E8' }}>
+                <p style={{ fontFamily: 'Caudex, serif', fontSize: 16, fontWeight: 500, color: '#F5F0E8' }}>
                   Sri Sri Homz
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>

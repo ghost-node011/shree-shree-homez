@@ -54,8 +54,8 @@ export default function Hero() {
     }}>
 
       {/* ── HERO BACKGROUND IMAGE ──
-          Replace /hero.jpg with your own luxury property photo (1920×1080+).
-          The Unsplash image below is a placeholder — swap src for your final photo.
+          Placeholder cinematic skyline (stand-in for a real Noida/Delhi NCR skyline shot).
+          Replace /hero.jpg with an actual Noida skyline photo (1920×1080+) when available.
       ── */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
@@ -64,7 +64,7 @@ export default function Hero() {
       }}>
         {/* Background image — replace URL with your own photo */}
         <img
-          src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1920&q=85"
           alt=""
           aria-hidden="true"
           style={{
@@ -182,7 +182,7 @@ export default function Hero() {
             transition={{ duration: 1.05, delay: 0.65, ease: [0.22,1,0.36,1] }}
             className="hero-heading"
             style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(52px, 10vw, 152px)',
               fontWeight: 500, lineHeight: 0.9,
               letterSpacing: '-0.02em',
@@ -201,7 +201,7 @@ export default function Hero() {
             transition={{ duration: 1.05, delay: 0.82, ease: [0.22,1,0.36,1] }}
             className="hero-heading"
             style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(52px, 10vw, 152px)',
               fontWeight: 300, fontStyle: 'italic',
               lineHeight: 0.9,
@@ -260,7 +260,7 @@ export default function Hero() {
             borderLeft: i > 0 ? '1px solid rgba(201,168,76,0.2)' : 'none',
           }}>
             <div style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(28px, 2.8vw, 42px)',
               fontWeight: 400, color: '#C9A84C', lineHeight: 1,
             }}>

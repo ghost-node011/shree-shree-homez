@@ -66,7 +66,7 @@ export default function WhyUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 'clamp(36px, 4vw, 60px)',
                 fontWeight: 400, lineHeight: 1.1,
                 color: '#F5F0E8',
@@ -121,7 +121,7 @@ export default function WhyUs() {
             >
               {/* Number */}
               <div style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 13, fontWeight: 400,
                 letterSpacing: '0.25em',
                 color: 'rgba(201,168,76,0.4)',
@@ -145,7 +145,7 @@ export default function WhyUs() {
               />
 
               <h3 style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 26, fontWeight: 500,
                 color: '#F5F0E8', marginBottom: 14,
                 lineHeight: 1.2,

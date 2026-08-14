@@ -70,7 +70,7 @@ export default function Founder() {
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{
-                      fontFamily: 'Cormorant Garamond, serif',
+                      fontFamily: 'Caudex, serif',
                       fontSize: 22, fontWeight: 500,
                       color: '#F5F0E8', marginBottom: 6,
                     }}>
@@ -118,7 +118,7 @@ export default function Founder() {
               className="section-label"
               style={{ marginBottom: 24 }}
             >
-              Founder's Message
+              A Little About Yashank
             </motion.div>
 
             <motion.h2
@@ -127,13 +127,13 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 400, lineHeight: 1.15,
                 color: '#F5F0E8', marginBottom: 8,
               }}
             >
-              A Message From
+              The Man Behind
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -141,13 +141,13 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.15 }}
               style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 300, fontStyle: 'italic',
                 color: '#C9A84C', marginBottom: 36,
               }}
             >
-              Yashank Arora
+              Sri Sri Homz
             </motion.h2>
 
             <motion.div
@@ -165,6 +165,7 @@ export default function Founder() {
 
             {[
               'Real estate and construction are not just businesses for me — they are about helping people build a better future.',
+              'Yashank grew up in Delhi NCR watching families navigate one of the biggest decisions of their lives — buying a home — often without anyone in their corner they could fully trust. That gap is what eventually pulled him into real estate, and years of hands-on experience across residential, commercial, and construction projects followed.',
               'I started Sri Sri Homz with the belief that people deserve honest guidance while making some of the biggest financial and emotional decisions of their lives.',
               'Our goal is not just to sell properties or construct buildings. Our goal is to create trust, deliver value, and help people build long-term wealth and meaningful spaces.',
             ].map((para, i) => (
@@ -186,13 +187,49 @@ export default function Founder() {
               </motion.p>
             ))}
 
+            {/* ── Credential strip ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              style={{ display: 'flex', gap: 0, margin: '8px 0 32px' }}
+            >
+              {[
+                { val: '5+',   label: 'Years in Real Estate' },
+                { val: '500+', label: 'Families Guided' },
+                { val: '15+',  label: 'Industry Recognitions' },
+              ].map((s, i) => (
+                <div key={i} style={{
+                  padding: i === 0 ? '0 28px 0 0' : '0 28px',
+                  borderLeft: i > 0 ? '1px solid rgba(201,168,76,0.15)' : 'none',
+                }}>
+                  <div style={{
+                    fontFamily: 'Caudex, serif',
+                    fontSize: 'clamp(22px, 2vw, 28px)',
+                    fontWeight: 400, color: '#C9A84C', lineHeight: 1,
+                  }}>
+                    {s.val}
+                  </div>
+                  <div style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: 9.5, fontWeight: 500,
+                    letterSpacing: '0.1em', textTransform: 'uppercase',
+                    color: 'rgba(245,240,232,0.4)', marginTop: 6,
+                  }}>
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.55 }}
               style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 20, fontStyle: 'italic',
                 color: '#C9A84C', marginTop: 32,
                 borderLeft: '2px solid rgba(201,168,76,0.4)',

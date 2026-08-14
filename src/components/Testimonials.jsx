@@ -47,7 +47,7 @@ export default function Testimonials() {
       {/* Background quote decoration */}
       <div style={{
         position: 'absolute', top: '10%', left: '5%',
-        fontFamily: 'Cormorant Garamond, serif',
+        fontFamily: 'Caudex, serif',
         fontSize: '30vw', fontWeight: 700,
         color: 'rgba(201,168,76,0.025)',
         lineHeight: 1, pointerEvents: 'none',
@@ -76,7 +76,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(34px, 4vw, 58px)',
               fontWeight: 400, color: '#F5F0E8',
             }}
@@ -126,7 +126,7 @@ export default function Testimonials() {
                 >
                   {/* Quote mark */}
                   <div style={{
-                    fontFamily: 'Cormorant Garamond, serif',
+                    fontFamily: 'Caudex, serif',
                     fontSize: 56, lineHeight: 1,
                     color: '#C9A84C', opacity: 0.6,
                     marginBottom: 20,
@@ -149,7 +149,7 @@ export default function Testimonials() {
                   <div style={{ width: 36, height: 1, background: 'rgba(201,168,76,0.4)', marginBottom: 18 }} />
 
                   <p style={{
-                    fontFamily: 'Cormorant Garamond, serif',
+                    fontFamily: 'Caudex, serif',
                     fontSize: 18, fontWeight: 500,
                     color: '#F5F0E8', marginBottom: 4,
                   }}>

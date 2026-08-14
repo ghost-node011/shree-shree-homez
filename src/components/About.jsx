@@ -84,7 +84,7 @@ export default function About() {
         </motion.div>
 
         <motion.h2 {...fade(0.1)} style={{
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Caudex, serif',
           fontSize: 'clamp(36px, 4.5vw, 64px)',
           fontWeight: 500, lineHeight: 1.1,
           color: '#F5F0E8', marginBottom: 4,
@@ -92,7 +92,7 @@ export default function About() {
           Built on Truth.
         </motion.h2>
         <motion.h2 {...fade(0.17)} style={{
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Caudex, serif',
           fontSize: 'clamp(36px, 4.5vw, 64px)',
           fontWeight: 300, fontStyle: 'italic',
           lineHeight: 1.1, color: '#C9A84C', marginBottom: 32,
@@ -196,7 +196,7 @@ export default function About() {
                 <div style={{ position: 'relative', textAlign: 'center' }}>
                   <div style={{ width: 40, height: 1, background: 'rgba(201,168,76,0.4)', margin: '0 auto 20px' }} />
                   <span style={{
-                    fontFamily: 'Cormorant Garamond, serif',
+                    fontFamily: 'Caudex, serif',
                     fontSize: 34, fontStyle: 'italic',
                     color: 'rgba(201,168,76,0.4)',
                     letterSpacing: '0.02em',
@@ -224,7 +224,7 @@ export default function About() {
             gap: 24, flexWrap: 'wrap',
           }}>
             <p style={{
-              fontFamily: 'Cormorant Garamond, serif',
+              fontFamily: 'Caudex, serif',
               fontSize: 'clamp(17px, 1.6vw, 22px)', fontStyle: 'italic',
               color: 'rgba(245,240,232,0.85)',
               lineHeight: 1.5, maxWidth: 440, margin: 0,
@@ -276,7 +276,7 @@ export default function About() {
               }}
             >
               <div style={{
-                fontFamily: 'Cormorant Garamond, serif',
+                fontFamily: 'Caudex, serif',
                 fontSize: 'clamp(30px, 3vw, 42px)',
                 fontWeight: 400, color: '#C9A84C', lineHeight: 1,
               }}>
