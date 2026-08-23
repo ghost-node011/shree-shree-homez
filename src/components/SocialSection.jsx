@@ -23,7 +23,7 @@ function InstagramGlyph() {
 export default function SocialSection() {
   return (
     <div style={{
-      background: 'linear-gradient(180deg, #060D18 0%, #0A1628 100%)',
+      background: '#F5EEE4',
       padding: '120px clamp(24px,6vw,120px)',
       position: 'relative', overflow: 'hidden',
     }}>
@@ -45,12 +45,12 @@ export default function SocialSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Caudex, serif',
+              fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(34px, 4vw, 58px)',
-              fontWeight: 400, color: '#F5F0E8', marginBottom: 20,
+              fontWeight: 400, color: '#14100D', marginBottom: 20,
             }}
           >
-            Follow <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>@srisrihomz</span>
+            Follow <span style={{ fontStyle: 'italic', color: '#C47856' }}>@srisrihomz</span>
           </motion.h2>
           <motion.a
             href="#"
@@ -61,10 +61,10 @@ export default function SocialSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
               display: 'inline-block',
-              fontFamily: 'Outfit, sans-serif', fontSize: 12, fontWeight: 600,
+              fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
               letterSpacing: '0.18em', textTransform: 'uppercase',
-              color: '#C9A84C', textDecoration: 'none',
-              borderBottom: '1px solid rgba(201,168,76,0.4)', paddingBottom: 4,
+              color: '#C47856', textDecoration: 'none',
+              borderBottom: '1px solid rgba(196,120,86,0.4)', paddingBottom: 4,
             }}
           >
             View Profile
@@ -89,7 +89,7 @@ export default function SocialSection() {
                 position: 'relative', overflow: 'hidden',
                 aspectRatio: '9/16',
                 display: 'block',
-                border: '1px solid rgba(201,168,76,0.12)',
+                border: '1px solid rgba(196,120,86,0.2)',
               }}
             >
               <img
@@ -101,22 +101,22 @@ export default function SocialSection() {
               />
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(to top, rgba(6,13,24,0.85) 0%, transparent 55%)',
+                background: 'linear-gradient(to top, rgba(20,16,13,0.85) 0%, transparent 55%)',
                 pointerEvents: 'none',
               }} />
               <div style={{
                 position: 'absolute', top: 10, right: 10,
                 width: 24, height: 24, borderRadius: '50%',
-                background: 'rgba(6,13,24,0.6)', backdropFilter: 'blur(4px)',
+                background: 'rgba(20,16,13,0.6)', backdropFilter: 'blur(4px)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: '#C9A84C',
+                color: '#C47856',
               }}>
                 <InstagramGlyph />
               </div>
               <p style={{
                 position: 'absolute', left: 10, right: 10, bottom: 10,
-                fontFamily: 'Outfit, sans-serif', fontSize: 10.5, fontWeight: 400,
-                lineHeight: 1.4, color: 'rgba(245,240,232,0.85)',
+                fontFamily: 'Inter, sans-serif', fontSize: 10.5, fontWeight: 400,
+                lineHeight: 1.4, color: 'rgba(245,238,228,0.85)',
                 margin: 0,
               }}>
                 {p.caption}

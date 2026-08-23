@@ -1,33 +1,40 @@
 import { motion } from 'framer-motion'
+import { HeartHandshake, Building2, MapPin, TrendingUp, UserCheck, MessagesSquare } from 'lucide-react'
 
 const REASONS = [
   {
     num: '01',
+    icon: HeartHandshake,
     title: 'Trust First Approach',
     desc: 'We prioritize relationships over transactions. Long-term trust is the foundation of every project we undertake.',
   },
   {
     num: '02',
+    icon: Building2,
     title: 'Real Estate + Construction',
     desc: 'From finding the right investment to building the right structure — complete end-to-end solutions under one brand.',
   },
   {
     num: '03',
+    icon: MapPin,
     title: 'Deep Delhi NCR Expertise',
     desc: 'We understand the pulse of Delhi NCR\'s luxury, residential, and investment-driven real estate markets.',
   },
   {
     num: '04',
+    icon: TrendingUp,
     title: 'Investment-Focused Advisory',
     desc: 'We don\'t just show properties — we identify opportunities with real appreciation and long-term value.',
   },
   {
     num: '05',
+    icon: UserCheck,
     title: 'Personalized Consulting',
     desc: 'Every client has different goals, budgets, and visions. We provide customized solutions accordingly.',
   },
   {
     num: '06',
+    icon: MessagesSquare,
     title: 'Transparent Communication',
     desc: 'No false promises. No unnecessary pressure. Just honest advice and practical execution at every step.',
   },
@@ -36,8 +43,8 @@ const REASONS = [
 export default function WhyUs() {
   return (
     <div style={{
-      background: 'linear-gradient(180deg, #060D18 0%, #0A1628 100%)',
-      padding: '120px clamp(24px,6vw,120px)',
+      background: '#F5EEE4',
+      padding: '120px clamp(24px,6vw,120px) 150px',
       position: 'relative',
     }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -66,14 +73,14 @@ export default function WhyUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(36px, 4vw, 60px)',
                 fontWeight: 400, lineHeight: 1.1,
-                color: '#F5F0E8',
+                color: '#14100D',
               }}
             >
               The Sri Sri Homz<br />
-              <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>Difference</span>
+              <span style={{ fontStyle: 'italic', color: '#C47856' }}>Difference</span>
             </motion.h2>
           </div>
           <motion.p
@@ -82,10 +89,10 @@ export default function WhyUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Inter, sans-serif',
               fontSize: 16, fontWeight: 300,
               lineHeight: 1.8,
-              color: 'rgba(245,240,232,0.5)',
+              color: 'rgba(20,16,13,0.62)',
               alignSelf: 'end',
             }}
           >
@@ -100,9 +107,11 @@ export default function WhyUs() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
           gap: 1,
-          background: 'rgba(201,168,76,0.06)',
+          background: 'rgba(196,120,86,0.06)',
         }}>
-          {REASONS.map((r, i) => (
+          {REASONS.map((r, i) => {
+            const Icon = r.icon
+            return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 24 }}
@@ -112,23 +121,43 @@ export default function WhyUs() {
               data-cursor
               className="whyus-card"
               style={{
-                background: '#060D18',
-                padding: '44px 40px',
+                background: '#F5EEE4',
+                padding: '48px 40px',
                 position: 'relative',
-                transition: 'background 0.4s ease',
+                overflow: 'hidden',
+                borderTop: '1px solid transparent',
+                transition: 'background 0.4s ease, border-color 0.4s ease',
               }}
-              whileHover={{ backgroundColor: '#0A1628' }}
+              whileHover={{ backgroundColor: '#EDE1D1', borderColor: 'rgba(196,120,86,0.5)' }}
             >
-              {/* Number */}
+              {/* Ghost numeral */}
               <div style={{
-                fontFamily: 'Caudex, serif',
-                fontSize: 13, fontWeight: 400,
-                letterSpacing: '0.25em',
-                color: 'rgba(201,168,76,0.4)',
-                marginBottom: 20,
+                position: 'absolute', top: -6, right: 12,
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 110, fontWeight: 600,
+                color: 'rgba(196,120,86,0.06)',
+                lineHeight: 1, pointerEvents: 'none',
+                userSelect: 'none',
               }}>
                 {r.num}
               </div>
+
+              {/* Icon */}
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: -4 }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  width: 52, height: 52,
+                  borderRadius: '50%',
+                  background: 'rgba(196,120,86,0.08)',
+                  border: '1px solid rgba(196,120,86,0.3)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: 24,
+                  position: 'relative',
+                }}
+              >
+                <Icon size={22} color="#C47856" strokeWidth={1.6} />
+              </motion.div>
 
               {/* Gold accent line */}
               <motion.div
@@ -138,30 +167,33 @@ export default function WhyUs() {
                 transition={{ duration: 0.8, delay: 0.3 + i * 0.05 }}
                 style={{
                   width: 32, height: 1,
-                  background: '#C9A84C',
+                  background: '#C47856',
                   transformOrigin: 'left',
                   marginBottom: 20,
+                  position: 'relative',
                 }}
               />
 
               <h3 style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 26, fontWeight: 500,
-                color: '#F5F0E8', marginBottom: 14,
+                color: '#14100D', marginBottom: 14,
                 lineHeight: 1.2,
+                position: 'relative',
               }}>
                 {r.title}
               </h3>
               <p style={{
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Inter, sans-serif',
                 fontSize: 14, fontWeight: 300,
                 lineHeight: 1.75,
-                color: 'rgba(245,240,232,0.48)',
+                color: '#8C7F72',
+                position: 'relative',
               }}>
                 {r.desc}
               </p>
             </motion.div>
-          ))}
+          )})}
         </div>
       </div>
     </div>

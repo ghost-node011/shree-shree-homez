@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from 'emailjs-com'
+import { Phone, MessageCircle, Mail, MapPin, Clock } from 'lucide-react'
 
 const SERVICES = [
   'Residential Property', 'Luxury Apartment', 'Builder Floor',
@@ -36,20 +37,22 @@ export default function Contact() {
 
   const inputStyle = {
     width: '100%',
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(201,168,76,0.2)',
-    padding: '16px 20px',
-    fontFamily: 'Outfit, sans-serif',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid rgba(196,120,86,0.3)',
+    padding: '12px 2px',
+    fontFamily: 'Inter, sans-serif',
     fontSize: 14, fontWeight: 300,
-    color: '#F5F0E8',
+    color: '#F5EEE4',
     outline: 'none',
     transition: 'border-color 0.3s',
     appearance: 'none',
+    borderRadius: 0,
   }
 
   return (
     <div style={{
-      background: '#030810',
+      background: '#F5EEE4',
       padding: '120px clamp(24px,6vw,120px)',
       position: 'relative', overflow: 'hidden',
     }}>
@@ -57,7 +60,7 @@ export default function Contact() {
       <div style={{
         position: 'absolute', bottom: -100, right: -100,
         width: 500, height: 500,
-        background: 'radial-gradient(ellipse, rgba(201,168,76,0.05) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(196,120,86,0.05) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -86,14 +89,14 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(34px, 4vw, 56px)',
                 fontWeight: 400, lineHeight: 1.1,
-                color: '#F5F0E8', marginBottom: 12,
+                color: '#14100D', marginBottom: 12,
               }}
             >
               Let's Build Your<br />
-              <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>Future Together</span>
+              <span style={{ fontStyle: 'italic', color: '#C47856' }}>Future Together</span>
             </motion.h2>
 
             <motion.div
@@ -103,7 +106,7 @@ export default function Contact() {
               transition={{ duration: 0.9 }}
               style={{
                 width: 60, height: 1,
-                background: 'linear-gradient(90deg, #C9A84C, transparent)',
+                background: 'linear-gradient(90deg, #C47856, transparent)',
                 transformOrigin: 'left',
                 marginBottom: 36,
               }}
@@ -115,10 +118,10 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.25 }}
               style={{
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Inter, sans-serif',
                 fontSize: 15, fontWeight: 300,
                 lineHeight: 1.8,
-                color: 'rgba(245,240,232,0.55)',
+                color: 'rgba(20,16,13,0.65)',
                 marginBottom: 52,
               }}
             >
@@ -129,10 +132,11 @@ export default function Contact() {
 
             {/* Contact details */}
             {[
-              { icon: '📞', label: 'Phone', value: '+91 XXXXX XXXXX', href: 'tel:+91XXXXXXXXXX' },
-              { icon: '💬', label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/91XXXXXXXXXX' },
-              { icon: '✉️', label: 'Email', value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
-              { icon: '📍', label: 'Location', value: 'Delhi NCR, India', href: null },
+              { Icon: Phone, label: 'Phone', value: '098100 12254 / 080627 57621', href: 'tel:+919810012254' },
+              { Icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919810012254' },
+              { Icon: Mail, label: 'Email', value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
+              { Icon: MapPin, label: 'Address', value: 'B-24, Rampuri, Block B, Surya Nagar, Ghaziabad, Uttar Pradesh 201011', href: null },
+              { Icon: Clock, label: 'Hours', value: '10:00 AM – 07:30 PM · All Days Open', href: null },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -140,43 +144,45 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
-                style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 16, marginBottom: 24 }}
               >
                 <div style={{
-                  width: 44, height: 44,
-                  border: '1px solid rgba(201,168,76,0.2)',
+                  width: 44, height: 44, flexShrink: 0,
+                  borderRadius: '50%',
+                  background: 'rgba(196,120,86,0.08)',
+                  border: '1px solid rgba(196,120,86,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 18, flexShrink: 0,
                 }}>
-                  {item.icon}
+                  <item.Icon size={18} color="#C47856" strokeWidth={1.75} />
                 </div>
                 <div>
                   <p style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Inter, sans-serif',
                     fontSize: 10, fontWeight: 600,
                     letterSpacing: '0.2em', textTransform: 'uppercase',
-                    color: 'rgba(201,168,76,0.6)', marginBottom: 2,
+                    color: 'rgba(196,120,86,0.6)', marginBottom: 2,
                   }}>
                     {item.label}
                   </p>
                   {item.href ? (
-                    <a href={item.href} data-cursor style={{
-                      fontFamily: 'Outfit, sans-serif',
+                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" data-cursor style={{
+                      fontFamily: 'Inter, sans-serif',
                       fontSize: 15, fontWeight: 400,
-                      color: 'rgba(245,240,232,0.75)',
+                      color: 'rgba(20,16,13,0.72)',
                       textDecoration: 'none',
                       transition: 'color 0.3s',
                     }}
-                      onMouseEnter={e => e.currentTarget.style.color = '#C9A84C'}
-                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.75)'}
+                      onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
+                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(20,16,13,0.72)'}
                     >
                       {item.value}
                     </a>
                   ) : (
                     <p style={{
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: 'Inter, sans-serif',
                       fontSize: 15, fontWeight: 400,
-                      color: 'rgba(245,240,232,0.75)',
+                      lineHeight: 1.5,
+                      color: 'rgba(20,16,13,0.72)',
                     }}>
                       {item.value}
                     </p>
@@ -195,16 +201,16 @@ export default function Contact() {
           >
             <form ref={formRef} onSubmit={onSubmit}
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(201,168,76,0.15)',
+                background: '#14100D',
+                border: '1px solid rgba(196,120,86,0.2)',
                 padding: 'clamp(28px,4vw,52px)',
                 display: 'flex', flexDirection: 'column', gap: 20,
               }}
             >
               <p style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 24, fontWeight: 400,
-                color: '#F5F0E8', marginBottom: 8,
+                color: '#F5EEE4', marginBottom: 8,
               }}>
                 Book a Free Consultation
               </p>
@@ -214,15 +220,15 @@ export default function Contact() {
                   name="name" value={form.name} onChange={onChange} required
                   placeholder="Full Name"
                   style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = '#C9A84C'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.2)'}
+                  onFocus={e => e.target.style.borderColor = '#C47856'}
+                  onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
                 />
                 <input
                   name="phone" value={form.phone} onChange={onChange} required
                   placeholder="Phone Number"
                   style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = '#C9A84C'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.2)'}
+                  onFocus={e => e.target.style.borderColor = '#C47856'}
+                  onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
                 />
               </div>
 
@@ -230,19 +236,19 @@ export default function Contact() {
                 name="email" value={form.email} onChange={onChange} type="email"
                 placeholder="Email Address"
                 style={inputStyle}
-                onFocus={e => e.target.style.borderColor = '#C9A84C'}
-                onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.2)'}
+                onFocus={e => e.target.style.borderColor = '#C47856'}
+                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
               />
 
               <select
                 name="service" value={form.service} onChange={onChange} required
-                style={{ ...inputStyle, color: form.service ? '#F5F0E8' : 'rgba(245,240,232,0.35)' }}
-                onFocus={e => e.target.style.borderColor = '#C9A84C'}
-                onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.2)'}
+                style={{ ...inputStyle, color: form.service ? '#F5EEE4' : 'rgba(245,238,228,0.4)' }}
+                onFocus={e => e.target.style.borderColor = '#C47856'}
+                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
               >
-                <option value="" style={{ background: '#060D18' }}>Select Service</option>
+                <option value="" style={{ background: '#14100D' }}>Select Service</option>
                 {SERVICES.map(s => (
-                  <option key={s} value={s} style={{ background: '#060D18' }}>{s}</option>
+                  <option key={s} value={s} style={{ background: '#14100D' }}>{s}</option>
                 ))}
               </select>
 
@@ -251,8 +257,8 @@ export default function Contact() {
                 placeholder="Tell us about your requirements..."
                 rows={4}
                 style={{ ...inputStyle, resize: 'vertical', minHeight: 110 }}
-                onFocus={e => e.target.style.borderColor = '#C9A84C'}
-                onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.2)'}
+                onFocus={e => e.target.style.borderColor = '#C47856'}
+                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
               />
 
               <button type="submit" data-cursor disabled={loading}
@@ -264,18 +270,18 @@ export default function Contact() {
 
               {status === 'success' && (
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: 13,
-                  color: '#C9A84C', textAlign: 'center',
-                  padding: '12px', border: '1px solid rgba(201,168,76,0.3)',
+                  fontFamily: 'Inter, sans-serif', fontSize: 13,
+                  color: '#C47856', textAlign: 'center',
+                  padding: '12px', border: '1px solid rgba(196,120,86,0.3)',
                 }}>
                   Thank you! We'll be in touch shortly.
                 </p>
               )}
               {status === 'error' && (
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: 13,
-                  color: '#F5F0E8', textAlign: 'center',
-                  padding: '12px', border: '1px solid rgba(245,240,232,0.2)',
+                  fontFamily: 'Inter, sans-serif', fontSize: 13,
+                  color: '#F5EEE4', textAlign: 'center',
+                  padding: '12px', border: '1px solid rgba(245,238,228,0.2)',
                 }}>
                   Something went wrong. Please call us directly.
                 </p>
@@ -283,6 +289,29 @@ export default function Contact() {
             </form>
           </motion.div>
         </div>
+
+        {/* Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.9, ease: [0.22,1,0.36,1] }}
+          style={{
+            marginTop: 72,
+            border: '1px solid rgba(196,120,86,0.2)',
+            filter: 'grayscale(0.4) contrast(1.05)',
+          }}
+        >
+          <iframe
+            title="Sri Sri Homz office location"
+            src="https://www.google.com/maps?q=B-24+Rampuri+Block+B+Surya+Nagar+Ghaziabad+Uttar+Pradesh+201011&output=embed"
+            width="100%"
+            height="380"
+            style={{ display: 'block', border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </motion.div>
       </div>
 
     </div>

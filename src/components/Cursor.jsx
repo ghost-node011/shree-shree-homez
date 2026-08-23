@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Cursor() {
   const dotRef   = useRef(null)
@@ -6,8 +6,14 @@ export default function Cursor() {
   const mouse    = useRef({ x: 0, y: 0 })
   const ring     = useRef({ x: 0, y: 0 })
   const rafRef   = useRef(null)
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
+    setEnabled(window.matchMedia('(hover: hover) and (pointer: fine)').matches)
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
     const dot  = dotRef.current
     const rng  = ringRef.current
     if (!dot || !rng) return
@@ -28,12 +34,12 @@ export default function Cursor() {
     const grow = () => {
       rng.style.width  = '52px'
       rng.style.height = '52px'
-      rng.style.borderColor = 'rgba(201,168,76,0.9)'
+      rng.style.borderColor = 'rgba(196,120,86,0.9)'
     }
     const shrink = () => {
       rng.style.width  = '44px'
       rng.style.height = '44px'
-      rng.style.borderColor = 'rgba(201,168,76,0.45)'
+      rng.style.borderColor = 'rgba(196,120,86,0.45)'
     }
 
     document.addEventListener('mousemove', onMove)
@@ -47,7 +53,9 @@ export default function Cursor() {
       document.removeEventListener('mousemove', onMove)
       cancelAnimationFrame(rafRef.current)
     }
-  }, [])
+  }, [enabled])
+
+  if (!enabled) return null
 
   return (
     <>
@@ -55,7 +63,7 @@ export default function Cursor() {
         position: 'fixed', top: 0, left: 0,
         width: 8, height: 8,
         borderRadius: '50%',
-        background: '#C9A84C',
+        background: '#C47856',
         pointerEvents: 'none',
         zIndex: 99999,
         transition: 'transform 0.04s linear',
@@ -65,7 +73,7 @@ export default function Cursor() {
         position: 'fixed', top: 0, left: 0,
         width: 44, height: 44,
         borderRadius: '50%',
-        border: '1px solid rgba(201,168,76,0.45)',
+        border: '1px solid rgba(196,120,86,0.45)',
         pointerEvents: 'none',
         zIndex: 99998,
         transition: 'width 0.3s ease, height 0.3s ease, border-color 0.3s ease',

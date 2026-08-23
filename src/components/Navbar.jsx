@@ -1,19 +1,15 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useNavigate } from 'react-router-dom'
 
 const NAV = [
-  { label: 'About',        id: 'about' },
-  { label: 'Services',     id: 'services' },
-  { label: 'Achievements', id: 'achievements' },
-  { label: 'Reviews',      id: 'reviews' },
-  { label: 'Founder',      id: 'founder' },
-  { label: 'Contact',      id: 'contact' },
+  { label: 'Home',     to: '/' },
+  { label: 'About',    to: '/about' },
+  { label: 'Services', to: '/services' },
+  { label: 'Gallery',  to: '/gallery' },
+  { label: 'Reviews',  to: '/reviews' },
+  { label: 'Contact',  to: '/contact' },
 ]
-
-function goTo(id) {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
 
 const isMobileDevice = () => window.innerWidth < 1024
 
@@ -21,6 +17,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const [mobile, setMobile]     = useState(isMobileDevice())
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -47,48 +44,65 @@ export default function Navbar() {
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           padding: `0 clamp(16px, 5vw, 80px)`,
           height: navH,
-          background: scrolled || open ? 'rgba(6,13,24,0.97)' : 'transparent',
-          backdropFilter: scrolled || open ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : 'none',
-          transition: 'height 0.4s ease, background 0.4s ease',
+          background: '#F5EEE4',
+          boxShadow: scrolled ? '0 2px 20px rgba(20,16,13,0.08)' : 'none',
+          borderBottom: '1px solid rgba(20,16,13,0.08)',
+          transition: 'height 0.4s ease, box-shadow 0.4s ease',
         }}
       >
-        <img
-          src="/logo-bg.png" alt="Sri Sri Homz"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        {/* Wordmark — no clean transparent logo asset yet, so a type-set lockup stands in */}
+        <Link
+          to="/"
           data-cursor
-          style={{ height: mobile ? 38 : (scrolled ? 44 : 56), transition: 'height 0.4s ease', objectFit: 'contain' }}
-        />
+          style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none' }}
+        >
+          <span style={{
+            fontFamily: 'Source Serif 4, serif',
+            fontSize: mobile ? 20 : (scrolled ? 24 : 28),
+            fontWeight: 500, lineHeight: 1,
+            color: '#14100D', transition: 'font-size 0.4s ease',
+          }}>
+            Sri Sri <span style={{ fontStyle: 'italic', color: '#C47856' }}>Homz</span>
+          </span>
+          <span style={{
+            fontFamily: 'Inter, sans-serif', fontSize: 8, fontWeight: 500,
+            letterSpacing: '0.3em', textTransform: 'uppercase',
+            color: '#8C7F72', marginTop: 2,
+          }}>
+            Real Estate &amp; Construction
+          </span>
+        </Link>
 
         {/* Desktop nav */}
         <div style={{ alignItems: 'center', gap: 32 }} className="nav-desktop">
           {NAV.map(n => (
-            <button key={n.id} onClick={() => goTo(n.id)} data-cursor
+            <Link key={n.to} to={n.to} data-cursor
               style={{
                 background: 'none', border: 'none',
-                fontFamily: 'Outfit, sans-serif', fontSize: 11,
+                fontFamily: 'Inter, sans-serif', fontSize: 11,
                 fontWeight: 500, letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'rgba(245,240,232,0.72)',
+                color: 'rgba(20,16,13,0.68)',
+                textDecoration: 'none',
                 transition: 'color 0.3s',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#C9A84C'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.72)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(20,16,13,0.68)'}
             >
               {n.label}
-            </button>
+            </Link>
           ))}
-          <button onClick={() => goTo('contact')} data-cursor
+          <button onClick={() => navigate('/contact')} data-cursor
             style={{
               background: 'transparent',
-              border: '1px solid rgba(201,168,76,0.5)',
-              color: '#C9A84C',
-              fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600,
+              border: '1px solid rgba(20,16,13,0.25)',
+              color: '#14100D',
+              fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 600,
               letterSpacing: '0.2em', textTransform: 'uppercase',
               padding: '12px 26px', transition: 'all 0.3s',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#C9A84C'; e.currentTarget.style.color = '#060D18' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C9A84C' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#14100D'; e.currentTarget.style.color = '#F5EEE4' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#14100D' }}
           >
             Book Consultation
           </button>
@@ -111,7 +125,7 @@ export default function Navbar() {
               rotate:  open && i===0 ? 45  : open && i===2 ? -45 : 0,
               y:       open && i===0 ? 8   : open && i===2 ? -8 : 0,
               opacity: open && i===1 ? 0 : 1,
-            }} style={{ display:'block', width:22, height:1.5, background:'#C9A84C', transformOrigin:'center', borderRadius:1 }} />
+            }} style={{ display:'block', width:22, height:1.5, background: '#14100D', transformOrigin:'center', borderRadius:1 }} />
           ))}
         </button>
       </motion.nav>
@@ -124,27 +138,27 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
             style={{
-              position: 'fixed', top: navH, left: 0, right: 0, zIndex: 899,
-              background: 'rgba(6,13,24,0.98)', backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(201,168,76,0.12)',
-              padding: '32px clamp(20px,5vw,80px) 40px',
+              position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 899,
+              background: 'rgba(20,16,13,0.98)', backdropFilter: 'blur(20px)',
+              padding: `${navH + 32}px clamp(20px,5vw,80px) 40px`,
               display: 'flex', flexDirection: 'column', gap: 20,
             }}
           >
             {NAV.map(n => (
-              <button key={n.id} onClick={() => { goTo(n.id); setOpen(false) }} data-cursor
+              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} data-cursor
                 style={{
                   background: 'none', border: 'none',
-                  fontFamily: 'Caudex, serif',
+                  fontFamily: 'Source Serif 4, serif',
                   fontSize: 30, fontWeight: 400,
-                  color: 'rgba(245,240,232,0.85)',
-                  textAlign: 'left', transition: 'color 0.3s',
+                  color: 'rgba(245,238,228,0.85)',
+                  textAlign: 'left', textDecoration: 'none',
+                  transition: 'color 0.3s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.color = '#C9A84C'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.85)'}
+                onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,238,228,0.85)'}
               >
                 {n.label}
-              </button>
+              </Link>
             ))}
           </motion.div>
         )}

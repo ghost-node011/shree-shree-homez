@@ -49,7 +49,7 @@ function Building({ b, color, night }) {
             <motion.div
               key={i}
               style={{
-                background: '#C9A84C',
+                background: '#C47856',
                 opacity: night,
               }}
             />
@@ -135,7 +135,7 @@ export default function SkylineAnimation() {
       {/* Gold horizon glow */}
       <div style={{
         position: 'absolute', bottom: '30%', left: 0, right: 0, height: 200,
-        background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(196,120,86,0.12) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -169,11 +169,11 @@ export default function SkylineAnimation() {
           Noida &amp; Delhi NCR
         </div>
         <h2 style={{
-          fontFamily: 'Caudex, serif',
+          fontFamily: 'Source Serif 4, serif',
           fontSize: 'clamp(30px, 4vw, 52px)',
           fontWeight: 400, color: '#F5F0E8',
         }}>
-          A Skyline We're <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>Helping Build</span>
+          A Skyline We're <span style={{ fontStyle: 'italic', color: '#C47856' }}>Helping Build</span>
         </h2>
       </div>
     </div>

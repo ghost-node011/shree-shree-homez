@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import ServiceCard from './ServiceCard'
 
 function useIsMobile() {
   const [mobile, setMobile] = useState(window.innerWidth < 768)
@@ -15,7 +17,7 @@ function useIsMobile() {
   return mobile
 }
 
-const REAL_ESTATE = [
+export const REAL_ESTATE = [
   {
     title: 'Luxury Apartments',
     desc: 'Premium apartments & builder floors in prime Delhi NCR locations with world-class amenities.',
@@ -66,7 +68,7 @@ const REAL_ESTATE = [
   },
 ]
 
-const CONSTRUCTION = [
+export const CONSTRUCTION = [
   {
     title: 'Independent House',
     desc: 'Turnkey construction of your dream independent home — foundation to final finish.',
@@ -110,137 +112,11 @@ const TABS = [
   { id: 'construction', label: 'Construction', count: '06', data: CONSTRUCTION },
 ]
 
-function ServiceCard({ item, index, fullWidth = false }) {
-  const [hovered, setHovered] = useState(false)
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.7, delay: index * 0.06, ease: [0.22,1,0.36,1] }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      data-cursor
-      style={{
-        position: 'relative',
-        overflow: 'hidden',
-        aspectRatio: '3/4',
-        cursor: 'pointer',
-        flexShrink: 0,
-        width: fullWidth ? '100%' : 'clamp(240px, 22vw, 320px)',
-      }}
-    >
-      {/* Photo */}
-      <img
-        src={item.img}
-        alt={item.title}
-        style={{
-          position: 'absolute', inset: 0,
-          width: '100%', height: '100%',
-          objectFit: 'cover',
-          transition: 'transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)',
-          transform: hovered ? 'scale(1.08)' : 'scale(1)',
-        }}
-      />
-
-      {/* Base overlay */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(to top, rgba(6,13,24,0.96) 0%, rgba(6,13,24,0.5) 50%, rgba(6,13,24,0.15) 100%)',
-        transition: 'opacity 0.4s',
-      }} />
-
-      {/* Hover overlay */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'rgba(201,168,76,0.08)',
-        opacity: hovered ? 1 : 0,
-        transition: 'opacity 0.4s',
-      }} />
-
-      {/* Content */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        padding: '28px 24px',
-        display: 'flex', flexDirection: 'column',
-        justifyContent: 'space-between',
-      }}>
-        {/* Tag top */}
-        <div style={{
-          alignSelf: 'flex-start',
-          background: 'rgba(201,168,76,0.15)',
-          border: '1px solid rgba(201,168,76,0.35)',
-          padding: '5px 12px',
-          fontFamily: 'Outfit, sans-serif',
-          fontSize: 9, fontWeight: 700,
-          letterSpacing: '0.22em',
-          textTransform: 'uppercase',
-          color: '#C9A84C',
-        }}>
-          {item.tag}
-        </div>
-
-        {/* Bottom text */}
-        <div>
-          {/* Gold line */}
-          <motion.div
-            animate={{ scaleX: hovered ? 1 : 0.3, opacity: hovered ? 1 : 0.4 }}
-            transition={{ duration: 0.4 }}
-            style={{
-              width: 36, height: 1,
-              background: '#C9A84C',
-              transformOrigin: 'left',
-              marginBottom: 14,
-            }}
-          />
-
-          <h3 style={{
-            fontFamily: 'Caudex, serif',
-            fontSize: 'clamp(20px, 1.8vw, 28px)',
-            fontWeight: 500, lineHeight: 1.15,
-            color: '#F5F0E8', marginBottom: 10,
-          }}>
-            {item.title}
-          </h3>
-
-          <motion.p
-            animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
-            transition={{ duration: 0.35 }}
-            style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontSize: 13, fontWeight: 300,
-              lineHeight: 1.65,
-              color: 'rgba(245,240,232,0.65)',
-            }}
-          >
-            {item.desc}
-          </motion.p>
-
-          {/* Arrow */}
-          <motion.div
-            animate={{ x: hovered ? 0 : -8, opacity: hovered ? 1 : 0 }}
-            transition={{ duration: 0.35 }}
-            style={{
-              marginTop: 16,
-              width: 36, height: 36,
-              border: '1px solid rgba(201,168,76,0.5)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              color: '#C9A84C', fontSize: 16,
-            }}
-          >
-            ↗
-          </motion.div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
 export default function Services() {
   const [active, setActive] = useState('realestate')
   const scrollRef = useRef(null)
   const isMobile = useIsMobile()
+  const navigate = useNavigate()
   const current = TABS.find(t => t.id === active)
 
   const scroll = (dir) => {
@@ -251,7 +127,7 @@ export default function Services() {
 
   return (
     <div style={{
-      background: '#060D18',
+      background: '#14100D',
       paddingTop: 120, paddingBottom: 80,
       position: 'relative', overflow: 'hidden',
     }}>
@@ -287,15 +163,15 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.08 }}
             style={{
-              fontFamily: 'Caudex, serif',
+              fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(48px, 6vw, 90px)',
               fontWeight: 400, lineHeight: 0.95,
               letterSpacing: '-0.01em',
-              color: '#F5F0E8', marginBottom: 0,
+              color: '#F5EEE4', marginBottom: 0,
             }}
           >
-            Certified<br />
-            <span style={{ fontStyle: 'italic', color: '#C9A84C' }}>Excellence</span>
+            Real Estate<br />
+            <span style={{ fontStyle: 'italic', color: '#C47856' }}>&amp; Construction</span>
           </motion.h2>
         </div>
 
@@ -308,10 +184,10 @@ export default function Services() {
           style={{ maxWidth: 340 }}
         >
           <p style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Inter, sans-serif',
             fontSize: 15, fontWeight: 300,
             lineHeight: 1.8,
-            color: 'rgba(245,240,232,0.48)',
+            color: 'rgba(245,238,228,0.48)',
             marginBottom: 24,
           }}>
             From finding the perfect investment to building the right structure — end-to-end solutions under one trusted name.
@@ -325,14 +201,14 @@ export default function Services() {
                 data-cursor
                 style={{
                   width: 48, height: 48,
-                  border: '1px solid rgba(201,168,76,0.3)',
+                  border: '1px solid rgba(196,120,86,0.3)',
                   background: 'transparent',
-                  color: '#C9A84C', fontSize: 18,
+                  color: '#C47856', fontSize: 18,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.3s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#C9A84C'; e.currentTarget.style.color = '#060D18' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C9A84C' }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#C47856'; e.currentTarget.style.color = '#14100D' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C47856' }}
               >
                 {arrow}
               </button>
@@ -346,7 +222,7 @@ export default function Services() {
         padding: '0 clamp(24px,6vw,100px)',
         maxWidth: 1400, margin: '0 auto',
         display: 'flex', gap: 0,
-        borderBottom: '1px solid rgba(201,168,76,0.1)',
+        borderBottom: '1px solid rgba(196,120,86,0.1)',
         marginBottom: 48,
       }}>
         {TABS.map(tab => (
@@ -356,12 +232,12 @@ export default function Services() {
             data-cursor
             style={{
               background: 'none', border: 'none',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Inter, sans-serif',
               fontSize: 11, fontWeight: 600,
               letterSpacing: '0.2em', textTransform: 'uppercase',
               padding: '14px 0', marginRight: 40,
-              color: active === tab.id ? '#C9A84C' : 'rgba(245,240,232,0.3)',
-              borderBottom: active === tab.id ? '1px solid #C9A84C' : '1px solid transparent',
+              color: active === tab.id ? '#C47856' : 'rgba(245,238,228,0.3)',
+              borderBottom: active === tab.id ? '1px solid #C47856' : '1px solid transparent',
               marginBottom: -1,
               transition: 'all 0.3s',
               display: 'flex', alignItems: 'center', gap: 10,
@@ -369,9 +245,9 @@ export default function Services() {
           >
             {tab.label}
             <span style={{
-              fontFamily: 'Caudex, serif',
+              fontFamily: 'Source Serif 4, serif',
               fontSize: 13, fontStyle: 'italic',
-              color: active === tab.id ? 'rgba(201,168,76,0.6)' : 'rgba(245,240,232,0.15)',
+              color: active === tab.id ? 'rgba(196,120,86,0.6)' : 'rgba(245,238,228,0.15)',
             }}>
               {tab.count}
             </span>
@@ -403,10 +279,10 @@ export default function Services() {
             ))}
             <SwiperSlide>
               <div
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => navigate('/contact')}
                 style={{
                   aspectRatio: '3/4',
-                  background: '#C9A84C',
+                  background: '#C47856',
                   display: 'flex', flexDirection: 'column',
                   alignItems: 'flex-start', justifyContent: 'flex-end',
                   padding: '32px 28px',
@@ -414,14 +290,14 @@ export default function Services() {
               >
                 <div style={{
                   width: 48, height: 48, borderRadius: '50%',
-                  background: '#060D18',
+                  background: '#14100D',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 22, marginBottom: 24,
                 }}>↗</div>
                 <p style={{
-                  fontFamily: 'Caudex, serif',
+                  fontFamily: 'Source Serif 4, serif',
                   fontSize: 26, fontWeight: 500,
-                  color: '#060D18', lineHeight: 1.2,
+                  color: '#14100D', lineHeight: 1.2,
                 }}>Book a Free Consultation</p>
               </div>
             </SwiperSlide>
@@ -452,32 +328,32 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
           data-cursor
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => navigate('/contact')}
           style={{
             flexShrink: 0,
             width: 'clamp(200px, 18vw, 260px)',
             aspectRatio: '3/4',
-            background: '#C9A84C',
+            background: '#C47856',
             display: 'flex', flexDirection: 'column',
             alignItems: 'flex-start', justifyContent: 'flex-end',
             padding: '32px 28px',
             cursor: 'pointer',
             transition: 'background 0.3s',
           }}
-          whileHover={{ backgroundColor: '#DEC172' }}
+          whileHover={{ backgroundColor: '#E2AB89' }}
         >
           <div style={{
             width: 48, height: 48, borderRadius: '50%',
-            background: '#060D18',
+            background: '#14100D',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: 22, marginBottom: 24,
           }}>
             ↗
           </div>
           <p style={{
-            fontFamily: 'Caudex, serif',
+            fontFamily: 'Source Serif 4, serif',
             fontSize: 26, fontWeight: 500,
-            color: '#060D18', lineHeight: 1.2,
+            color: '#14100D', lineHeight: 1.2,
           }}>
             Book a Free Consultation
           </p>

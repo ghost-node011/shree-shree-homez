@@ -1,20 +1,35 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { CalendarClock, Users, Award, Play } from 'lucide-react'
+import { useVideoLightbox } from './VideoLightbox'
+
+const CREDENTIALS = [
+  { icon: CalendarClock, val: '5+',   label: 'Years in Real Estate' },
+  { icon: Users,         val: '500+', label: 'Families Guided' },
+  { icon: Award,         val: '15+',  label: 'Industry Recognitions' },
+]
 
 export default function Founder() {
   const [photoFailed, setPhotoFailed] = useState(false)
+  const { setOpen: setStoryOpen, modal: storyModal } = useVideoLightbox()
   return (
     <div style={{
-      background: 'linear-gradient(160deg, #060D18 0%, #0A1628 100%)',
-      padding: '120px clamp(24px,6vw,120px)',
-      position: 'relative', overflow: 'hidden',
+      background: '#F5EEE4',
+      padding: '130px clamp(24px,6vw,120px)',
+      position: 'relative',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      {/* Ambient background glow */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(196,120,86,0.07) 0%, transparent 50%), radial-gradient(circle at 95% 80%, rgba(196,120,86,0.05) 0%, transparent 45%)',
+      }} />
+
+      <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
         <div className="founder-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '80px',
-          alignItems: 'center',
+          alignItems: 'start',
         }}>
           {/* Left — Photo frame */}
           <motion.div
@@ -22,89 +37,215 @@ export default function Founder() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 1, ease: [0.22,1,0.36,1] }}
+            className="founder-photo-col"
             style={{ display: 'flex', justifyContent: 'center' }}
           >
-            <div style={{ position: 'relative', width: 'min(360px, 100%)' }}>
-              {/* Decorative frame */}
+            <div style={{ position: 'relative', width: 'min(420px, 100%)' }}>
+              {/* Soft ambient glow behind photo */}
               <div style={{
-                position: 'absolute', top: -16, left: -16, right: 16, bottom: 16,
-                border: '1px solid rgba(201,168,76,0.2)',
+                position: 'absolute', inset: '-10%',
+                background: 'radial-gradient(circle, rgba(196,120,86,0.22) 0%, transparent 65%)',
+                filter: 'blur(20px)',
                 pointerEvents: 'none',
               }} />
 
-              {/* ── Founder photo ──
-                  Drop the professional photo at /public/founder.jpg and it renders here.
-                  Falls back to the avatar placeholder until that file exists.
-              ── */}
-              {!photoFailed ? (
-                <img
-                  src="/founder.jpg"
-                  alt="Yashank Arora — Founder, Sri Sri Homz"
-                  onError={() => setPhotoFailed(true)}
-                  style={{
-                    aspectRatio: '3/4',
-                    width: '100%',
-                    objectFit: 'cover',
-                    border: '1px solid rgba(201,168,76,0.15)',
-                    display: 'block',
-                  }}
-                />
-              ) : (
-                <div style={{
-                  aspectRatio: '3/4',
-                  background: 'linear-gradient(160deg, #0F2040 0%, #0A1628 100%)',
-                  border: '1px solid rgba(201,168,76,0.15)',
-                  display: 'flex', flexDirection: 'column',
-                  alignItems: 'center', justifyContent: 'center',
-                  gap: 16, position: 'relative',
-                }}>
-                  {/* Avatar silhouette */}
-                  <div style={{
-                    width: 90, height: 90, borderRadius: '50%',
-                    background: 'rgba(201,168,76,0.1)',
-                    border: '1px solid rgba(201,168,76,0.25)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 36,
-                  }}>
-                    👤
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <p style={{
-                      fontFamily: 'Caudex, serif',
-                      fontSize: 22, fontWeight: 500,
-                      color: '#F5F0E8', marginBottom: 6,
-                    }}>
-                      Yashank Arora
-                    </p>
-                    <p style={{
-                      fontFamily: 'Outfit, sans-serif',
-                      fontSize: 10, fontWeight: 600,
-                      letterSpacing: '0.2em',
-                      textTransform: 'uppercase',
-                      color: 'rgba(201,168,76,0.7)',
-                    }}>
-                      Founder, Sri Sri Homz
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Bottom label */}
+              {/* Decorative offset frame */}
               <div style={{
-                position: 'absolute', bottom: -20, right: -20,
-                background: '#C9A84C',
-                padding: '12px 20px',
+                position: 'absolute', top: -18, left: -18, right: 18, bottom: 18,
+                border: '1px solid rgba(196,120,86,0.28)',
+                pointerEvents: 'none',
+              }} />
+
+              <div style={{
+                position: 'relative',
+                boxShadow: '0 40px 70px -24px rgba(20,16,13,0.4)',
+              }}>
+                {!photoFailed ? (
+                  <img
+                    src="/yashank.png"
+                    alt="Yashank Arora — Founder, Sri Sri Homz"
+                    onError={() => setPhotoFailed(true)}
+                    style={{
+                      aspectRatio: '3/4',
+                      width: '100%',
+                      objectFit: 'cover',
+                      border: '1px solid rgba(196,120,86,0.2)',
+                      display: 'block',
+                    }}
+                  />
+                ) : (
+                  <div style={{
+                    aspectRatio: '3/4',
+                    background: 'linear-gradient(160deg, #241D18 0%, #1C1512 100%)',
+                    border: '1px solid rgba(196,120,86,0.15)',
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center',
+                    gap: 16, position: 'relative',
+                  }}>
+                    <div style={{
+                      width: 90, height: 90, borderRadius: '50%',
+                      background: 'rgba(196,120,86,0.1)',
+                      border: '1px solid rgba(196,120,86,0.25)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: 36,
+                    }}>
+                      👤
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{
+                        fontFamily: 'Source Serif 4, serif',
+                        fontSize: 22, fontWeight: 500,
+                        color: '#F5EEE4', marginBottom: 6,
+                      }}>
+                        Yashank Arora
+                      </p>
+                      <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: 10, fontWeight: 600,
+                        letterSpacing: '0.2em',
+                        textTransform: 'uppercase',
+                        color: 'rgba(196,120,86,0.7)',
+                      }}>
+                        Founder, Sri Sri Homz
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Monogram seal */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.5, ease: [0.22,1,0.36,1] }}
+                  style={{
+                    position: 'absolute', top: -22, right: -22,
+                    width: 64, height: 64, borderRadius: '50%',
+                    background: '#F5EEE4',
+                    border: '1px solid rgba(196,120,86,0.4)',
+                    boxShadow: '0 12px 28px rgba(20,16,13,0.25)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}
+                >
+                  <span style={{
+                    fontFamily: 'Source Serif 4, serif',
+                    fontStyle: 'italic', fontWeight: 600,
+                    fontSize: 22, color: '#C47856',
+                  }}>
+                    YA
+                  </span>
+                </motion.div>
+
+                {/* Trust badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7, rotate: 10 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: -6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.55, ease: [0.22,1,0.36,1] }}
+                  style={{
+                    position: 'absolute', top: 20, left: -18,
+                    background: '#C47856',
+                    padding: '10px 16px',
+                    boxShadow: '0 12px 24px rgba(20,16,13,0.35)',
+                    textAlign: 'center',
+                  }}
+                >
+                  <p style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: 8.5, fontWeight: 700,
+                    letterSpacing: '0.12em', textTransform: 'uppercase',
+                    color: 'rgba(20,16,13,0.75)', marginBottom: 2,
+                  }}>
+                    Trusted By
+                  </p>
+                  <p style={{
+                    fontFamily: 'Source Serif 4, serif',
+                    fontSize: 17, fontWeight: 600,
+                    color: '#14100D', lineHeight: 1,
+                  }}>
+                    500+ Families
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Caption strip */}
+              <div style={{
+                marginTop: 20,
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                gap: 12,
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif',
-                  fontSize: 9, fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  color: '#060D18',
+                  fontFamily: 'Source Serif 4, serif',
+                  fontSize: 16, fontWeight: 500,
+                  color: '#14100D',
                 }}>
-                  Delhi NCR
+                  Yashank Arora
+                </p>
+                <p style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: 9.5, fontWeight: 600,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#C47856',
+                }}>
+                  Founder & CEO
                 </p>
               </div>
+
+              {/* ── Credential strip ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  marginTop: 28,
+                  paddingTop: 24,
+                  borderTop: '1px solid rgba(196,120,86,0.18)',
+                }}
+              >
+                {CREDENTIALS.map((s, i) => {
+                  const Icon = s.icon
+                  return (
+                    <div key={i} style={{
+                      padding: i === 0 ? '0 14px 0 0' : '0 14px',
+                      borderLeft: i > 0 ? '1px solid rgba(196,120,86,0.18)' : 'none',
+                    }}>
+                      <motion.div
+                        whileHover={{ scale: 1.08, rotate: -4 }}
+                        transition={{ duration: 0.3 }}
+                        style={{
+                          width: 34, height: 34, borderRadius: '50%',
+                          background: 'rgba(196,120,86,0.08)',
+                          border: '1px solid rgba(196,120,86,0.3)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          marginBottom: 12,
+                        }}
+                      >
+                        <Icon size={15} color="#C47856" strokeWidth={1.75} />
+                      </motion.div>
+                      <div style={{
+                        fontFamily: 'Source Serif 4, serif',
+                        fontSize: 'clamp(18px, 1.6vw, 22px)',
+                        fontWeight: 400, color: '#C47856', lineHeight: 1,
+                      }}>
+                        {s.val}
+                      </div>
+                      <div style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: 9, fontWeight: 500,
+                        letterSpacing: '0.06em', textTransform: 'uppercase',
+                        color: '#8C7F72', marginTop: 6,
+                        lineHeight: 1.4,
+                      }}>
+                        {s.label}
+                      </div>
+                    </div>
+                  )
+                })}
+              </motion.div>
             </div>
           </motion.div>
 
@@ -127,10 +268,10 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 400, lineHeight: 1.15,
-                color: '#F5F0E8', marginBottom: 8,
+                color: '#14100D', marginBottom: 8,
               }}
             >
               The Man Behind
@@ -141,14 +282,45 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.15 }}
               style={{
-                fontFamily: 'Caudex, serif',
+                fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 300, fontStyle: 'italic',
-                color: '#C9A84C', marginBottom: 36,
+                color: '#C47856', marginBottom: 36,
               }}
             >
               Sri Sri Homz
             </motion.h2>
+
+            <motion.button
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              onClick={() => setStoryOpen(true)}
+              data-cursor
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 10,
+                background: '#241D18', border: 'none',
+                padding: '13px 24px', marginBottom: 32,
+                cursor: 'pointer',
+              }}
+            >
+              <span style={{
+                width: 22, height: 22, borderRadius: '50%',
+                background: '#C47856',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0,
+              }}>
+                <Play size={10} color="#14100D" fill="#14100D" strokeWidth={0} />
+              </span>
+              <span style={{
+                fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600,
+                letterSpacing: '0.16em', textTransform: 'uppercase',
+                color: '#F5EEE4',
+              }}>
+                Watch Our Story
+              </span>
+            </motion.button>
 
             <motion.div
               initial={{ scaleX: 0 }}
@@ -157,7 +329,7 @@ export default function Founder() {
               transition={{ duration: 0.9 }}
               style={{
                 width: 60, height: 1,
-                background: 'linear-gradient(90deg, #C9A84C, transparent)',
+                background: 'linear-gradient(90deg, #C47856, transparent)',
                 transformOrigin: 'left',
                 marginBottom: 32,
               }}
@@ -176,10 +348,10 @@ export default function Founder() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 + i * 0.1 }}
                 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Inter, sans-serif',
                   fontSize: 16, fontWeight: 300,
                   lineHeight: 1.85,
-                  color: 'rgba(245,240,232,0.62)',
+                  color: 'rgba(20,16,13,0.68)',
                   marginBottom: 20,
                 }}
               >
@@ -187,60 +359,63 @@ export default function Founder() {
               </motion.p>
             ))}
 
-            {/* ── Credential strip ── */}
+            {/* ── Pull quote card ── */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              style={{ display: 'flex', gap: 0, margin: '8px 0 32px' }}
-            >
-              {[
-                { val: '5+',   label: 'Years in Real Estate' },
-                { val: '500+', label: 'Families Guided' },
-                { val: '15+',  label: 'Industry Recognitions' },
-              ].map((s, i) => (
-                <div key={i} style={{
-                  padding: i === 0 ? '0 28px 0 0' : '0 28px',
-                  borderLeft: i > 0 ? '1px solid rgba(201,168,76,0.15)' : 'none',
-                }}>
-                  <div style={{
-                    fontFamily: 'Caudex, serif',
-                    fontSize: 'clamp(22px, 2vw, 28px)',
-                    fontWeight: 400, color: '#C9A84C', lineHeight: 1,
-                  }}>
-                    {s.val}
-                  </div>
-                  <div style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: 9.5, fontWeight: 500,
-                    letterSpacing: '0.1em', textTransform: 'uppercase',
-                    color: 'rgba(245,240,232,0.4)', marginTop: 6,
-                  }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.55 }}
               style={{
-                fontFamily: 'Caudex, serif',
-                fontSize: 20, fontStyle: 'italic',
-                color: '#C9A84C', marginTop: 32,
-                borderLeft: '2px solid rgba(201,168,76,0.4)',
-                paddingLeft: 20,
+                position: 'relative',
+                background: '#FFFFFF',
+                border: '1px solid rgba(196,120,86,0.22)',
+                padding: '32px 36px',
+                marginTop: 12,
+                overflow: 'hidden',
               }}
             >
-              "At Sri Sri Homz, every relationship matters."
-            </motion.p>
+              <div style={{
+                position: 'absolute', top: -14, left: 12,
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 90, fontWeight: 700,
+                color: 'rgba(196,120,86,0.08)',
+                lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
+              }}>
+                "
+              </div>
+              <p style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 21, fontStyle: 'italic',
+                color: '#14100D', lineHeight: 1.4,
+                position: 'relative', marginBottom: 18,
+              }}>
+                At Sri Sri Homz, every relationship matters.
+              </p>
+              <p style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontStyle: 'italic', fontSize: 17,
+                color: '#C47856', position: 'relative',
+              }}>
+                — Yashank Arora
+              </p>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                style={{
+                  position: 'absolute', bottom: 0, left: 0,
+                  height: 2, width: '100%',
+                  background: 'linear-gradient(90deg, #C47856, transparent)',
+                  transformOrigin: 'left',
+                }}
+              />
+            </motion.div>
           </div>
         </div>
       </div>
+
+      {storyModal}
     </div>
   )
 }
