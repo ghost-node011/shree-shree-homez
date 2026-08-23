@@ -271,61 +271,91 @@ export default function Achievements() {
         >
           Regulatory Compliance
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          style={{
-            display: 'flex', gap: 24, flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: 20,
+          maxWidth: 640, margin: '0 auto',
+        }}>
           {COMPLIANCE.map((c, i) => (
             <motion.div
               key={i}
               data-cursor
-              whileHover={{ y: -4, borderColor: 'rgba(196,120,86,0.6)', backgroundColor: 'rgba(196,120,86,0.06)' }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              whileHover={{ y: -4, borderColor: 'rgba(196,120,86,0.6)' }}
               style={{
-                display: 'flex', alignItems: 'center', gap: 18,
+                position: 'relative',
                 background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(196,120,86,0.28)',
-                padding: '22px 34px',
-                minWidth: 260,
+                border: '1px solid rgba(196,120,86,0.3)',
+                padding: '36px 24px 28px',
+                textAlign: 'center',
+                transition: 'border-color 0.3s ease',
               }}
             >
+              {/* Inner certificate hairline */}
               <div style={{
-                width: 46, height: 46, flexShrink: 0,
-                borderRadius: '50%',
-                background: 'rgba(196,120,86,0.1)',
-                border: '1px solid rgba(196,120,86,0.4)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                position: 'absolute', inset: 8,
+                border: '1px solid rgba(196,120,86,0.18)',
+                pointerEvents: 'none',
+              }} />
+
+              {/* Seal medallion */}
+              <div style={{ position: 'relative', width: 68, height: 82, margin: '0 auto 20px' }}>
+                {/* Ribbon tails — sit behind the medallion, only tips peek out below */}
+                <div style={{
+                  position: 'absolute', top: 40, left: '50%',
+                  transform: 'translateX(-50%)',
+                  display: 'flex', gap: 4, zIndex: 0,
+                }}>
+                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #A85F3F' }} />
+                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #C47856' }} />
+                </div>
+
+                <div style={{
+                  position: 'absolute', top: 0, left: 0,
+                  width: 68, height: 68, borderRadius: '50%',
+                  background: 'radial-gradient(circle at 35% 30%, rgba(196,120,86,0.3) 0%, transparent 70%), #1C1512',
+                  border: '2px solid #C47856',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  zIndex: 1,
+                }}>
+                  <ShieldCheck size={26} color="#E2AB89" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 9, fontWeight: 600,
+                letterSpacing: '0.18em', textTransform: 'uppercase',
+                color: 'rgba(196,120,86,0.75)', marginBottom: 10,
+                position: 'relative',
               }}>
-                <ShieldCheck size={20} color="#E2AB89" strokeWidth={1.75} />
-              </div>
-              <div style={{ textAlign: 'left' }}>
-                <p style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: 13, fontWeight: 700,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#F5EEE4',
-                  marginBottom: 4,
-                }}>
-                  {c.title}
-                </p>
-                <p style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: 11.5, fontWeight: 400,
-                  color: 'rgba(245,238,228,0.5)',
-                }}>
-                  {c.sub}
-                </p>
-              </div>
+                Government Certified
+              </p>
+              <h3 style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 21, fontWeight: 600,
+                letterSpacing: '0.03em',
+                color: '#F5EEE4', marginBottom: 12,
+                position: 'relative',
+              }}>
+                {c.title}
+              </h3>
+              <div style={{ width: 32, height: 1, background: 'rgba(196,120,86,0.5)', margin: '0 auto 12px', position: 'relative' }} />
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 12, fontWeight: 400,
+                color: 'rgba(245,238,228,0.5)',
+                position: 'relative',
+              }}>
+                {c.sub}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   )

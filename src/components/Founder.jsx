@@ -49,9 +49,9 @@ export default function Founder() {
                 pointerEvents: 'none',
               }} />
 
-              {/* Decorative offset frame */}
+              {/* Decorative frame */}
               <div style={{
-                position: 'absolute', top: -18, left: -18, right: 18, bottom: 18,
+                position: 'absolute', inset: -18,
                 border: '1px solid rgba(196,120,86,0.28)',
                 pointerEvents: 'none',
               }} />
