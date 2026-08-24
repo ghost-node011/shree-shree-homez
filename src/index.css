@@ -367,10 +367,6 @@ h1, h2, h3, h4 {
   .hero-ctas           { flex-direction: column !important; gap: 12px !important; }
   .hero-ctasbtn        { width: 100% !important; justify-content: center !important; }
 
-  /* Stats */
-  .stat-item           { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid rgba(196,120,86,0.1); padding-bottom: 32px !important; }
-  .stat-item:last-child{ border-bottom: none !important; }
-
   /* Services header */
   .services-header     { grid-template-columns: 1fr !important; }
   .services-arrows     { display: none !important; }

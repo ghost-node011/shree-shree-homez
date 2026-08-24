@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import Stats from '../components/Stats'
 import About from '../components/About'
 import WhyUs from '../components/WhyUs'
 import Achievements from '../components/Achievements'
@@ -114,7 +113,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
       <About />
       <ServicesTeaser />
       <div id="whyus"><WhyUs /></div>
