@@ -69,7 +69,7 @@ export default function Testimonials() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundImage: `linear-gradient(180deg, rgba(20,16,13,0.55) 0%, rgba(20,16,13,0.62) 45%, rgba(20,16,13,0.88) 100%), url(${r.image})`,
+                backgroundImage: `linear-gradient(180deg, rgba(0,43,66,0.55) 0%, rgba(0,43,66,0.62) 45%, rgba(0,43,66,0.88) 100%), url(${r.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -87,7 +87,7 @@ export default function Testimonials() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7 }}
                   className="section-label"
-                  style={{ marginBottom: 22, color: '#E2AB89' }}
+                  style={{ marginBottom: 22, color: '#FFC670' }}
                 >
                   Client Testimonials
                 </motion.div>
@@ -143,7 +143,7 @@ export default function Testimonials() {
                   fontWeight: 400,
                   fontSize: 'clamp(17px, 2vw, 22px)',
                   lineHeight: 1.65,
-                  color: '#F5EEE4',
+                  color: '#F7F8FA',
                   marginBottom: 26,
                 }}>
                   {r.quote}
@@ -153,7 +153,7 @@ export default function Testimonials() {
                   fontFamily: 'Inter, sans-serif',
                   fontWeight: 600,
                   fontSize: 16,
-                  color: 'rgba(245,238,228,0.55)',
+                  color: 'rgba(247,248,250,0.55)',
                 }}>
                   {r.name}
                   <span style={{ opacity: 0.6, fontWeight: 400 }}> — {r.type}</span>

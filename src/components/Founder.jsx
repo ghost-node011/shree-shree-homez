@@ -14,14 +14,14 @@ export default function Founder() {
   const { setOpen: setStoryOpen, modal: storyModal } = useVideoLightbox()
   return (
     <div style={{
-      background: '#F5EEE4',
+      background: '#F7F8FA',
       padding: '130px clamp(24px,6vw,120px)',
       position: 'relative',
     }}>
       {/* Ambient background glow */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(196,120,86,0.07) 0%, transparent 50%), radial-gradient(circle at 95% 80%, rgba(196,120,86,0.05) 0%, transparent 45%)',
+        backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(249,168,25,0.07) 0%, transparent 50%), radial-gradient(circle at 95% 80%, rgba(249,168,25,0.05) 0%, transparent 45%)',
       }} />
 
       <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
@@ -44,7 +44,7 @@ export default function Founder() {
               {/* Soft ambient glow behind photo */}
               <div style={{
                 position: 'absolute', inset: '-10%',
-                background: 'radial-gradient(circle, rgba(196,120,86,0.22) 0%, transparent 65%)',
+                background: 'radial-gradient(circle, rgba(249,168,25,0.22) 0%, transparent 65%)',
                 filter: 'blur(20px)',
                 pointerEvents: 'none',
               }} />
@@ -52,13 +52,13 @@ export default function Founder() {
               {/* Decorative frame */}
               <div style={{
                 position: 'absolute', inset: -18,
-                border: '1px solid rgba(196,120,86,0.28)',
+                border: '1px solid rgba(249,168,25,0.28)',
                 pointerEvents: 'none',
               }} />
 
               <div style={{
                 position: 'relative',
-                boxShadow: '0 40px 70px -24px rgba(20,16,13,0.4)',
+                boxShadow: '0 40px 70px -24px rgba(0,43,66,0.4)',
               }}>
                 {!photoFailed ? (
                   <img
@@ -69,23 +69,23 @@ export default function Founder() {
                       aspectRatio: '3/4',
                       width: '100%',
                       objectFit: 'cover',
-                      border: '1px solid rgba(196,120,86,0.2)',
+                      border: '1px solid rgba(249,168,25,0.2)',
                       display: 'block',
                     }}
                   />
                 ) : (
                   <div style={{
                     aspectRatio: '3/4',
-                    background: 'linear-gradient(160deg, #241D18 0%, #1C1512 100%)',
-                    border: '1px solid rgba(196,120,86,0.15)',
+                    background: 'linear-gradient(160deg, #01476E 0%, #013A5C 100%)',
+                    border: '1px solid rgba(249,168,25,0.15)',
                     display: 'flex', flexDirection: 'column',
                     alignItems: 'center', justifyContent: 'center',
                     gap: 16, position: 'relative',
                   }}>
                     <div style={{
                       width: 90, height: 90, borderRadius: '50%',
-                      background: 'rgba(196,120,86,0.1)',
-                      border: '1px solid rgba(196,120,86,0.25)',
+                      background: 'rgba(249,168,25,0.1)',
+                      border: '1px solid rgba(249,168,25,0.25)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       fontSize: 36,
                     }}>
@@ -95,7 +95,7 @@ export default function Founder() {
                       <p style={{
                         fontFamily: 'Source Serif 4, serif',
                         fontSize: 22, fontWeight: 500,
-                        color: '#F5EEE4', marginBottom: 6,
+                        color: '#F7F8FA', marginBottom: 6,
                       }}>
                         Yashank Arora
                       </p>
@@ -104,7 +104,7 @@ export default function Founder() {
                         fontSize: 10, fontWeight: 600,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
-                        color: 'rgba(196,120,86,0.7)',
+                        color: 'rgba(249,168,25,0.7)',
                       }}>
                         Founder, Sri Sri Homz
                       </p>
@@ -121,16 +121,16 @@ export default function Founder() {
                   style={{
                     position: 'absolute', top: -22, right: -22,
                     width: 64, height: 64, borderRadius: '50%',
-                    background: '#F5EEE4',
-                    border: '1px solid rgba(196,120,86,0.4)',
-                    boxShadow: '0 12px 28px rgba(20,16,13,0.25)',
+                    background: '#F7F8FA',
+                    border: '1px solid rgba(249,168,25,0.4)',
+                    boxShadow: '0 12px 28px rgba(0,43,66,0.25)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}
                 >
                   <span style={{
                     fontFamily: 'Source Serif 4, serif',
                     fontStyle: 'italic', fontWeight: 600,
-                    fontSize: 22, color: '#C47856',
+                    fontSize: 22, color: '#F9A819',
                   }}>
                     YA
                   </span>
@@ -144,9 +144,9 @@ export default function Founder() {
                   transition={{ duration: 0.7, delay: 0.55, ease: [0.22,1,0.36,1] }}
                   style={{
                     position: 'absolute', top: 20, left: -18,
-                    background: '#C47856',
+                    background: '#F9A819',
                     padding: '10px 16px',
-                    boxShadow: '0 12px 24px rgba(20,16,13,0.35)',
+                    boxShadow: '0 12px 24px rgba(0,43,66,0.35)',
                     textAlign: 'center',
                   }}
                 >
@@ -154,14 +154,14 @@ export default function Founder() {
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 8.5, fontWeight: 700,
                     letterSpacing: '0.12em', textTransform: 'uppercase',
-                    color: 'rgba(20,16,13,0.75)', marginBottom: 2,
+                    color: 'rgba(0,43,66,0.75)', marginBottom: 2,
                   }}>
                     Trusted By
                   </p>
                   <p style={{
                     fontFamily: 'Source Serif 4, serif',
                     fontSize: 17, fontWeight: 600,
-                    color: '#14100D', lineHeight: 1,
+                    color: '#002B42', lineHeight: 1,
                   }}>
                     500+ Families
                   </p>
@@ -177,7 +177,7 @@ export default function Founder() {
                 <p style={{
                   fontFamily: 'Source Serif 4, serif',
                   fontSize: 16, fontWeight: 500,
-                  color: '#14100D',
+                  color: '#002B42',
                 }}>
                   Yashank Arora
                 </p>
@@ -186,7 +186,7 @@ export default function Founder() {
                   fontSize: 9.5, fontWeight: 600,
                   letterSpacing: '0.16em',
                   textTransform: 'uppercase',
-                  color: '#C47856',
+                  color: '#F9A819',
                 }}>
                   Founder & CEO
                 </p>
@@ -203,7 +203,7 @@ export default function Founder() {
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   marginTop: 28,
                   paddingTop: 24,
-                  borderTop: '1px solid rgba(196,120,86,0.18)',
+                  borderTop: '1px solid rgba(249,168,25,0.18)',
                 }}
               >
                 {CREDENTIALS.map((s, i) => {
@@ -211,25 +211,25 @@ export default function Founder() {
                   return (
                     <div key={i} style={{
                       padding: i === 0 ? '0 14px 0 0' : '0 14px',
-                      borderLeft: i > 0 ? '1px solid rgba(196,120,86,0.18)' : 'none',
+                      borderLeft: i > 0 ? '1px solid rgba(249,168,25,0.18)' : 'none',
                     }}>
                       <motion.div
                         whileHover={{ scale: 1.08, rotate: -4 }}
                         transition={{ duration: 0.3 }}
                         style={{
                           width: 34, height: 34, borderRadius: '50%',
-                          background: 'rgba(196,120,86,0.08)',
-                          border: '1px solid rgba(196,120,86,0.3)',
+                          background: 'rgba(249,168,25,0.08)',
+                          border: '1px solid rgba(249,168,25,0.3)',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
                           marginBottom: 12,
                         }}
                       >
-                        <Icon size={15} color="#C47856" strokeWidth={1.75} />
+                        <Icon size={15} color="#F9A819" strokeWidth={1.75} />
                       </motion.div>
                       <div style={{
                         fontFamily: 'Source Serif 4, serif',
                         fontSize: 'clamp(18px, 1.6vw, 22px)',
-                        fontWeight: 400, color: '#C47856', lineHeight: 1,
+                        fontWeight: 400, color: '#F9A819', lineHeight: 1,
                       }}>
                         {s.val}
                       </div>
@@ -237,7 +237,7 @@ export default function Founder() {
                         fontFamily: 'Inter, sans-serif',
                         fontSize: 9, fontWeight: 500,
                         letterSpacing: '0.06em', textTransform: 'uppercase',
-                        color: '#8C7F72', marginTop: 6,
+                        color: '#5D7A93', marginTop: 6,
                         lineHeight: 1.4,
                       }}>
                         {s.label}
@@ -271,7 +271,7 @@ export default function Founder() {
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 400, lineHeight: 1.15,
-                color: '#14100D', marginBottom: 8,
+                color: '#002B42', marginBottom: 8,
               }}
             >
               The Man Behind
@@ -285,7 +285,7 @@ export default function Founder() {
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(32px, 3.5vw, 52px)',
                 fontWeight: 300, fontStyle: 'italic',
-                color: '#C47856', marginBottom: 36,
+                color: '#F9A819', marginBottom: 36,
               }}
             >
               Sri Sri Homz
@@ -300,23 +300,23 @@ export default function Founder() {
               data-cursor
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
-                background: '#241D18', border: 'none',
+                background: '#01476E', border: 'none',
                 padding: '13px 24px', marginBottom: 32,
                 cursor: 'pointer',
               }}
             >
               <span style={{
                 width: 22, height: 22, borderRadius: '50%',
-                background: '#C47856',
+                background: '#F9A819',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexShrink: 0,
               }}>
-                <Play size={10} color="#14100D" fill="#14100D" strokeWidth={0} />
+                <Play size={10} color="#002B42" fill="#002B42" strokeWidth={0} />
               </span>
               <span style={{
                 fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600,
                 letterSpacing: '0.16em', textTransform: 'uppercase',
-                color: '#F5EEE4',
+                color: '#F7F8FA',
               }}>
                 Watch Our Story
               </span>
@@ -329,7 +329,7 @@ export default function Founder() {
               transition={{ duration: 0.9 }}
               style={{
                 width: 60, height: 1,
-                background: 'linear-gradient(90deg, #C47856, transparent)',
+                background: 'linear-gradient(90deg, #F9A819, transparent)',
                 transformOrigin: 'left',
                 marginBottom: 32,
               }}
@@ -351,7 +351,7 @@ export default function Founder() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: 16, fontWeight: 300,
                   lineHeight: 1.85,
-                  color: 'rgba(20,16,13,0.68)',
+                  color: 'rgba(0,43,66,0.68)',
                   marginBottom: 20,
                 }}
               >
@@ -368,7 +368,7 @@ export default function Founder() {
               style={{
                 position: 'relative',
                 background: '#FFFFFF',
-                border: '1px solid rgba(196,120,86,0.22)',
+                border: '1px solid rgba(249,168,25,0.22)',
                 padding: '32px 36px',
                 marginTop: 12,
                 overflow: 'hidden',
@@ -378,7 +378,7 @@ export default function Founder() {
                 position: 'absolute', top: -14, left: 12,
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 90, fontWeight: 700,
-                color: 'rgba(196,120,86,0.08)',
+                color: 'rgba(249,168,25,0.08)',
                 lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
               }}>
                 "
@@ -386,7 +386,7 @@ export default function Founder() {
               <p style={{
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 21, fontStyle: 'italic',
-                color: '#14100D', lineHeight: 1.4,
+                color: '#002B42', lineHeight: 1.4,
                 position: 'relative', marginBottom: 18,
               }}>
                 At Sri Sri Homz, every relationship matters.
@@ -394,7 +394,7 @@ export default function Founder() {
               <p style={{
                 fontFamily: 'Source Serif 4, serif',
                 fontStyle: 'italic', fontSize: 17,
-                color: '#C47856', position: 'relative',
+                color: '#F9A819', position: 'relative',
               }}>
                 — Yashank Arora
               </p>
@@ -406,7 +406,7 @@ export default function Founder() {
                 style={{
                   position: 'absolute', bottom: 0, left: 0,
                   height: 2, width: '100%',
-                  background: 'linear-gradient(90deg, #C47856, transparent)',
+                  background: 'linear-gradient(90deg, #F9A819, transparent)',
                   transformOrigin: 'left',
                 }}
               />

@@ -1,38 +1,42 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Instagram, Youtube, Facebook, Clock, Phone, Mail, MapPin } from 'lucide-react'
 
-const LINKS = {
-  Company: [
-    { label: 'About Us',      to: '/about' },
-    { label: 'Our Services',  to: '/services' },
-    { label: 'Why Choose Us', to: '/#whyus' },
-    { label: 'Achievements',  to: '/about#achievements' },
-    { label: 'Founder',       to: '/about#founder' },
-  ],
-  Services: [
-    { label: 'Luxury Apartments',   to: '/services' },
-    { label: 'Builder Floors',      to: '/services' },
-    { label: 'Investment Advisory', to: '/services' },
-    { label: 'Construction',        to: '/services' },
-    { label: 'Redevelopment',       to: '/services' },
-  ],
-}
+const NAV_LINKS = [
+  { label: 'Home',       to: '/' },
+  { label: 'Services',   to: '/services' },
+  { label: 'About Us',   to: '/about' },
+  { label: 'Our Team',   to: '/team' },
+  { label: 'Contact Us', to: '/contact' },
+]
 
-const CONTACT_LINKS = [
-  { label: 'Book Consultation', to: '/contact' },
-  { label: 'Send Enquiry',      to: '/contact' },
-  { label: 'WhatsApp Us',       href: 'https://wa.me/919810012254' },
+const LEGAL_LINKS = [
+  { label: 'Privacy Policy',          to: '/privacy-policy' },
+  { label: 'Accessibility Statement', to: '/accessibility-statement' },
+]
+
+const SOCIALS = [
+  { Icon: Instagram, href: 'https://instagram.com/srisrihomz', label: 'Instagram' },
+  { Icon: Youtube,   href: 'https://youtube.com/@srisrihomz',  label: 'YouTube' },
+  { Icon: Facebook,  href: 'https://facebook.com/srisrihomz',  label: 'Facebook' },
+]
+
+const CONTACT_INFO = [
+  { Icon: Clock,  value: 'Monday - Saturday,\n10:00 AM - 07:30 PM' },
+  { Icon: Phone,  value: '098100 12254', href: 'tel:+919810012254' },
+  { Icon: Mail,   value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
+  { Icon: MapPin, value: 'B-24, Rampuri, Block B,\nSurya Nagar, Ghaziabad, UP 201011' },
 ]
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#14100D', borderTop: '1px solid rgba(196,120,86,0.12)' }}>
+    <footer style={{ background: '#002B42', borderTop: '1px solid rgba(249,168,25,0.15)' }}>
       <div style={{
-        padding: '80px clamp(24px,6vw,120px) 60px',
-        maxWidth: 1400, margin: '0 auto',
+        padding: '80px clamp(24px,6vw,120px) 56px',
+        maxWidth: 1300, margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: '2fr 1fr 1fr 1fr',
-        gap: '60px',
+        gridTemplateColumns: '1.3fr 1fr 1fr',
+        gap: '48px',
       }}
         className="footer-grid"
       >
@@ -43,123 +47,124 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            style={{ marginBottom: 24 }}
+            style={{ marginBottom: 20 }}
           >
-            <span style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 30, fontWeight: 500, lineHeight: 1,
-              color: '#F5EEE4',
-            }}>
-              Sri Sri <span style={{ fontStyle: 'italic', color: '#C47856' }}>Homz</span>
-            </span>
+            <img src="/logo-bg.png" alt="Sri Sri Homz" style={{ height: 68, width: 'auto', display: 'block', marginLeft: -8 }} />
           </motion.div>
           <p style={{
-            fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-            lineHeight: 1.8, color: 'rgba(245,238,228,0.45)', maxWidth: 280, marginBottom: 28,
+            fontFamily: 'Inter, sans-serif', fontSize: 14.5, fontWeight: 300,
+            lineHeight: 1.8, color: 'rgba(247,248,250,0.5)', maxWidth: 300, marginBottom: 22,
           }}>
-            Luxury real estate & construction in Delhi NCR.
-            Built on Truth. Driven by Connection.
+            Your trusted real estate partner in Delhi NCR, specializing in
+            residential, commercial, and construction projects. Transparent
+            service. End-to-end support.
           </p>
-          <div style={{ display: 'flex', gap: 12 }}>
-            {['RERA ✓', 'HRERA ✓'].map(b => (
-              <div key={b} style={{
-                padding: '6px 14px',
-                border: '1px solid rgba(196,120,86,0.22)',
-                fontFamily: 'Inter, sans-serif', fontSize: 9, fontWeight: 700,
-                letterSpacing: '0.2em', color: 'rgba(196,120,86,0.65)',
-              }}>
-                {b}
-              </div>
+          <p style={{
+            fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
+            letterSpacing: '0.08em', textTransform: 'uppercase',
+            color: '#FFC670', marginBottom: 14,
+          }}>
+            Follow Us on Social Media
+          </p>
+          <div style={{ display: 'flex', gap: 16 }}>
+            {SOCIALS.map(({ Icon, href, label }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" data-cursor
+                aria-label={label}
+                style={{ color: '#F9A819', display: 'flex', transition: 'opacity 0.3s' }}
+                onMouseEnter={e => e.currentTarget.style.opacity = 0.65}
+                onMouseLeave={e => e.currentTarget.style.opacity = 1}
+              >
+                <Icon size={22} strokeWidth={1.75} />
+              </a>
             ))}
           </div>
         </div>
 
-        {Object.entries(LINKS).map(([col, items]) => (
-          <div key={col}>
-            <p style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 700,
-              letterSpacing: '0.25em', textTransform: 'uppercase',
-              color: '#C47856', marginBottom: 24,
-            }}>
-              {col}
-            </p>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {items.map(l => (
-                <li key={l.label}>
-                  <Link to={l.to} data-cursor
-                    style={{
-                      fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-                      color: 'rgba(245,238,228,0.45)', textAlign: 'left',
-                      textDecoration: 'none',
-                      transition: 'color 0.3s',
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
-                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,238,228,0.45)'}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-
+        {/* Navigate */}
         <div>
           <p style={{
-            fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 700,
-            letterSpacing: '0.25em', textTransform: 'uppercase',
-            color: '#C47856', marginBottom: 24,
+            fontFamily: 'Inter, sans-serif', fontSize: 13, fontWeight: 700,
+            letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#FFC670', marginBottom: 22,
           }}>
-            Contact
+            Navigate
           </p>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {CONTACT_LINKS.map(l => (
-              <li key={l.label}>
-                {l.href ? (
-                  <a href={l.href} target="_blank" rel="noopener noreferrer" data-cursor
-                    style={{
-                      fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-                      color: 'rgba(245,238,228,0.45)', textAlign: 'left',
-                      textDecoration: 'none',
-                      transition: 'color 0.3s',
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
-                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,238,228,0.45)'}
-                  >
-                    {l.label}
-                  </a>
-                ) : (
-                  <Link to={l.to} data-cursor
-                    style={{
-                      fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-                      color: 'rgba(245,238,228,0.45)', textAlign: 'left',
-                      textDecoration: 'none',
-                      transition: 'color 0.3s',
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
-                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,238,228,0.45)'}
-                  >
-                    {l.label}
-                  </Link>
-                )}
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
+            {NAV_LINKS.map(l => (
+              <li key={l.to}>
+                <Link to={l.to} data-cursor
+                  style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 14.5, fontWeight: 500,
+                    color: 'rgba(247,248,250,0.7)', textDecoration: 'none',
+                    transition: 'color 0.3s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#F9A819'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(247,248,250,0.7)'}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {LEGAL_LINKS.map(l => (
+              <li key={l.to}>
+                <Link to={l.to} data-cursor
+                  style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 13, fontWeight: 400,
+                    color: 'rgba(247,248,250,0.45)', textDecoration: 'underline',
+                    transition: 'color 0.3s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#F9A819'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(247,248,250,0.45)'}
+                >
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* Contact */}
+        <div>
+          <p style={{
+            fontFamily: 'Inter, sans-serif', fontSize: 13, fontWeight: 700,
+            letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#FFC670', marginBottom: 22,
+          }}>
+            Contact Us
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {CONTACT_INFO.map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                <item.Icon size={17} color="#F9A819" strokeWidth={1.75} style={{ marginTop: 2, flexShrink: 0 }} />
+                {item.href ? (
+                  <a href={item.href} data-cursor style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 400,
+                    color: 'rgba(247,248,250,0.7)', textDecoration: 'none', whiteSpace: 'pre-line',
+                  }}>
+                    {item.value}
+                  </a>
+                ) : (
+                  <p style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 400,
+                    color: 'rgba(247,248,250,0.7)', lineHeight: 1.5, whiteSpace: 'pre-line',
+                  }}>
+                    {item.value}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="hr-gold" />
-
-      <div style={{
-        padding: '24px clamp(24px,6vw,120px)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        maxWidth: 1400, margin: '0 auto',
-      }}>
+      <div style={{ borderTop: '1px solid rgba(249,168,25,0.12)', padding: '22px clamp(24px,6vw,120px)' }}>
         <p style={{
-          fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 300,
-          color: 'rgba(245,238,228,0.28)', letterSpacing: '0.05em',
+          fontFamily: 'Inter, sans-serif', fontSize: 13, fontWeight: 300,
+          color: 'rgba(247,248,250,0.4)', textAlign: 'center',
         }}>
-          © {new Date().getFullYear()} Sri Sri Homz. All rights reserved.
+          © {new Date().getFullYear()} by Sri Sri Homz.
         </p>
       </div>
 

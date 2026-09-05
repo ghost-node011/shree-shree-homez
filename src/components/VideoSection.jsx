@@ -4,7 +4,7 @@ import VideoThumb from './VideoLightbox'
 export default function VideoSection() {
   return (
     <div style={{
-      background: '#14100D',
+      background: '#002B42',
       padding: '120px clamp(24px,6vw,120px)',
       position: 'relative', overflow: 'hidden',
     }}>
@@ -28,10 +28,10 @@ export default function VideoSection() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(34px, 4vw, 58px)',
-              fontWeight: 400, color: '#F5EEE4',
+              fontWeight: 400, color: '#F7F8FA',
             }}
           >
-            A Closer Look at <span style={{ fontStyle: 'italic', color: '#C47856' }}>Sri Sri Homz</span>
+            A Closer Look at <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homz</span>
           </motion.h2>
         </div>
 

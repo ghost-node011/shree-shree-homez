@@ -34,12 +34,12 @@ export default function Cursor() {
     const grow = () => {
       rng.style.width  = '52px'
       rng.style.height = '52px'
-      rng.style.borderColor = 'rgba(196,120,86,0.9)'
+      rng.style.borderColor = 'rgba(249,168,25,0.9)'
     }
     const shrink = () => {
       rng.style.width  = '44px'
       rng.style.height = '44px'
-      rng.style.borderColor = 'rgba(196,120,86,0.45)'
+      rng.style.borderColor = 'rgba(249,168,25,0.45)'
     }
 
     document.addEventListener('mousemove', onMove)
@@ -63,7 +63,7 @@ export default function Cursor() {
         position: 'fixed', top: 0, left: 0,
         width: 8, height: 8,
         borderRadius: '50%',
-        background: '#C47856',
+        background: '#F9A819',
         pointerEvents: 'none',
         zIndex: 99999,
         transition: 'transform 0.04s linear',
@@ -73,7 +73,7 @@ export default function Cursor() {
         position: 'fixed', top: 0, left: 0,
         width: 44, height: 44,
         borderRadius: '50%',
-        border: '1px solid rgba(196,120,86,0.45)',
+        border: '1px solid rgba(249,168,25,0.45)',
         pointerEvents: 'none',
         zIndex: 99998,
         transition: 'width 0.3s ease, height 0.3s ease, border-color 0.3s ease',

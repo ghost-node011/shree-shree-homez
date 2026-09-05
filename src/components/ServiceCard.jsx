@@ -38,14 +38,14 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
       {/* Base overlay */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to top, rgba(20,16,13,0.96) 0%, rgba(20,16,13,0.5) 50%, rgba(20,16,13,0.15) 100%)',
+        background: 'linear-gradient(to top, rgba(0,43,66,0.96) 0%, rgba(0,43,66,0.5) 50%, rgba(0,43,66,0.15) 100%)',
         transition: 'opacity 0.4s',
       }} />
 
       {/* Hover overlay */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'rgba(196,120,86,0.08)',
+        background: 'rgba(249,168,25,0.08)',
         opacity: hovered ? 1 : 0,
         transition: 'opacity 0.4s',
       }} />
@@ -60,14 +60,14 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
         {/* Tag top */}
         <div style={{
           alignSelf: 'flex-start',
-          background: 'rgba(196,120,86,0.15)',
-          border: '1px solid rgba(196,120,86,0.35)',
+          background: 'rgba(249,168,25,0.15)',
+          border: '1px solid rgba(249,168,25,0.35)',
           padding: '5px 12px',
           fontFamily: 'Inter, sans-serif',
           fontSize: 9, fontWeight: 700,
           letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          color: '#C47856',
+          color: '#F9A819',
         }}>
           {item.tag}
         </div>
@@ -80,7 +80,7 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
             transition={{ duration: 0.4 }}
             style={{
               width: 36, height: 1,
-              background: '#C47856',
+              background: '#F9A819',
               transformOrigin: 'left',
               marginBottom: 14,
             }}
@@ -90,7 +90,7 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
             fontFamily: 'Source Serif 4, serif',
             fontSize: 'clamp(20px, 1.8vw, 28px)',
             fontWeight: 500, lineHeight: 1.15,
-            color: '#F5EEE4', marginBottom: 10,
+            color: '#F7F8FA', marginBottom: 10,
           }}>
             {item.title}
           </h3>
@@ -102,7 +102,7 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
               fontFamily: 'Inter, sans-serif',
               fontSize: 13, fontWeight: 300,
               lineHeight: 1.65,
-              color: 'rgba(245,238,228,0.65)',
+              color: 'rgba(247,248,250,0.65)',
             }}
           >
             {item.desc}
@@ -115,9 +115,9 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
             style={{
               marginTop: 16,
               width: 36, height: 36,
-              border: '1px solid rgba(196,120,86,0.5)',
+              border: '1px solid rgba(249,168,25,0.5)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              color: '#C47856', fontSize: 16,
+              color: '#F9A819', fontSize: 16,
             }}
           >
             ↗

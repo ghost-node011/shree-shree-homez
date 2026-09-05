@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero'
 
 // Curated stock photography standing in until real property/office photos are provided.
 const PHOTOS = [
@@ -29,7 +30,7 @@ function PhotoTile({ p, i }) {
         overflow: 'hidden',
         breakInside: 'avoid',
         marginBottom: 16,
-        border: '1px solid rgba(196,120,86,0.18)',
+        border: '1px solid rgba(249,168,25,0.18)',
       }}
     >
       <img
@@ -44,12 +45,12 @@ function PhotoTile({ p, i }) {
       />
       <div style={{
         position: 'absolute', top: 12, left: 12,
-        background: 'rgba(20,16,13,0.55)', backdropFilter: 'blur(4px)',
-        border: '1px solid rgba(196,120,86,0.35)',
+        background: 'rgba(0,43,66,0.55)', backdropFilter: 'blur(4px)',
+        border: '1px solid rgba(249,168,25,0.35)',
         padding: '5px 12px',
         fontFamily: 'Inter, sans-serif', fontSize: 9, fontWeight: 700,
         letterSpacing: '0.18em', textTransform: 'uppercase',
-        color: '#E2AB89',
+        color: '#FFC670',
         pointerEvents: 'none',
       }}>
         {p.tag}
@@ -61,63 +62,16 @@ function PhotoTile({ p, i }) {
 export default function Gallery() {
   return (
     <div>
-      {/* ── Dark header band ── */}
-      <div style={{
-        background: '#14100D',
-        padding: '150px clamp(24px,6vw,120px) 64px',
-        position: 'relative', overflow: 'hidden',
-      }}>
-        <div style={{
-          position: 'absolute', inset: 0, pointerEvents: 'none',
-          backgroundImage: 'radial-gradient(circle at 85% 20%, rgba(196,120,86,0.09) 0%, transparent 50%)',
-        }} />
-        <div style={{ maxWidth: 1300, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="section-label"
-            style={{ justifyContent: 'center', marginBottom: 24, color: '#E2AB89' }}
-          >
-            Gallery
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.85, delay: 0.1 }}
-            style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(36px, 4.5vw, 64px)',
-              fontWeight: 400, lineHeight: 1.1,
-              color: '#F5EEE4', marginBottom: 20,
-            }}
-          >
-            A Glimpse Into <span style={{ fontStyle: 'italic', color: '#C47856' }}>Our World</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 16, fontWeight: 300,
-              color: 'rgba(245,238,228,0.55)',
-              maxWidth: 560, margin: '0 auto',
-              lineHeight: 1.7,
-            }}
-          >
-            From striking exteriors to thoughtfully finished interiors — a look
-            at the kind of spaces we help our clients find and build.
-          </motion.p>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Gallery"
+        title="A Glimpse Into"
+        accent="Our World"
+        subtitle="From striking exteriors to thoughtfully finished interiors — a look at the kind of spaces we help our clients find and build."
+      />
 
       {/* ── Photo grid ── */}
       <div style={{
-        background: '#F5EEE4',
+        background: '#F7F8FA',
         padding: '80px clamp(24px,6vw,120px) 120px',
       }}>
         <div style={{ maxWidth: 1300, margin: '0 auto' }}>

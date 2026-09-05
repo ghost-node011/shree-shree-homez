@@ -43,7 +43,7 @@ const REASONS = [
 export default function WhyUs() {
   return (
     <div style={{
-      background: '#F5EEE4',
+      background: '#F7F8FA',
       padding: '120px clamp(24px,6vw,120px) 150px',
       position: 'relative',
     }}>
@@ -76,11 +76,11 @@ export default function WhyUs() {
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(36px, 4vw, 60px)',
                 fontWeight: 400, lineHeight: 1.1,
-                color: '#14100D',
+                color: '#002B42',
               }}
             >
               The Sri Sri Homz<br />
-              <span style={{ fontStyle: 'italic', color: '#C47856' }}>Difference</span>
+              <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Difference</span>
             </motion.h2>
           </div>
           <motion.p
@@ -92,7 +92,7 @@ export default function WhyUs() {
               fontFamily: 'Inter, sans-serif',
               fontSize: 16, fontWeight: 300,
               lineHeight: 1.8,
-              color: 'rgba(20,16,13,0.62)',
+              color: 'rgba(0,43,66,0.62)',
               alignSelf: 'end',
             }}
           >
@@ -107,7 +107,7 @@ export default function WhyUs() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
           gap: 1,
-          background: 'rgba(196,120,86,0.06)',
+          background: 'rgba(249,168,25,0.06)',
         }}>
           {REASONS.map((r, i) => {
             const Icon = r.icon
@@ -121,21 +121,21 @@ export default function WhyUs() {
               data-cursor
               className="whyus-card"
               style={{
-                background: '#F5EEE4',
+                background: '#F7F8FA',
                 padding: '48px 40px',
                 position: 'relative',
                 overflow: 'hidden',
                 borderTop: '1px solid transparent',
                 transition: 'background 0.4s ease, border-color 0.4s ease',
               }}
-              whileHover={{ backgroundColor: '#EDE1D1', borderColor: 'rgba(196,120,86,0.5)' }}
+              whileHover={{ backgroundColor: '#E7ECF1', borderColor: 'rgba(249,168,25,0.5)' }}
             >
               {/* Ghost numeral */}
               <div style={{
                 position: 'absolute', top: -6, right: 12,
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 110, fontWeight: 600,
-                color: 'rgba(196,120,86,0.06)',
+                color: 'rgba(249,168,25,0.06)',
                 lineHeight: 1, pointerEvents: 'none',
                 userSelect: 'none',
               }}>
@@ -149,14 +149,14 @@ export default function WhyUs() {
                 style={{
                   width: 52, height: 52,
                   borderRadius: '50%',
-                  background: 'rgba(196,120,86,0.08)',
-                  border: '1px solid rgba(196,120,86,0.3)',
+                  background: 'rgba(249,168,25,0.08)',
+                  border: '1px solid rgba(249,168,25,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 24,
                   position: 'relative',
                 }}
               >
-                <Icon size={22} color="#C47856" strokeWidth={1.6} />
+                <Icon size={22} color="#F9A819" strokeWidth={1.6} />
               </motion.div>
 
               {/* Gold accent line */}
@@ -167,7 +167,7 @@ export default function WhyUs() {
                 transition={{ duration: 0.8, delay: 0.3 + i * 0.05 }}
                 style={{
                   width: 32, height: 1,
-                  background: '#C47856',
+                  background: '#F9A819',
                   transformOrigin: 'left',
                   marginBottom: 20,
                   position: 'relative',
@@ -177,7 +177,7 @@ export default function WhyUs() {
               <h3 style={{
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 26, fontWeight: 500,
-                color: '#14100D', marginBottom: 14,
+                color: '#002B42', marginBottom: 14,
                 lineHeight: 1.2,
                 position: 'relative',
               }}>
@@ -187,7 +187,7 @@ export default function WhyUs() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 14, fontWeight: 300,
                 lineHeight: 1.75,
-                color: '#8C7F72',
+                color: '#5D7A93',
                 position: 'relative',
               }}>
                 {r.desc}

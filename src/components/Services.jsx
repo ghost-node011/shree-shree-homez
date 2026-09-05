@@ -127,7 +127,7 @@ export default function Services() {
 
   return (
     <div style={{
-      background: '#14100D',
+      background: '#002B42',
       paddingTop: 120, paddingBottom: 80,
       position: 'relative', overflow: 'hidden',
     }}>
@@ -167,11 +167,11 @@ export default function Services() {
               fontSize: 'clamp(48px, 6vw, 90px)',
               fontWeight: 400, lineHeight: 0.95,
               letterSpacing: '-0.01em',
-              color: '#F5EEE4', marginBottom: 0,
+              color: '#F7F8FA', marginBottom: 0,
             }}
           >
             Real Estate<br />
-            <span style={{ fontStyle: 'italic', color: '#C47856' }}>&amp; Construction</span>
+            <span style={{ fontStyle: 'italic', color: '#F9A819' }}>&amp; Construction</span>
           </motion.h2>
         </div>
 
@@ -187,7 +187,7 @@ export default function Services() {
             fontFamily: 'Inter, sans-serif',
             fontSize: 15, fontWeight: 300,
             lineHeight: 1.8,
-            color: 'rgba(245,238,228,0.48)',
+            color: 'rgba(247,248,250,0.48)',
             marginBottom: 24,
           }}>
             From finding the perfect investment to building the right structure — end-to-end solutions under one trusted name.
@@ -201,14 +201,14 @@ export default function Services() {
                 data-cursor
                 style={{
                   width: 48, height: 48,
-                  border: '1px solid rgba(196,120,86,0.3)',
+                  border: '1px solid rgba(249,168,25,0.3)',
                   background: 'transparent',
-                  color: '#C47856', fontSize: 18,
+                  color: '#F9A819', fontSize: 18,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.3s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#C47856'; e.currentTarget.style.color = '#14100D' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#C47856' }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#F9A819'; e.currentTarget.style.color = '#002B42' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#F9A819' }}
               >
                 {arrow}
               </button>
@@ -222,7 +222,7 @@ export default function Services() {
         padding: '0 clamp(24px,6vw,100px)',
         maxWidth: 1400, margin: '0 auto',
         display: 'flex', gap: 0,
-        borderBottom: '1px solid rgba(196,120,86,0.1)',
+        borderBottom: '1px solid rgba(249,168,25,0.1)',
         marginBottom: 48,
       }}>
         {TABS.map(tab => (
@@ -236,8 +236,8 @@ export default function Services() {
               fontSize: 11, fontWeight: 600,
               letterSpacing: '0.2em', textTransform: 'uppercase',
               padding: '14px 0', marginRight: 40,
-              color: active === tab.id ? '#C47856' : 'rgba(245,238,228,0.3)',
-              borderBottom: active === tab.id ? '1px solid #C47856' : '1px solid transparent',
+              color: active === tab.id ? '#F9A819' : 'rgba(247,248,250,0.3)',
+              borderBottom: active === tab.id ? '1px solid #F9A819' : '1px solid transparent',
               marginBottom: -1,
               transition: 'all 0.3s',
               display: 'flex', alignItems: 'center', gap: 10,
@@ -247,7 +247,7 @@ export default function Services() {
             <span style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 13, fontStyle: 'italic',
-              color: active === tab.id ? 'rgba(196,120,86,0.6)' : 'rgba(245,238,228,0.15)',
+              color: active === tab.id ? 'rgba(249,168,25,0.6)' : 'rgba(247,248,250,0.15)',
             }}>
               {tab.count}
             </span>
@@ -282,7 +282,7 @@ export default function Services() {
                 onClick={() => navigate('/contact')}
                 style={{
                   aspectRatio: '3/4',
-                  background: '#C47856',
+                  background: '#F9A819',
                   display: 'flex', flexDirection: 'column',
                   alignItems: 'flex-start', justifyContent: 'flex-end',
                   padding: '32px 28px',
@@ -290,14 +290,14 @@ export default function Services() {
               >
                 <div style={{
                   width: 48, height: 48, borderRadius: '50%',
-                  background: '#14100D',
+                  background: '#002B42',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 22, marginBottom: 24,
                 }}>↗</div>
                 <p style={{
                   fontFamily: 'Source Serif 4, serif',
                   fontSize: 26, fontWeight: 500,
-                  color: '#14100D', lineHeight: 1.2,
+                  color: '#002B42', lineHeight: 1.2,
                 }}>Book a Free Consultation</p>
               </div>
             </SwiperSlide>
@@ -333,18 +333,18 @@ export default function Services() {
             flexShrink: 0,
             width: 'clamp(200px, 18vw, 260px)',
             aspectRatio: '3/4',
-            background: '#C47856',
+            background: '#F9A819',
             display: 'flex', flexDirection: 'column',
             alignItems: 'flex-start', justifyContent: 'flex-end',
             padding: '32px 28px',
             cursor: 'pointer',
             transition: 'background 0.3s',
           }}
-          whileHover={{ backgroundColor: '#E2AB89' }}
+          whileHover={{ backgroundColor: '#FFC670' }}
         >
           <div style={{
             width: 48, height: 48, borderRadius: '50%',
-            background: '#14100D',
+            background: '#002B42',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: 22, marginBottom: 24,
           }}>
@@ -353,7 +353,7 @@ export default function Services() {
           <p style={{
             fontFamily: 'Source Serif 4, serif',
             fontSize: 26, fontWeight: 500,
-            color: '#14100D', lineHeight: 1.2,
+            color: '#002B42', lineHeight: 1.2,
           }}>
             Book a Free Consultation
           </p>

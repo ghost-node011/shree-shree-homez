@@ -44,7 +44,7 @@ export default function Preloader({ onDone }) {
                 position: 'absolute',
                 width: size, height: size,
                 borderRadius: '50%',
-                border: `1px solid rgba(196,120,86,${0.12 - i * 0.03})`,
+                border: `1px solid rgba(249,168,25,${0.12 - i * 0.03})`,
               }}
             />
           ))}
@@ -61,7 +61,7 @@ export default function Preloader({ onDone }) {
           {/* Progress track */}
           <div style={{
             position: 'relative', width: 200, height: 1,
-            background: 'rgba(196,120,86,0.15)',
+            background: 'rgba(249,168,25,0.15)',
             marginBottom: 20, zIndex: 1,
           }}>
             <motion.div
@@ -69,7 +69,7 @@ export default function Preloader({ onDone }) {
               transition={{ duration: 0.25, ease: 'linear' }}
               style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(90deg, #A85F3F, #C47856, #E2AB89)',
+                background: 'linear-gradient(90deg, #C98209, #F9A819, #FFC670)',
                 transformOrigin: 'left',
               }}
             />
@@ -79,8 +79,8 @@ export default function Preloader({ onDone }) {
               style={{
                 position: 'absolute', top: -3,
                 width: 7, height: 7,
-                background: '#E2AB89', borderRadius: '50%',
-                boxShadow: '0 0 12px rgba(196,120,86,0.9)',
+                background: '#FFC670', borderRadius: '50%',
+                boxShadow: '0 0 12px rgba(249,168,25,0.9)',
                 transform: 'translateX(-50%)',
               }}
             />
@@ -90,7 +90,7 @@ export default function Preloader({ onDone }) {
           <p style={{
             fontFamily: 'Source Serif 4, serif',
             fontSize: 13, letterSpacing: '0.4em',
-            color: 'rgba(196,120,86,0.65)',
+            color: 'rgba(249,168,25,0.65)',
             position: 'relative', zIndex: 1,
           }}>
             {String(pct).padStart(3, '0')}

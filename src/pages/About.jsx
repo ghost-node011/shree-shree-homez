@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Flag, Users2, Award, TrendingUp } from 'lucide-react'
 import About from '../components/About'
+import WhyUs from '../components/WhyUs'
+import VideoSection from '../components/VideoSection'
+import Philosophy from '../components/Philosophy'
 import Founder from '../components/Founder'
+import GoogleReviews from '../components/GoogleReviews'
 import Achievements from '../components/Achievements'
+import PageHero from '../components/PageHero'
 
 const JOURNEY = [
   {
@@ -30,7 +36,7 @@ const JOURNEY = [
 function OurJourney() {
   return (
     <div style={{
-      background: '#F5EEE4',
+      background: '#F7F8FA',
       padding: '110px clamp(24px,6vw,120px)',
       position: 'relative',
     }}>
@@ -54,10 +60,10 @@ function OurJourney() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(32px, 3.8vw, 52px)',
-              fontWeight: 400, color: '#14100D',
+              fontWeight: 400, color: '#002B42',
             }}
           >
-            From Vision to <span style={{ fontStyle: 'italic', color: '#C47856' }}>Trusted Name</span>
+            From Vision to <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Trusted Name</span>
           </motion.h2>
         </div>
 
@@ -65,7 +71,7 @@ function OurJourney() {
           {/* Connecting line */}
           <div style={{
             position: 'absolute', top: 28, left: 28, right: 28,
-            height: 1, background: 'rgba(196,120,86,0.25)',
+            height: 1, background: 'rgba(249,168,25,0.25)',
             display: 'none',
           }} className="journey-line" />
 
@@ -87,32 +93,32 @@ function OurJourney() {
                 >
                   <div style={{
                     width: 56, height: 56, borderRadius: '50%',
-                    background: '#F5EEE4',
-                    border: '1px solid rgba(196,120,86,0.35)',
+                    background: '#F7F8FA',
+                    border: '1px solid rgba(249,168,25,0.35)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     margin: '0 auto 22px', position: 'relative', zIndex: 1,
                   }}>
-                    <Icon size={22} color="#C47856" strokeWidth={1.75} />
+                    <Icon size={22} color="#F9A819" strokeWidth={1.75} />
                   </div>
                   <p style={{
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 10, fontWeight: 700,
                     letterSpacing: '0.15em', textTransform: 'uppercase',
-                    color: 'rgba(196,120,86,0.7)', marginBottom: 8,
+                    color: 'rgba(249,168,25,0.7)', marginBottom: 8,
                   }}>
                     Step {i + 1}
                   </p>
                   <h3 style={{
                     fontFamily: 'Source Serif 4, serif',
                     fontSize: 20, fontWeight: 500,
-                    color: '#14100D', marginBottom: 10,
+                    color: '#002B42', marginBottom: 10,
                   }}>
                     {j.title}
                   </h3>
                   <p style={{
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 13.5, fontWeight: 300,
-                    lineHeight: 1.7, color: '#8C7F72',
+                    lineHeight: 1.7, color: '#5D7A93',
                   }}>
                     {j.desc}
                   </p>
@@ -120,6 +126,12 @@ function OurJourney() {
               )
             })}
           </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 56 }}>
+          <Link to="/team" data-cursor className="btn-outline-gold">
+            Meet Our Team
+          </Link>
         </div>
       </div>
 
@@ -135,9 +147,19 @@ function OurJourney() {
 export default function AboutPage() {
   return (
     <>
+      <PageHero
+        eyebrow="About Us"
+        title="Built on Truth,"
+        accent="Driven by Connection"
+        subtitle="Honest guidance for buying, building, and investing in Delhi NCR real estate."
+      />
       <About />
       <OurJourney />
+      <div id="whyus"><WhyUs /></div>
+      <VideoSection />
+      <Philosophy />
       <div id="founder"><Founder /></div>
+      <GoogleReviews />
       <div id="achievements"><Achievements /></div>
     </>
   )

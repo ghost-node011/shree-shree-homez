@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { PhoneCall, MapPinned, FileCheck2, KeyRound } from 'lucide-react'
 import Services from '../components/Services'
+import PageHero from '../components/PageHero'
 
 const PROCESS = [
   {
@@ -29,7 +30,7 @@ const PROCESS = [
 function OurProcess() {
   return (
     <div style={{
-      background: '#F5EEE4',
+      background: '#F7F8FA',
       padding: '110px clamp(24px,6vw,120px)',
       position: 'relative',
     }}>
@@ -53,10 +54,10 @@ function OurProcess() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(32px, 3.8vw, 52px)',
-              fontWeight: 400, color: '#14100D',
+              fontWeight: 400, color: '#002B42',
             }}
           >
-            Our <span style={{ fontStyle: 'italic', color: '#C47856' }}>Process</span>
+            Our <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Process</span>
           </motion.h2>
         </div>
 
@@ -64,7 +65,7 @@ function OurProcess() {
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gap: 1,
-          background: 'rgba(196,120,86,0.06)',
+          background: 'rgba(249,168,25,0.06)',
         }}>
           {PROCESS.map((p, i) => {
             const Icon = p.icon
@@ -76,7 +77,7 @@ function OurProcess() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22,1,0.36,1] }}
                 style={{
-                  background: '#F5EEE4',
+                  background: '#F7F8FA',
                   padding: '40px 28px',
                   position: 'relative',
                 }}
@@ -85,31 +86,31 @@ function OurProcess() {
                   position: 'absolute', top: 32, right: 28,
                   fontFamily: 'Source Serif 4, serif',
                   fontSize: 48, fontWeight: 600,
-                  color: 'rgba(196,120,86,0.08)',
+                  color: 'rgba(249,168,25,0.08)',
                   lineHeight: 1,
                 }}>
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div style={{
                   width: 48, height: 48, borderRadius: '50%',
-                  background: 'rgba(196,120,86,0.08)',
-                  border: '1px solid rgba(196,120,86,0.3)',
+                  background: 'rgba(249,168,25,0.08)',
+                  border: '1px solid rgba(249,168,25,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 22,
                 }}>
-                  <Icon size={20} color="#C47856" strokeWidth={1.75} />
+                  <Icon size={20} color="#F9A819" strokeWidth={1.75} />
                 </div>
                 <h3 style={{
                   fontFamily: 'Source Serif 4, serif',
                   fontSize: 21, fontWeight: 500,
-                  color: '#14100D', marginBottom: 10,
+                  color: '#002B42', marginBottom: 10,
                 }}>
                   {p.title}
                 </h3>
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
                   fontSize: 13.5, fontWeight: 300,
-                  lineHeight: 1.7, color: '#8C7F72',
+                  lineHeight: 1.7, color: '#5D7A93',
                 }}>
                   {p.desc}
                 </p>
@@ -142,6 +143,12 @@ function OurProcess() {
 export default function ServicesPage() {
   return (
     <>
+      <PageHero
+        eyebrow="Our Services"
+        title="What We"
+        accent="Offer"
+        subtitle="End-to-end solutions across residential, commercial, and construction — all under one trusted name."
+      />
       <Services />
       <OurProcess />
     </>

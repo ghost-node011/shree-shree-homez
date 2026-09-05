@@ -39,11 +39,11 @@ export default function Contact() {
     width: '100%',
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid rgba(196,120,86,0.3)',
+    borderBottom: '1px solid rgba(249,168,25,0.3)',
     padding: '12px 2px',
     fontFamily: 'Inter, sans-serif',
     fontSize: 14, fontWeight: 300,
-    color: '#F5EEE4',
+    color: '#F7F8FA',
     outline: 'none',
     transition: 'border-color 0.3s',
     appearance: 'none',
@@ -52,7 +52,7 @@ export default function Contact() {
 
   return (
     <div style={{
-      background: '#F5EEE4',
+      background: '#F7F8FA',
       padding: '120px clamp(24px,6vw,120px)',
       position: 'relative', overflow: 'hidden',
     }}>
@@ -60,7 +60,7 @@ export default function Contact() {
       <div style={{
         position: 'absolute', bottom: -100, right: -100,
         width: 500, height: 500,
-        background: 'radial-gradient(ellipse, rgba(196,120,86,0.05) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(249,168,25,0.05) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -92,11 +92,11 @@ export default function Contact() {
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 'clamp(34px, 4vw, 56px)',
                 fontWeight: 400, lineHeight: 1.1,
-                color: '#14100D', marginBottom: 12,
+                color: '#002B42', marginBottom: 12,
               }}
             >
               Let's Build Your<br />
-              <span style={{ fontStyle: 'italic', color: '#C47856' }}>Future Together</span>
+              <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Future Together</span>
             </motion.h2>
 
             <motion.div
@@ -106,7 +106,7 @@ export default function Contact() {
               transition={{ duration: 0.9 }}
               style={{
                 width: 60, height: 1,
-                background: 'linear-gradient(90deg, #C47856, transparent)',
+                background: 'linear-gradient(90deg, #F9A819, transparent)',
                 transformOrigin: 'left',
                 marginBottom: 36,
               }}
@@ -121,7 +121,7 @@ export default function Contact() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 15, fontWeight: 300,
                 lineHeight: 1.8,
-                color: 'rgba(20,16,13,0.65)',
+                color: 'rgba(0,43,66,0.65)',
                 marginBottom: 52,
               }}
             >
@@ -149,18 +149,18 @@ export default function Contact() {
                 <div style={{
                   width: 44, height: 44, flexShrink: 0,
                   borderRadius: '50%',
-                  background: 'rgba(196,120,86,0.08)',
-                  border: '1px solid rgba(196,120,86,0.3)',
+                  background: 'rgba(249,168,25,0.08)',
+                  border: '1px solid rgba(249,168,25,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
-                  <item.Icon size={18} color="#C47856" strokeWidth={1.75} />
+                  <item.Icon size={18} color="#F9A819" strokeWidth={1.75} />
                 </div>
                 <div>
                   <p style={{
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 10, fontWeight: 600,
                     letterSpacing: '0.2em', textTransform: 'uppercase',
-                    color: 'rgba(196,120,86,0.6)', marginBottom: 2,
+                    color: 'rgba(249,168,25,0.6)', marginBottom: 2,
                   }}>
                     {item.label}
                   </p>
@@ -168,12 +168,12 @@ export default function Contact() {
                     <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" data-cursor style={{
                       fontFamily: 'Inter, sans-serif',
                       fontSize: 15, fontWeight: 400,
-                      color: 'rgba(20,16,13,0.72)',
+                      color: 'rgba(0,43,66,0.72)',
                       textDecoration: 'none',
                       transition: 'color 0.3s',
                     }}
-                      onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
-                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(20,16,13,0.72)'}
+                      onMouseEnter={e => e.currentTarget.style.color = '#F9A819'}
+                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(0,43,66,0.72)'}
                     >
                       {item.value}
                     </a>
@@ -182,7 +182,7 @@ export default function Contact() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: 15, fontWeight: 400,
                       lineHeight: 1.5,
-                      color: 'rgba(20,16,13,0.72)',
+                      color: 'rgba(0,43,66,0.72)',
                     }}>
                       {item.value}
                     </p>
@@ -201,8 +201,8 @@ export default function Contact() {
           >
             <form ref={formRef} onSubmit={onSubmit}
               style={{
-                background: '#14100D',
-                border: '1px solid rgba(196,120,86,0.2)',
+                background: '#002B42',
+                border: '1px solid rgba(249,168,25,0.2)',
                 padding: 'clamp(28px,4vw,52px)',
                 display: 'flex', flexDirection: 'column', gap: 20,
               }}
@@ -210,7 +210,7 @@ export default function Contact() {
               <p style={{
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 24, fontWeight: 400,
-                color: '#F5EEE4', marginBottom: 8,
+                color: '#F7F8FA', marginBottom: 8,
               }}>
                 Book a Free Consultation
               </p>
@@ -220,15 +220,15 @@ export default function Contact() {
                   name="name" value={form.name} onChange={onChange} required
                   placeholder="Full Name"
                   style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = '#C47856'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
+                  onFocus={e => e.target.style.borderColor = '#F9A819'}
+                  onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
                 />
                 <input
                   name="phone" value={form.phone} onChange={onChange} required
                   placeholder="Phone Number"
                   style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = '#C47856'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
+                  onFocus={e => e.target.style.borderColor = '#F9A819'}
+                  onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
                 />
               </div>
 
@@ -236,19 +236,19 @@ export default function Contact() {
                 name="email" value={form.email} onChange={onChange} type="email"
                 placeholder="Email Address"
                 style={inputStyle}
-                onFocus={e => e.target.style.borderColor = '#C47856'}
-                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
+                onFocus={e => e.target.style.borderColor = '#F9A819'}
+                onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
               />
 
               <select
                 name="service" value={form.service} onChange={onChange} required
-                style={{ ...inputStyle, color: form.service ? '#F5EEE4' : 'rgba(245,238,228,0.4)' }}
-                onFocus={e => e.target.style.borderColor = '#C47856'}
-                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
+                style={{ ...inputStyle, color: form.service ? '#F7F8FA' : 'rgba(247,248,250,0.4)' }}
+                onFocus={e => e.target.style.borderColor = '#F9A819'}
+                onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
               >
-                <option value="" style={{ background: '#14100D' }}>Select Service</option>
+                <option value="" style={{ background: '#002B42' }}>Select Service</option>
                 {SERVICES.map(s => (
-                  <option key={s} value={s} style={{ background: '#14100D' }}>{s}</option>
+                  <option key={s} value={s} style={{ background: '#002B42' }}>{s}</option>
                 ))}
               </select>
 
@@ -257,8 +257,8 @@ export default function Contact() {
                 placeholder="Tell us about your requirements..."
                 rows={4}
                 style={{ ...inputStyle, resize: 'vertical', minHeight: 110 }}
-                onFocus={e => e.target.style.borderColor = '#C47856'}
-                onBlur={e => e.target.style.borderColor = 'rgba(196,120,86,0.2)'}
+                onFocus={e => e.target.style.borderColor = '#F9A819'}
+                onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
               />
 
               <button type="submit" data-cursor disabled={loading}
@@ -271,8 +271,8 @@ export default function Contact() {
               {status === 'success' && (
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: 13,
-                  color: '#C47856', textAlign: 'center',
-                  padding: '12px', border: '1px solid rgba(196,120,86,0.3)',
+                  color: '#F9A819', textAlign: 'center',
+                  padding: '12px', border: '1px solid rgba(249,168,25,0.3)',
                 }}>
                   Thank you! We'll be in touch shortly.
                 </p>
@@ -280,8 +280,8 @@ export default function Contact() {
               {status === 'error' && (
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: 13,
-                  color: '#F5EEE4', textAlign: 'center',
-                  padding: '12px', border: '1px solid rgba(245,238,228,0.2)',
+                  color: '#F7F8FA', textAlign: 'center',
+                  padding: '12px', border: '1px solid rgba(247,248,250,0.2)',
                 }}>
                   Something went wrong. Please call us directly.
                 </p>
@@ -298,7 +298,7 @@ export default function Contact() {
           transition={{ duration: 0.9, ease: [0.22,1,0.36,1] }}
           style={{
             marginTop: 72,
-            border: '1px solid rgba(196,120,86,0.2)',
+            border: '1px solid rgba(249,168,25,0.2)',
             filter: 'grayscale(0.4) contrast(1.05)',
           }}
         >

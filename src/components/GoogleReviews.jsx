@@ -44,7 +44,7 @@ function Stars({ rating, size = 14 }) {
   return (
     <div style={{ display: 'flex', gap: 2 }}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} style={{ color: i < rating ? '#C47856' : 'rgba(196,120,86,0.2)', fontSize: size }}>★</span>
+        <span key={i} style={{ color: i < rating ? '#F9A819' : 'rgba(249,168,25,0.2)', fontSize: size }}>★</span>
       ))}
     </div>
   )
@@ -62,10 +62,10 @@ function ReviewCard({ review, index }) {
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: [0.22,1,0.36,1] }}
       data-cursor
-      whileHover={{ y: -6, borderColor: 'rgba(196,120,86,0.5)', boxShadow: '0 20px 40px rgba(20,16,13,0.08)' }}
+      whileHover={{ y: -6, borderColor: 'rgba(249,168,25,0.5)', boxShadow: '0 20px 40px rgba(0,43,66,0.08)' }}
       style={{
         background: '#FFFFFF',
-        border: '1px solid rgba(196,120,86,0.15)',
+        border: '1px solid rgba(249,168,25,0.15)',
         padding: '36px 30px 30px',
         display: 'flex', flexDirection: 'column',
         position: 'relative',
@@ -78,7 +78,7 @@ function ReviewCard({ review, index }) {
         position: 'absolute', top: -18, right: 12,
         fontFamily: 'Source Serif 4, serif',
         fontSize: 100, fontWeight: 700,
-        color: 'rgba(196,120,86,0.06)',
+        color: 'rgba(249,168,25,0.06)',
         lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
       }}>
         "
@@ -88,19 +88,19 @@ function ReviewCard({ review, index }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div style={{
             width: 42, height: 42, borderRadius: '50%',
-            background: 'linear-gradient(135deg, rgba(196,120,86,0.22), rgba(196,120,86,0.08))',
-            border: '1px solid rgba(196,120,86,0.35)',
+            background: 'linear-gradient(135deg, rgba(249,168,25,0.22), rgba(249,168,25,0.08))',
+            border: '1px solid rgba(249,168,25,0.35)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'Source Serif 4, serif', fontSize: 16, color: '#A85F3F',
+            fontFamily: 'Source Serif 4, serif', fontSize: 16, color: '#C98209',
             flexShrink: 0,
           }}>
             {review.name.charAt(0)}
           </div>
           <div>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 600, color: '#14100D' }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 600, color: '#002B42' }}>
               {review.name}
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#8C7F72', marginTop: 2 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#5D7A93', marginTop: 2 }}>
               {review.date}
             </p>
           </div>
@@ -114,7 +114,7 @@ function ReviewCard({ review, index }) {
 
       <p style={{
         fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-        lineHeight: 1.75, color: 'rgba(20,16,13,0.68)', flex: 1,
+        lineHeight: 1.75, color: 'rgba(0,43,66,0.68)', flex: 1,
         position: 'relative',
       }}>
         {shown}
@@ -129,7 +129,7 @@ function ReviewCard({ review, index }) {
             alignSelf: 'flex-start',
             fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600,
             letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: '#C47856',
+            color: '#F9A819',
             position: 'relative',
           }}
         >
@@ -146,7 +146,7 @@ function ReviewCard({ review, index }) {
         style={{
           position: 'absolute', bottom: 0, left: 0,
           height: 2, width: '100%',
-          background: 'linear-gradient(90deg, #C47856, transparent)',
+          background: 'linear-gradient(90deg, #F9A819, transparent)',
           transformOrigin: 'left',
         }}
       />
@@ -157,20 +157,20 @@ function ReviewCard({ review, index }) {
 export default function GoogleReviews() {
   return (
     <div style={{
-      background: '#EDE1D1',
+      background: '#E7ECF1',
       padding: '130px clamp(24px,6vw,120px)',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Decorative background glow + ghost quote */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'radial-gradient(circle at 85% 15%, rgba(196,120,86,0.08) 0%, transparent 55%)',
+        backgroundImage: 'radial-gradient(circle at 85% 15%, rgba(249,168,25,0.08) 0%, transparent 55%)',
       }} />
       <div style={{
         position: 'absolute', top: '2%', left: '3%',
         fontFamily: 'Source Serif 4, serif',
         fontSize: 'min(28vw, 380px)', fontWeight: 700,
-        color: 'rgba(196,120,86,0.035)',
+        color: 'rgba(249,168,25,0.035)',
         lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
       }}>
         "
@@ -196,10 +196,10 @@ export default function GoogleReviews() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(34px, 4vw, 58px)',
-              fontWeight: 400, color: '#14100D', marginBottom: 32,
+              fontWeight: 400, color: '#002B42', marginBottom: 32,
             }}
           >
-            Trusted by <span style={{ fontStyle: 'italic', color: '#C47856' }}>Our Clients</span>
+            Trusted by <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Our Clients</span>
           </motion.h2>
 
           {/* Rating summary */}
@@ -211,21 +211,21 @@ export default function GoogleReviews() {
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 26,
               padding: '24px 40px',
-              border: '1px solid rgba(196,120,86,0.3)',
+              border: '1px solid rgba(249,168,25,0.3)',
               background: '#FFFFFF',
-              boxShadow: '0 24px 48px rgba(20,16,13,0.06)',
+              boxShadow: '0 24px 48px rgba(0,43,66,0.06)',
             }}
           >
             <GoogleG size={34} />
-            <div style={{ width: 1, height: 44, background: 'rgba(196,120,86,0.2)' }} />
-            <span style={{ fontFamily: 'Source Serif 4, serif', fontSize: 44, color: '#C47856', lineHeight: 1 }}>
+            <div style={{ width: 1, height: 44, background: 'rgba(249,168,25,0.2)' }} />
+            <span style={{ fontFamily: 'Source Serif 4, serif', fontSize: 44, color: '#F9A819', lineHeight: 1 }}>
               4.9
             </span>
             <div style={{ textAlign: 'left' }}>
               <Stars rating={5} size={15} />
               <p style={{
                 fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 400,
-                color: '#8C7F72', marginTop: 6,
+                color: '#5D7A93', marginTop: 6,
               }}>
                 Based on 180+ Google reviews
               </p>

@@ -49,7 +49,7 @@ function Building({ b, color, night }) {
             <motion.div
               key={i}
               style={{
-                background: '#C47856',
+                background: '#F9A819',
                 opacity: night,
               }}
             />
@@ -118,7 +118,7 @@ export default function SkylineAnimation() {
             top: `${(i * 53) % 60}%`,
             left: `${(i * 37) % 100}%`,
             width: 1.5, height: 1.5, borderRadius: '50%',
-            background: '#F5F0E8',
+            background: '#F7F8FA',
             opacity: 0.4 + (i % 4) * 0.15,
           }} />
         ))}
@@ -135,7 +135,7 @@ export default function SkylineAnimation() {
       {/* Gold horizon glow */}
       <div style={{
         position: 'absolute', bottom: '30%', left: 0, right: 0, height: 200,
-        background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(196,120,86,0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(249,168,25,0.12) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -165,15 +165,15 @@ export default function SkylineAnimation() {
         position: 'absolute', top: 'clamp(40px,6vw,72px)', left: 0, right: 0,
         textAlign: 'center', zIndex: 5, pointerEvents: 'none',
       }}>
-        <div className="section-label" style={{ justifyContent: 'center', marginBottom: 20, color: 'rgba(245,240,232,0.85)' }}>
+        <div className="section-label" style={{ justifyContent: 'center', marginBottom: 20, color: 'rgba(247,248,250,0.85)' }}>
           Noida &amp; Delhi NCR
         </div>
         <h2 style={{
           fontFamily: 'Source Serif 4, serif',
           fontSize: 'clamp(30px, 4vw, 52px)',
-          fontWeight: 400, color: '#F5F0E8',
+          fontWeight: 400, color: '#F7F8FA',
         }}>
-          A Skyline We're <span style={{ fontStyle: 'italic', color: '#C47856' }}>Helping Build</span>
+          A Skyline We're <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Helping Build</span>
         </h2>
       </div>
     </div>

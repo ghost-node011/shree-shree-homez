@@ -9,9 +9,11 @@ import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
 import ServicesPage from './pages/Services'
+import TeamPage from './pages/Team'
 import GalleryPage from './pages/Gallery'
-import ReviewsPage from './pages/Reviews'
 import ContactPage from './pages/Contact'
+import PrivacyPolicyPage from './pages/PrivacyPolicy'
+import AccessibilityStatementPage from './pages/AccessibilityStatement'
 
 function App() {
   const [loaded, setLoaded] = useState(false)
@@ -29,9 +31,11 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/team" element={<TeamPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/accessibility-statement" element={<AccessibilityStatementPage />} />
           </Routes>
         </main>
         <Footer />

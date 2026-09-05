@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Award, ShieldCheck } from 'lucide-react'
+import SkylineAnimation from './SkylineAnimation'
 
 const COMPLIANCE = [
   { title: 'RERA Approved', sub: 'Registered Real Estate Entity' },
@@ -48,26 +49,27 @@ const BRANDS = ['SOBHA Limited', 'Civitech Developers', 'Prestige Group', 'Godre
 
 export default function Achievements() {
   return (
+    <>
     <div style={{
-      background: '#14100D',
+      background: '#002B42',
       padding: '150px clamp(24px,6vw,120px) 140px',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Background glow + concentric rings */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'radial-gradient(circle at 15% 10%, rgba(196,120,86,0.09) 0%, transparent 55%), radial-gradient(circle at 90% 85%, rgba(196,120,86,0.06) 0%, transparent 50%)',
+        backgroundImage: 'radial-gradient(circle at 15% 10%, rgba(249,168,25,0.09) 0%, transparent 55%), radial-gradient(circle at 90% 85%, rgba(249,168,25,0.06) 0%, transparent 50%)',
       }} />
       <div style={{
         position: 'absolute', top: '8%', right: '-10%',
         width: 560, height: 560, borderRadius: '50%',
-        border: '1px solid rgba(196,120,86,0.08)',
+        border: '1px solid rgba(249,168,25,0.08)',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', top: '8%', right: '-10%',
         width: 720, height: 720, borderRadius: '50%',
-        border: '1px solid rgba(196,120,86,0.05)',
+        border: '1px solid rgba(249,168,25,0.05)',
         transform: 'translate(80px, 80px)',
         pointerEvents: 'none',
       }} />
@@ -81,7 +83,7 @@ export default function Achievements() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="section-label"
-            style={{ justifyContent: 'center', marginBottom: 24, color: '#E2AB89' }}
+            style={{ justifyContent: 'center', marginBottom: 24, color: '#FFC670' }}
           >
             Achievements & Recognition
           </motion.div>
@@ -93,12 +95,12 @@ export default function Achievements() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontSize: 'clamp(36px, 4vw, 62px)',
-              fontWeight: 400, color: '#F5EEE4',
+              fontWeight: 400, color: '#F7F8FA',
               marginBottom: 20,
             }}
           >
             Recognized by India's<br />
-            <span style={{ fontStyle: 'italic', color: '#C47856' }}>Premier Developers</span>
+            <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Premier Developers</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -108,7 +110,7 @@ export default function Achievements() {
             style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: 16, fontWeight: 300,
-              color: 'rgba(245,238,228,0.55)',
+              color: 'rgba(247,248,250,0.55)',
               maxWidth: 560, margin: '0 auto',
               lineHeight: 1.7,
             }}
@@ -121,8 +123,8 @@ export default function Achievements() {
         {/* Partner brand marquee */}
         <div style={{
           overflow: 'hidden',
-          borderTop: '1px solid rgba(196,120,86,0.15)',
-          borderBottom: '1px solid rgba(196,120,86,0.15)',
+          borderTop: '1px solid rgba(249,168,25,0.15)',
+          borderBottom: '1px solid rgba(249,168,25,0.15)',
           padding: '22px 0',
           marginBottom: 72,
           maskImage: 'linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)',
@@ -134,12 +136,12 @@ export default function Achievements() {
                 fontSize: 13, fontWeight: 500,
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'rgba(245,238,228,0.4)',
+                color: 'rgba(247,248,250,0.4)',
                 display: 'flex', alignItems: 'center', gap: 40,
                 whiteSpace: 'nowrap',
               }}>
                 {b}
-                <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#C47856', opacity: 0.6 }} />
+                <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#F9A819', opacity: 0.6 }} />
               </span>
             ))}
           </div>
@@ -162,23 +164,23 @@ export default function Achievements() {
               data-cursor
               style={{
                 background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(196,120,86,0.16)',
+                border: '1px solid rgba(249,168,25,0.16)',
                 padding: '40px 36px',
                 position: 'relative',
                 transition: 'all 0.4s ease',
               }}
               whileHover={{
                 y: -8,
-                backgroundColor: 'rgba(196,120,86,0.06)',
-                borderColor: 'rgba(196,120,86,0.5)',
+                backgroundColor: 'rgba(249,168,25,0.06)',
+                borderColor: 'rgba(249,168,25,0.5)',
                 boxShadow: '0 24px 48px rgba(0,0,0,0.35)',
               }}
             >
               {/* Corner accents */}
               {[{ top: 0, left: 0 }, { top: 0, right: 0 }].map((pos, ci) => (
                 <div key={ci} style={{ position: 'absolute', ...pos, width: 22, height: 22, opacity: 0.5 }}>
-                  <div style={{ position: 'absolute', top: 0, [pos.left !== undefined ? 'left' : 'right']: 0, width: '100%', height: 1, background: '#C47856' }} />
-                  <div style={{ position: 'absolute', top: 0, [pos.left !== undefined ? 'left' : 'right']: 0, height: '100%', width: 1, background: '#C47856' }} />
+                  <div style={{ position: 'absolute', top: 0, [pos.left !== undefined ? 'left' : 'right']: 0, width: '100%', height: 1, background: '#F9A819' }} />
+                  <div style={{ position: 'absolute', top: 0, [pos.left !== undefined ? 'left' : 'right']: 0, height: '100%', width: 1, background: '#F9A819' }} />
                 </div>
               ))}
 
@@ -189,26 +191,26 @@ export default function Achievements() {
                 style={{
                   width: 52, height: 52,
                   borderRadius: '50%',
-                  background: 'rgba(196,120,86,0.1)',
-                  border: '1px solid rgba(196,120,86,0.4)',
+                  background: 'rgba(249,168,25,0.1)',
+                  border: '1px solid rgba(249,168,25,0.4)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 24,
                 }}
               >
-                <Award size={22} color="#E2AB89" strokeWidth={1.6} />
+                <Award size={22} color="#FFC670" strokeWidth={1.6} />
               </motion.div>
 
               {/* Category pill */}
               <div style={{
                 display: 'inline-block',
-                background: 'rgba(196,120,86,0.1)',
-                border: '1px solid rgba(196,120,86,0.28)',
+                background: 'rgba(249,168,25,0.1)',
+                border: '1px solid rgba(249,168,25,0.28)',
                 padding: '4px 12px',
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 9, fontWeight: 600,
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                color: '#E2AB89',
+                color: '#FFC670',
                 marginBottom: 18,
               }}>
                 {a.category}
@@ -217,7 +219,7 @@ export default function Achievements() {
               <h3 style={{
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 24, fontWeight: 500,
-                color: '#F5EEE4', marginBottom: 8,
+                color: '#F7F8FA', marginBottom: 8,
                 lineHeight: 1.2,
               }}>
                 {a.award}
@@ -228,7 +230,7 @@ export default function Achievements() {
                 fontSize: 11, fontWeight: 600,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: 'rgba(196,120,86,0.85)',
+                color: 'rgba(249,168,25,0.85)',
                 marginBottom: 14,
               }}>
                 {a.brand} · {a.year}
@@ -238,7 +240,7 @@ export default function Achievements() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 13.5, fontWeight: 300,
                 lineHeight: 1.7,
-                color: 'rgba(245,238,228,0.5)',
+                color: 'rgba(247,248,250,0.5)',
               }}>
                 {a.desc}
               </p>
@@ -252,7 +254,7 @@ export default function Achievements() {
                 style={{
                   position: 'absolute', bottom: 0, left: 0,
                   height: 2, width: '100%',
-                  background: 'linear-gradient(90deg, #C47856, transparent)',
+                  background: 'linear-gradient(90deg, #F9A819, transparent)',
                   transformOrigin: 'left',
                 }}
               />
@@ -267,7 +269,7 @@ export default function Achievements() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="section-label"
-          style={{ justifyContent: 'center', marginBottom: 28, color: '#E2AB89' }}
+          style={{ justifyContent: 'center', marginBottom: 28, color: '#FFC670' }}
         >
           Regulatory Compliance
         </motion.div>
@@ -285,11 +287,11 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              whileHover={{ y: -4, borderColor: 'rgba(196,120,86,0.6)' }}
+              whileHover={{ y: -4, borderColor: 'rgba(249,168,25,0.6)' }}
               style={{
                 position: 'relative',
                 background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(196,120,86,0.3)',
+                border: '1px solid rgba(249,168,25,0.3)',
                 padding: '36px 24px 28px',
                 textAlign: 'center',
                 transition: 'border-color 0.3s ease',
@@ -298,7 +300,7 @@ export default function Achievements() {
               {/* Inner certificate hairline */}
               <div style={{
                 position: 'absolute', inset: 8,
-                border: '1px solid rgba(196,120,86,0.18)',
+                border: '1px solid rgba(249,168,25,0.18)',
                 pointerEvents: 'none',
               }} />
 
@@ -310,19 +312,19 @@ export default function Achievements() {
                   transform: 'translateX(-50%)',
                   display: 'flex', gap: 4, zIndex: 0,
                 }}>
-                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #A85F3F' }} />
-                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #C47856' }} />
+                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #C98209' }} />
+                  <div style={{ width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderTop: '34px solid #F9A819' }} />
                 </div>
 
                 <div style={{
                   position: 'absolute', top: 0, left: 0,
                   width: 68, height: 68, borderRadius: '50%',
-                  background: 'radial-gradient(circle at 35% 30%, rgba(196,120,86,0.3) 0%, transparent 70%), #1C1512',
-                  border: '2px solid #C47856',
+                  background: 'radial-gradient(circle at 35% 30%, rgba(249,168,25,0.3) 0%, transparent 70%), #013A5C',
+                  border: '2px solid #F9A819',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   zIndex: 1,
                 }}>
-                  <ShieldCheck size={26} color="#E2AB89" strokeWidth={1.5} />
+                  <ShieldCheck size={26} color="#FFC670" strokeWidth={1.5} />
                 </div>
               </div>
 
@@ -330,7 +332,7 @@ export default function Achievements() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 9, fontWeight: 600,
                 letterSpacing: '0.18em', textTransform: 'uppercase',
-                color: 'rgba(196,120,86,0.75)', marginBottom: 10,
+                color: 'rgba(249,168,25,0.75)', marginBottom: 10,
                 position: 'relative',
               }}>
                 Government Certified
@@ -339,16 +341,16 @@ export default function Achievements() {
                 fontFamily: 'Source Serif 4, serif',
                 fontSize: 21, fontWeight: 600,
                 letterSpacing: '0.03em',
-                color: '#F5EEE4', marginBottom: 12,
+                color: '#F7F8FA', marginBottom: 12,
                 position: 'relative',
               }}>
                 {c.title}
               </h3>
-              <div style={{ width: 32, height: 1, background: 'rgba(196,120,86,0.5)', margin: '0 auto 12px', position: 'relative' }} />
+              <div style={{ width: 32, height: 1, background: 'rgba(249,168,25,0.5)', margin: '0 auto 12px', position: 'relative' }} />
               <p style={{
                 fontFamily: 'Inter, sans-serif',
                 fontSize: 12, fontWeight: 400,
-                color: 'rgba(245,238,228,0.5)',
+                color: 'rgba(247,248,250,0.5)',
                 position: 'relative',
               }}>
                 {c.sub}
@@ -358,5 +360,7 @@ export default function Achievements() {
         </div>
       </div>
     </div>
+    <SkylineAnimation />
+    </>
   )
 }

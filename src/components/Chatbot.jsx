@@ -156,7 +156,7 @@ function TypingDots() {
         <motion.div key={i}
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
-          style={{ width: 6, height: 6, borderRadius: '50%', background: '#C47856', opacity: 0.7 }}
+          style={{ width: 6, height: 6, borderRadius: '50%', background: '#F9A819', opacity: 0.7 }}
         />
       ))}
     </div>
@@ -185,7 +185,7 @@ function ContactButtons({ data }) {
       icon: '📞',
       label: 'Call Now',
       sub: PHONE.replace('+91', '+91 '),
-      color: '#C47856',
+      color: '#F9A819',
       href: `tel:${PHONE}`,
     },
     {
@@ -230,11 +230,11 @@ function ContactButtons({ data }) {
           <div>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: 13, fontWeight: 600,
-              color: '#F5F0E8', letterSpacing: '0.02em',
+              color: '#F7F8FA', letterSpacing: '0.02em',
             }}>{a.label}</p>
             <p style={{
               fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 300,
-              color: 'rgba(245,240,232,0.45)', marginTop: 2,
+              color: 'rgba(247,248,250,0.45)', marginTop: 2,
             }}>{a.sub}</p>
           </div>
           <div style={{ marginLeft: 'auto', color: a.color, opacity: 0.6, fontSize: 16 }}>→</div>
@@ -328,7 +328,7 @@ export default function Chatbot() {
           flex-direction: column;
           border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(196,120,86,0.2);
+          box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(249,168,25,0.2);
         }
         .chat-trigger {
           position: fixed;
@@ -337,27 +337,27 @@ export default function Chatbot() {
           z-index: 9999;
           width: 60px; height: 60px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #C47856, #E2AB89);
+          background: linear-gradient(135deg, #F9A819, #FFC670);
           border: none;
           cursor: pointer;
           display: flex; align-items: center; justify-content: center;
           font-size: 26px;
-          box-shadow: 0 8px 32px rgba(196,120,86,0.45);
+          box-shadow: 0 8px 32px rgba(249,168,25,0.45);
         }
         .chat-msgs { overflow-y: auto; flex: 1; padding: 16px; scroll-behavior: smooth; }
         .chat-msgs::-webkit-scrollbar { width: 3px; }
-        .chat-msgs::-webkit-scrollbar-thumb { background: rgba(196,120,86,0.3); border-radius: 2px; }
+        .chat-msgs::-webkit-scrollbar-thumb { background: rgba(249,168,25,0.3); border-radius: 2px; }
         .bot-bubble {
           max-width: 85%;
           background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(196,120,86,0.15);
+          border: 1px solid rgba(249,168,25,0.15);
           border-radius: 4px 16px 16px 16px;
           padding: 12px 15px;
           margin-bottom: 8px;
         }
         .user-bubble {
           max-width: 80%;
-          background: linear-gradient(135deg, #C47856, #B8952E);
+          background: linear-gradient(135deg, #F9A819, #C98209);
           border-radius: 16px 4px 16px 16px;
           padding: 11px 15px;
           margin-left: auto;
@@ -366,21 +366,21 @@ export default function Chatbot() {
         .opt-btn {
           width: 100%;
           text-align: left;
-          background: rgba(196,120,86,0.07);
-          border: 1px solid rgba(196,120,86,0.25);
+          background: rgba(249,168,25,0.07);
+          border: 1px solid rgba(249,168,25,0.25);
           border-radius: 10px;
           padding: 11px 14px;
           font-family: Inter, sans-serif;
           font-size: 13px; font-weight: 400;
-          color: rgba(245,240,232,0.85);
+          color: rgba(247,248,250,0.85);
           cursor: pointer;
           transition: all 0.25s;
           margin-bottom: 8px;
         }
         .opt-btn:hover {
-          background: rgba(196,120,86,0.18);
-          border-color: rgba(196,120,86,0.6);
-          color: #F5F0E8;
+          background: rgba(249,168,25,0.18);
+          border-color: rgba(249,168,25,0.6);
+          color: #F7F8FA;
         }
         @media (max-width: 480px) {
           .chat-window {
@@ -416,11 +416,11 @@ export default function Chatbot() {
           initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
           style={{
             position: 'fixed', bottom: 72, right: 20, zIndex: 10000,
-            background: '#C47856', color: '#060D18',
+            background: '#F9A819', color: '#060D18',
             fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 700,
             padding: '5px 12px', borderRadius: 20,
             whiteSpace: 'nowrap',
-            boxShadow: '0 4px 16px rgba(196,120,86,0.4)',
+            boxShadow: '0 4px 16px rgba(249,168,25,0.4)',
           }}
         >
           Hi! How can we help? 👋
@@ -461,33 +461,33 @@ export default function Chatbot() {
             {/* Header */}
             <div style={{
               background: 'linear-gradient(135deg, #0A1628, #060D18)',
-              borderBottom: '1px solid rgba(196,120,86,0.2)',
+              borderBottom: '1px solid rgba(249,168,25,0.2)',
               padding: '16px 18px',
               display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0,
             }}>
               <div style={{
                 width: 42, height: 42, borderRadius: 12,
-                background: 'rgba(196,120,86,0.15)',
-                border: '1px solid rgba(196,120,86,0.35)',
+                background: 'rgba(249,168,25,0.15)',
+                border: '1px solid rgba(249,168,25,0.35)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 20, flexShrink: 0,
               }}>🏠</div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: 16, fontWeight: 500, color: '#F5F0E8' }}>
+                <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: 16, fontWeight: 500, color: '#F7F8FA' }}>
                   Sri Sri Homz
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>
                   <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4ADE80' }} />
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: 'rgba(245,240,232,0.45)' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: 'rgba(247,248,250,0.45)' }}>
                     Expert Available Now
                   </p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                 <button onClick={restart}
-                  style={{ background: 'none', border: 'none', color: 'rgba(245,240,232,0.3)', fontSize: 11, fontFamily: 'Inter, sans-serif', letterSpacing: '0.08em', cursor: 'pointer', padding: '4px 8px' }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#C47856'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.3)'}
+                  style={{ background: 'none', border: 'none', color: 'rgba(247,248,250,0.3)', fontSize: 11, fontFamily: 'Inter, sans-serif', letterSpacing: '0.08em', cursor: 'pointer', padding: '4px 8px' }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#F9A819'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(247,248,250,0.3)'}
                 >
                   Restart
                 </button>
@@ -497,13 +497,13 @@ export default function Chatbot() {
                     width: 32, height: 32, borderRadius: '50%',
                     background: 'rgba(255,255,255,0.06)',
                     border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'rgba(245,240,232,0.5)',
+                    color: 'rgba(247,248,250,0.5)',
                     fontSize: 15, cursor: 'pointer',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transition: 'all 0.2s', flexShrink: 0,
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(196,120,86,0.15)'; e.currentTarget.style.borderColor = 'rgba(196,120,86,0.4)'; e.currentTarget.style.color = '#C47856' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(245,240,232,0.5)' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(249,168,25,0.15)'; e.currentTarget.style.borderColor = 'rgba(249,168,25,0.4)'; e.currentTarget.style.color = '#F9A819' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(247,248,250,0.5)' }}
                   aria-label="Close chat"
                 >
                   ✕
@@ -526,7 +526,7 @@ export default function Chatbot() {
                         <div className="bot-bubble">
                           <p style={{
                             fontFamily: 'Inter, sans-serif', fontSize: 13.5, fontWeight: 300,
-                            lineHeight: 1.7, color: 'rgba(245,240,232,0.85)',
+                            lineHeight: 1.7, color: 'rgba(247,248,250,0.85)',
                             whiteSpace: 'pre-line',
                           }}>
                             {msg.text}
@@ -586,13 +586,13 @@ export default function Chatbot() {
             {/* Footer */}
             <div style={{
               background: '#060D18',
-              borderTop: '1px solid rgba(196,120,86,0.1)',
+              borderTop: '1px solid rgba(249,168,25,0.1)',
               padding: '10px 16px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
             }}>
               <p style={{
                 fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 300,
-                color: 'rgba(245,240,232,0.25)', letterSpacing: '0.08em',
+                color: 'rgba(247,248,250,0.25)', letterSpacing: '0.08em',
               }}>
                 Powered by Sri Sri Homz · Built on Truth
               </p>

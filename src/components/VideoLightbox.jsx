@@ -17,7 +17,7 @@ function LightboxModal({ open, onClose, videoId }) {
           onClick={onClose}
           style={{
             position: 'fixed', inset: 0, zIndex: 2000,
-            background: 'rgba(10,7,5,0.94)',
+            background: 'rgba(0,20,32,0.94)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             padding: 'clamp(16px,4vw,48px)',
           }}
@@ -31,7 +31,7 @@ function LightboxModal({ open, onClose, videoId }) {
             style={{
               width: '100%', maxWidth: 1100,
               aspectRatio: '16/9',
-              border: '1px solid rgba(196,120,86,0.25)',
+              border: '1px solid rgba(249,168,25,0.25)',
               position: 'relative', background: '#000',
             }}
           >
@@ -48,7 +48,7 @@ function LightboxModal({ open, onClose, videoId }) {
               style={{
                 position: 'absolute', top: -44, right: 0,
                 background: 'none', border: 'none',
-                color: 'rgba(245,238,228,0.8)',
+                color: 'rgba(247,248,250,0.8)',
                 fontFamily: 'Inter, sans-serif', fontSize: 11,
                 letterSpacing: '0.2em', textTransform: 'uppercase',
                 padding: 8,
@@ -89,7 +89,7 @@ export default function VideoThumb({
         style={{
           position: 'relative', overflow: 'hidden',
           aspectRatio, cursor: 'pointer',
-          border: '1px solid rgba(196,120,86,0.2)',
+          border: '1px solid rgba(249,168,25,0.2)',
         }}
       >
         <img
@@ -99,7 +99,7 @@ export default function VideoThumb({
         />
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(180deg, rgba(20,16,13,0.35) 0%, rgba(20,16,13,0.55) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,43,66,0.35) 0%, rgba(0,43,66,0.55) 100%)',
         }} />
         <div style={{
           position: 'absolute', top: '50%', left: '50%',
@@ -111,20 +111,20 @@ export default function VideoThumb({
             transition={{ duration: 0.3 }}
             style={{
               width: playSize, height: playSize, borderRadius: '50%',
-              border: '1px solid rgba(196,120,86,0.6)',
-              background: 'rgba(20,16,13,0.5)',
+              border: '1px solid rgba(249,168,25,0.6)',
+              background: 'rgba(0,43,66,0.5)',
               backdropFilter: 'blur(6px)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}
           >
-            <Play size={playSize * 0.32} color="#C47856" fill="#C47856" strokeWidth={0} style={{ marginLeft: 3 }} />
+            <Play size={playSize * 0.32} color="#F9A819" fill="#F9A819" strokeWidth={0} style={{ marginLeft: 3 }} />
           </motion.div>
           {label && (
             <span style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: 11, fontWeight: 600,
               letterSpacing: '0.2em', textTransform: 'uppercase',
-              color: 'rgba(245,238,228,0.85)',
+              color: 'rgba(247,248,250,0.85)',
             }}>
               {label}
             </span>

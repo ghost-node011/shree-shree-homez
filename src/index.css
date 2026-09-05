@@ -3,30 +3,30 @@
 
 /* ═══════════════════════════════════════
    LUXURY DESIGN TOKENS — SRI SRI HOMZ
-   (warm cream / ink palette, terracotta-gold accent)
+   (logo palette: deep navy + gold accent, on off-white)
 ═══════════════════════════════════════ */
 :root {
-  --gold:        #C47856;
-  --gold-light:  #E2AB89;
-  --gold-dark:   #A85F3F;
-  --gold-pale:   rgba(196, 120, 86, 0.07);
-  --gold-border: rgba(196, 120, 86, 0.22);
-  --gold-glow:   rgba(196, 120, 86, 0.35);
-  --ink:         #14100D;
-  --ink-soft:    #1C1512;
-  --ink-mid:     #241D18;
-  --navy:        #1C1512;
-  --navy-deep:   #14100D;
-  --navy-mid:    #241D18;
-  --navy-light:  #2E2620;
+  --gold:        #F9A819;
+  --gold-light:  #FFC670;
+  --gold-dark:   #C98209;
+  --gold-pale:   rgba(249, 168, 25, 0.07);
+  --gold-border: rgba(249, 168, 25, 0.22);
+  --gold-glow:   rgba(249, 168, 25, 0.35);
+  --ink:         #002B42;
+  --ink-soft:    #013A5C;
+  --ink-mid:     #01476E;
+  --navy:        #013A5C;
+  --navy-deep:   #002B42;
+  --navy-mid:    #01476E;
+  --navy-light:  #045680;
   --white:       #FFFFFF;
-  --cream:       #F5EEE4;
-  --cream-soft:  #EDE1D1;
-  --taupe:       #8C7F72;
-  --text-body:   rgba(245, 238, 228, 0.75);
-  --text-muted:  rgba(245, 238, 228, 0.45);
-  --text-body-light: rgba(20, 16, 13, 0.72);
-  --text-muted-light: #8C7F72;
+  --cream:       #F7F8FA;
+  --cream-soft:  #E7ECF1;
+  --taupe:       #5D7A93;
+  --text-body:   rgba(247, 248, 250, 0.75);
+  --text-muted:  rgba(247, 248, 250, 0.45);
+  --text-body-light: rgba(0, 43, 66, 0.72);
+  --text-muted-light: #5D7A93;
 }
 
 /* ═══════════════════════════════════════
@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
 ═══════════════════════════════════════ */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: rgba(196,120,86,0.4); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(249,168,25,0.4); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
 /* ═══════════════════════════════════════
@@ -166,13 +166,34 @@ h1, h2, h3, h4 {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   padding: 17px 44px;
-  border: 1px solid rgba(196,120,86,0.5);
+  border: 1px solid rgba(249,168,25,0.5);
   text-decoration: none;
   transition: all 0.4s ease;
 }
 .btn-outline-gold:hover {
-  background: rgba(196,120,86,0.08);
+  background: rgba(249,168,25,0.08);
   border-color: var(--gold);
+}
+
+.btn-outline-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 17px 44px;
+  border: 1px solid rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.btn-outline-hero:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
 }
 
 /* ═══════════════════════════════════════
@@ -189,13 +210,13 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(196,120,86,0.05) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(249,168,25,0.05) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 .card-luxury:hover {
-  background: rgba(196,120,86,0.04);
-  border-color: rgba(196,120,86,0.5);
+  background: rgba(249,168,25,0.04);
+  border-color: rgba(249,168,25,0.5);
   transform: translateY(-4px);
 }
 .card-luxury:hover::before { opacity: 1; }
@@ -220,7 +241,7 @@ h1, h2, h3, h4 {
    SWIPER TESTIMONIALS
 ═══════════════════════════════════════ */
 .swiper-pagination-bullet {
-  background: rgba(196,120,86,0.3) !important;
+  background: rgba(249,168,25,0.3) !important;
   width: 8px !important;
   height: 2px !important;
   border-radius: 1px !important;
@@ -253,7 +274,7 @@ h1, h2, h3, h4 {
 }
 .testimonial-slider .swiper-button-prev,
 .testimonial-slider .swiper-button-next {
-  color: rgba(245,238,228,0.8);
+  color: rgba(247,248,250,0.8);
   --swiper-navigation-size: 22px;
   top: 50%;
   transition: color 0.3s ease, opacity 0.3s ease;
@@ -340,7 +361,7 @@ h1, h2, h3, h4 {
 .hr-gold {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(196,120,86,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(249,168,25,0.3), transparent);
   border: none;
   margin: 0;
 }
@@ -376,7 +397,7 @@ h1, h2, h3, h4 {
 
   /* About: banner goes taller/narrower, caption stacks instead of sitting side by side */
   .about-trust-row      { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 28px 0 !important; }
-  .about-trust-row > div{ padding: 0 !important; border-left: none !important; border-bottom: 1px solid rgba(196,120,86,0.12); padding-bottom: 20px !important; }
+  .about-trust-row > div{ padding: 0 !important; border-left: none !important; border-bottom: 1px solid rgba(249,168,25,0.12); padding-bottom: 20px !important; }
   .about-trust-row > div:nth-last-child(-n+2) { border-bottom: none !important; padding-bottom: 0 !important; }
 
   /* Founder grid gap */
