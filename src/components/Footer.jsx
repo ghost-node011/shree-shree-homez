@@ -12,6 +12,7 @@ const NAV_LINKS = [
 
 const LEGAL_LINKS = [
   { label: 'Privacy Policy',          to: '/privacy-policy' },
+  { label: 'Terms & Conditions',      to: '/terms-and-conditions' },
   { label: 'Accessibility Statement', to: '/accessibility-statement' },
 ]
 

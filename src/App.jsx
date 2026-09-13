@@ -14,6 +14,7 @@ import GalleryPage from './pages/Gallery'
 import ContactPage from './pages/Contact'
 import PrivacyPolicyPage from './pages/PrivacyPolicy'
 import AccessibilityStatementPage from './pages/AccessibilityStatement'
+import TermsPage from './pages/Terms'
 
 function App() {
   const [loaded, setLoaded] = useState(false)
@@ -36,6 +37,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/accessibility-statement" element={<AccessibilityStatementPage />} />
+            <Route path="/terms-and-conditions" element={<TermsPage />} />
           </Routes>
         </main>
         <Footer />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com'
 import { Clock, Phone, Mail, MapPin } from 'lucide-react'
 
@@ -16,11 +17,14 @@ const REQUIREMENTS = [
 ]
 
 export default function GetInTouchContact() {
-  const [form, setForm]       = useState({ name: '', email: '', phone: '', requirement: '' })
+  const [form, setForm]       = useState({ name: '', email: '', phone: '', requirement: '', consent: false })
   const [status, setStatus]   = useState('')
   const [loading, setLoading] = useState(false)
 
-  const onChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
+  const onChange = e => {
+    const { name, type, checked, value } = e.target
+    setForm(p => ({ ...p, [name]: type === 'checkbox' ? checked : value }))
+  }
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -33,7 +37,7 @@ export default function GetInTouchContact() {
         'YOUR_PUBLIC_KEY',
       )
       setStatus('success')
-      setForm({ name: '', email: '', phone: '', requirement: '' })
+      setForm({ name: '', email: '', phone: '', requirement: '', consent: false })
     } catch {
       setStatus('error')
     }
@@ -195,9 +199,26 @@ export default function GetInTouchContact() {
               </select>
             </div>
 
+            <label style={{
+              display: 'flex', alignItems: 'flex-start', gap: 10,
+              cursor: 'pointer',
+            }}>
+              <input
+                type="checkbox" name="consent" checked={form.consent} onChange={onChange} required
+                style={{ marginTop: 3, width: 15, height: 15, accentColor: '#F9A819', flexShrink: 0, cursor: 'pointer' }}
+              />
+              <span style={{
+                fontFamily: 'Inter, sans-serif', fontSize: 12.5, fontWeight: 400,
+                lineHeight: 1.6, color: 'rgba(0,43,66,0.6)',
+              }}>
+                I agree to the <Link to="/privacy-policy" data-cursor style={{ color: '#002B42', textDecoration: 'underline' }}>Privacy Policy</Link> and{' '}
+                <Link to="/terms-and-conditions" data-cursor style={{ color: '#002B42', textDecoration: 'underline' }}>Terms & Conditions</Link>, and consent to being contacted about my enquiry. *
+              </span>
+            </label>
+
             <button type="submit" data-cursor disabled={loading}
               className="btn-gold"
-              style={{ alignSelf: 'flex-start', opacity: loading ? 0.7 : 1, marginTop: 8 }}
+              style={{ alignSelf: 'flex-start', opacity: loading ? 0.7 : 1, marginTop: 0 }}
             >
               <span>{loading ? 'Sending...' : 'Submit'}</span>
             </button>

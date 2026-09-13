@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import emailjs from 'emailjs-com'
 import { Phone, MessageCircle, Mail, MapPin, Clock } from 'lucide-react'
 
@@ -11,11 +12,14 @@ const SERVICES = [
 
 export default function Contact() {
   const formRef = useRef(null)
-  const [form, setForm]       = useState({ name: '', phone: '', email: '', service: '', message: '' })
+  const [form, setForm]       = useState({ name: '', phone: '', email: '', service: '', message: '', consent: false })
   const [status, setStatus]   = useState('')
   const [loading, setLoading] = useState(false)
 
-  const onChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
+  const onChange = e => {
+    const { name, type, checked, value } = e.target
+    setForm(p => ({ ...p, [name]: type === 'checkbox' ? checked : value }))
+  }
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -28,7 +32,7 @@ export default function Contact() {
         'YOUR_PUBLIC_KEY',
       )
       setStatus('success')
-      setForm({ name: '', phone: '', email: '', service: '', message: '' })
+      setForm({ name: '', phone: '', email: '', service: '', message: '', consent: false })
     } catch {
       setStatus('error')
     }
@@ -260,6 +264,23 @@ export default function Contact() {
                 onFocus={e => e.target.style.borderColor = '#F9A819'}
                 onBlur={e => e.target.style.borderColor = 'rgba(249,168,25,0.2)'}
               />
+
+              <label style={{
+                display: 'flex', alignItems: 'flex-start', gap: 10,
+                cursor: 'pointer',
+              }}>
+                <input
+                  type="checkbox" name="consent" checked={form.consent} onChange={onChange} required
+                  style={{ marginTop: 3, width: 15, height: 15, accentColor: '#F9A819', flexShrink: 0, cursor: 'pointer' }}
+                />
+                <span style={{
+                  fontFamily: 'Inter, sans-serif', fontSize: 12.5, fontWeight: 300,
+                  lineHeight: 1.6, color: 'rgba(247,248,250,0.65)',
+                }}>
+                  I agree to the <Link to="/privacy-policy" data-cursor style={{ color: '#F9A819', textDecoration: 'underline' }}>Privacy Policy</Link> and{' '}
+                  <Link to="/terms-and-conditions" data-cursor style={{ color: '#F9A819', textDecoration: 'underline' }}>Terms & Conditions</Link>, and consent to being contacted about my enquiry. *
+                </span>
+              </label>
 
               <button type="submit" data-cursor disabled={loading}
                 className="btn-gold"
