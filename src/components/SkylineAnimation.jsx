@@ -169,9 +169,11 @@ export default function SkylineAnimation() {
           Noida &amp; Delhi NCR
         </div>
         <h2 style={{
-          fontFamily: 'Source Serif 4, serif',
-          fontSize: 'clamp(30px, 4vw, 52px)',
-          fontWeight: 400, color: '#F7F8FA',
+          fontFamily: 'var(--font-heading)',
+          fontSize: 'var(--heading-section)',
+          fontWeight: 700,
+          letterSpacing: 'var(--spacing-heading-section)',
+          color: '#F7F8FA',
         }}>
           A Skyline We're <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Helping Build</span>
         </h2>

@@ -93,9 +93,11 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 'clamp(34px, 4vw, 56px)',
-                fontWeight: 400, lineHeight: 1.1,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-section)',
+                fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-section)',
+                lineHeight: 1.15,
                 color: '#002B42', marginBottom: 12,
               }}
             >
@@ -122,10 +124,10 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.25 }}
               style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 15, fontWeight: 300,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-body-size)', fontWeight: 400,
                 lineHeight: 1.8,
-                color: 'rgba(0,43,66,0.65)',
+                color: 'rgba(0,43,66,0.75)',
                 marginBottom: 52,
               }}
             >
@@ -212,8 +214,9 @@ export default function Contact() {
               }}
             >
               <p style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 24, fontWeight: 400,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#F7F8FA', marginBottom: 8,
               }}>
                 Book a Free Consultation

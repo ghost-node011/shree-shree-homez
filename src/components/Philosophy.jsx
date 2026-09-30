@@ -84,13 +84,14 @@ export default function Philosophy() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 1.1, ease: [0.22,1,0.36,1] }}
           style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 'clamp(28px, 3.8vw, 58px)',
-            fontWeight: 300,
-            fontStyle: 'italic',
-            lineHeight: 1.42,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(26px, 3.5vw, 44px)',
+            fontWeight: 700,
+            letterSpacing: 'var(--spacing-heading-section)',
+            fontStyle: 'normal',
+            lineHeight: 1.45,
             color: '#F7F8FA',
-            maxWidth: 940, margin: '0 auto',
+            maxWidth: 960, margin: '0 auto',
             position: 'relative',
           }}
         >

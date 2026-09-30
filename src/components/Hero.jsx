@@ -39,10 +39,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.22,1,0.36,1] }}
           style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(40px, 6vw, 80px)',
-            fontWeight: 700, lineHeight: 1,
-            letterSpacing: '0.01em',
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-hero)',
+            fontWeight: 700, lineHeight: 1.1,
+            letterSpacing: 'var(--spacing-heading-hero)',
             textTransform: 'uppercase',
             color: '#FFFFFF', margin: 0,
           }}
@@ -54,12 +54,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.45, ease: [0.22,1,0.36,1] }}
+          className="hero-tagline"
           style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(16px, 1.6vw, 22px)',
-            fontWeight: 400, letterSpacing: '0.12em',
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--tagline-hero)',
+            fontWeight: 400,
+            letterSpacing: 'var(--spacing-tagline)',
             color: 'rgba(255,255,255,0.9)',
-            marginTop: 14, marginBottom: 36,
+            marginTop: 16, marginBottom: 36,
           }}
         >
           Divine Home, Divine People

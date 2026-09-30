@@ -47,9 +47,10 @@ export default function PageHero({ eyebrow, title, accent, subtitle }) {
           viewport={{ once: true }}
           transition={{ duration: 0.85, delay: 0.1 }}
           style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 'clamp(34px, 4.5vw, 60px)',
-            fontWeight: 400, lineHeight: 1.1,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-hero)',
+            fontWeight: 700, lineHeight: 1.15,
+            letterSpacing: 'var(--spacing-heading-hero)',
             color: '#FFFFFF', marginBottom: subtitle ? 20 : 0,
           }}
         >
@@ -62,9 +63,11 @@ export default function PageHero({ eyebrow, title, accent, subtitle }) {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 16, fontWeight: 300,
-              color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto',
-              lineHeight: 1.7,
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-body-size)',
+              fontWeight: 400,
+              color: 'rgba(255,255,255,0.75)', maxWidth: 640, margin: '0 auto',
+              lineHeight: 1.75,
             }}
           >
             {subtitle}

@@ -58,9 +58,11 @@ function OurJourney() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(32px, 3.8vw, 52px)',
-              fontWeight: 400, color: '#002B42',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#002B42',
             }}
           >
             From Vision to <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Trusted Name</span>
@@ -109,8 +111,9 @@ function OurJourney() {
                     Step {i + 1}
                   </p>
                   <h3 style={{
-                    fontFamily: 'Source Serif 4, serif',
-                    fontSize: 20, fontWeight: 500,
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'var(--heading-card)', fontWeight: 700,
+                    letterSpacing: 'var(--spacing-heading-card)',
                     color: '#002B42', marginBottom: 10,
                   }}>
                     {j.title}

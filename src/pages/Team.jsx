@@ -64,9 +64,11 @@ export default function Team() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.08 }}
               style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 'clamp(30px, 3.5vw, 46px)',
-                fontWeight: 400, color: '#002B42',
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-section)',
+                fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-section)',
+                color: '#002B42',
               }}
             >
               Teams <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Behind Every Deal</span>
@@ -100,10 +102,10 @@ export default function Team() {
                 }}>
                   <d.Icon size={21} color="#F9A819" strokeWidth={1.6} />
                 </div>
-                <h3 style={{ fontFamily: 'Source Serif 4, serif', fontSize: 21, fontWeight: 500, color: '#002B42', marginBottom: 12 }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--heading-card)', fontWeight: 700, letterSpacing: 'var(--spacing-heading-card)', color: '#002B42', marginBottom: 12 }}>
                   {d.title}
                 </h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300, lineHeight: 1.75, color: '#5D7A93' }}>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, fontWeight: 400, lineHeight: 1.75, color: '#5D7A93' }}>
                   {d.desc}
                 </p>
               </motion.div>

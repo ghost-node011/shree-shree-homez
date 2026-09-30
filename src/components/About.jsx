@@ -31,9 +31,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(30px, 3.5vw, 44px)',
-              fontWeight: 500, color: '#002B42', marginBottom: 24,
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#002B42', marginBottom: 24,
             }}
           >
             About Sri Sri Homz
@@ -51,8 +53,12 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 + i * 0.08 }}
               style={{
-                fontFamily: 'Inter, sans-serif', fontSize: 15.5, fontWeight: 300,
-                lineHeight: 1.85, color: 'rgba(0,43,66,0.68)', marginBottom: 18,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-body-size)',
+                fontWeight: 400,
+                lineHeight: 1.75,
+                color: 'rgba(0,43,66,0.72)',
+                marginBottom: 18,
               }}
             >
               {para}

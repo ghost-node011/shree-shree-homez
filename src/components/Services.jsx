@@ -163,10 +163,10 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.08 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(48px, 6vw, 90px)',
-              fontWeight: 400, lineHeight: 0.95,
-              letterSpacing: '-0.01em',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-hero)',
+              fontWeight: 700, lineHeight: 1.05,
+              letterSpacing: 'var(--spacing-heading-section)',
               color: '#F7F8FA', marginBottom: 0,
             }}
           >
@@ -184,10 +184,10 @@ export default function Services() {
           style={{ maxWidth: 340 }}
         >
           <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 15, fontWeight: 300,
-            lineHeight: 1.8,
-            color: 'rgba(247,248,250,0.48)',
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--text-body-size)', fontWeight: 400,
+            lineHeight: 1.75,
+            color: 'rgba(247,248,250,0.65)',
             marginBottom: 24,
           }}>
             From finding the perfect investment to building the right structure — end-to-end solutions under one trusted name.
@@ -232,9 +232,9 @@ export default function Services() {
             data-cursor
             style={{
               background: 'none', border: 'none',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 11, fontWeight: 600,
-              letterSpacing: '0.2em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-nav)', fontWeight: 500,
+              letterSpacing: 'var(--spacing-nav-btn)', textTransform: 'uppercase',
               padding: '14px 0', marginRight: 40,
               color: active === tab.id ? '#F9A819' : 'rgba(247,248,250,0.3)',
               borderBottom: active === tab.id ? '1px solid #F9A819' : '1px solid transparent',
@@ -245,9 +245,9 @@ export default function Services() {
           >
             {tab.label}
             <span style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 13, fontStyle: 'italic',
-              color: active === tab.id ? 'rgba(249,168,25,0.6)' : 'rgba(247,248,250,0.15)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 12, fontWeight: 500,
+              color: active === tab.id ? 'rgba(249,168,25,0.6)' : 'rgba(247,248,250,0.25)',
             }}>
               {tab.count}
             </span>
@@ -295,9 +295,10 @@ export default function Services() {
                   fontSize: 22, marginBottom: 24,
                 }}>↗</div>
                 <p style={{
-                  fontFamily: 'Source Serif 4, serif',
-                  fontSize: 26, fontWeight: 500,
-                  color: '#002B42', lineHeight: 1.2,
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'var(--heading-card)', fontWeight: 700,
+                  letterSpacing: 'var(--spacing-heading-card)',
+                  color: '#002B42', lineHeight: 1.25,
                 }}>Book a Free Consultation</p>
               </div>
             </SwiperSlide>
@@ -351,9 +352,10 @@ export default function Services() {
             ↗
           </div>
           <p style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 26, fontWeight: 500,
-            color: '#002B42', lineHeight: 1.2,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-card)', fontWeight: 700,
+            letterSpacing: 'var(--spacing-heading-card)',
+            color: '#002B42', lineHeight: 1.25,
           }}>
             Book a Free Consultation
           </p>

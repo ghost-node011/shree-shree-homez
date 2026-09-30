@@ -52,9 +52,11 @@ function OurProcess() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(32px, 3.8vw, 52px)',
-              fontWeight: 400, color: '#002B42',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#002B42',
             }}
           >
             Our <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Process</span>
@@ -84,8 +86,8 @@ function OurProcess() {
               >
                 <div style={{
                   position: 'absolute', top: 32, right: 28,
-                  fontFamily: 'Source Serif 4, serif',
-                  fontSize: 48, fontWeight: 600,
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 48, fontWeight: 700,
                   color: 'rgba(249,168,25,0.08)',
                   lineHeight: 1,
                 }}>
@@ -101,8 +103,9 @@ function OurProcess() {
                   <Icon size={20} color="#F9A819" strokeWidth={1.75} />
                 </div>
                 <h3 style={{
-                  fontFamily: 'Source Serif 4, serif',
-                  fontSize: 21, fontWeight: 500,
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'var(--heading-card)', fontWeight: 700,
+                  letterSpacing: 'var(--spacing-heading-card)',
                   color: '#002B42', marginBottom: 10,
                 }}>
                   {p.title}

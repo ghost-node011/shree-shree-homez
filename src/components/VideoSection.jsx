@@ -26,9 +26,11 @@ export default function VideoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(34px, 4vw, 58px)',
-              fontWeight: 400, color: '#F7F8FA',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#F7F8FA',
             }}
           >
             A Closer Look at <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homz</span>

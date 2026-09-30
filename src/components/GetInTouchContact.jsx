@@ -85,23 +85,25 @@ export default function GetInTouchContact() {
           style={{ borderRight: '1px solid rgba(0,43,66,0.12)', paddingRight: 56 }}
         >
           <h2 style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 'clamp(28px, 3vw, 40px)',
-            fontWeight: 500, color: '#002B42', marginBottom: 24,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-section)',
+            fontWeight: 700,
+            letterSpacing: 'var(--spacing-heading-section)',
+            color: '#002B42', marginBottom: 24,
           }}>
             Get in Touch
           </h2>
           <p style={{
-            fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 300,
-            lineHeight: 1.8, color: 'rgba(0,43,66,0.65)', marginBottom: 18,
+            fontFamily: 'var(--font-sans)', fontSize: 'var(--text-body-size)', fontWeight: 400,
+            lineHeight: 1.8, color: 'rgba(0,43,66,0.75)', marginBottom: 18,
           }}>
             At Sri Sri Homz, we are more than just a real estate company. We are
             rooted in honesty, guided by relationships, and committed to serving
             our clients with transparency at every step.
           </p>
           <p style={{
-            fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 300,
-            lineHeight: 1.8, color: 'rgba(0,43,66,0.65)', marginBottom: 32,
+            fontFamily: 'var(--font-sans)', fontSize: 'var(--text-body-size)', fontWeight: 400,
+            lineHeight: 1.8, color: 'rgba(0,43,66,0.75)', marginBottom: 32,
           }}>
             Whether you're searching for a new home, building an independent
             house, or exploring investment opportunities in Delhi NCR, we're
@@ -140,15 +142,17 @@ export default function GetInTouchContact() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 'clamp(28px, 3vw, 40px)',
-            fontWeight: 500, color: '#002B42', marginBottom: 14,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-section)',
+            fontWeight: 700,
+            letterSpacing: 'var(--spacing-heading-section)',
+            color: '#002B42', marginBottom: 14,
           }}>
             Contact Us
           </h2>
           <p style={{
-            fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 300,
-            lineHeight: 1.7, color: 'rgba(0,43,66,0.65)', marginBottom: 32,
+            fontFamily: 'var(--font-sans)', fontSize: 'var(--text-body-size)', fontWeight: 400,
+            lineHeight: 1.7, color: 'rgba(0,43,66,0.75)', marginBottom: 32,
           }}>
             Have a question or ready to get started? Fill out the form below
             and our team will be in touch shortly.

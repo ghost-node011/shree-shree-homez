@@ -73,9 +73,10 @@ export default function WhyUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 'clamp(36px, 4vw, 60px)',
-                fontWeight: 400, lineHeight: 1.1,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-section)',
+                fontWeight: 700, lineHeight: 1.15,
+                letterSpacing: 'var(--spacing-heading-section)',
                 color: '#002B42',
               }}
             >
@@ -89,10 +90,10 @@ export default function WhyUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 16, fontWeight: 300,
-              lineHeight: 1.8,
-              color: 'rgba(0,43,66,0.62)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-body-size)', fontWeight: 400,
+              lineHeight: 1.75,
+              color: 'rgba(0,43,66,0.68)',
               alignSelf: 'end',
             }}
           >
@@ -133,8 +134,8 @@ export default function WhyUs() {
               {/* Ghost numeral */}
               <div style={{
                 position: 'absolute', top: -6, right: 12,
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 110, fontWeight: 600,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 110, fontWeight: 700,
                 color: 'rgba(249,168,25,0.06)',
                 lineHeight: 1, pointerEvents: 'none',
                 userSelect: 'none',
@@ -175,17 +176,18 @@ export default function WhyUs() {
               />
 
               <h3 style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 26, fontWeight: 500,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#002B42', marginBottom: 14,
-                lineHeight: 1.2,
+                lineHeight: 1.3,
                 position: 'relative',
               }}>
                 {r.title}
               </h3>
               <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 14, fontWeight: 300,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-body-size)', fontWeight: 400,
                 lineHeight: 1.75,
                 color: '#5D7A93',
                 position: 'relative',

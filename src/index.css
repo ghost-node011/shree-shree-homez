@@ -1,11 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600;1,8..60,700&display=swap');
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════
+   FONT DECLARATIONS & SYSTEM FALLBACKS
+═══════════════════════════════════════ */
+@font-face {
+  font-family: 'Tercia Light';
+  src: local('Tercia Light'), local('Tercia-Light'), local('Tercia');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* ═══════════════════════════════════════
    LUXURY DESIGN TOKENS — SRI SRI HOMZ
-   (logo palette: deep navy + gold accent, on off-white)
 ═══════════════════════════════════════ */
 :root {
+  /* Colors */
   --gold:        #F9A819;
   --gold-light:  #FFC670;
   --gold-dark:   #C98209;
@@ -27,6 +37,48 @@
   --text-muted:  rgba(247, 248, 250, 0.45);
   --text-body-light: rgba(0, 43, 66, 0.72);
   --text-muted-light: #5D7A93;
+
+  /* Typography Font Families */
+  --font-heading: 'Tercia Light', 'Tercia', 'Cinzel', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography Sizes (Desktop Default) */
+  --heading-hero: 70px;
+  --heading-section: 40px;
+  --heading-card: 26px;
+  --tagline-hero: 26px;
+
+  --text-nav: 14px;
+  --text-btn: 14px;
+  --text-body-size: 16.5px;
+
+  /* Letter Spacing Tokens (Wide Kirpa style) */
+  --spacing-heading-hero: 0.06em;
+  --spacing-heading-section: 0.05em;
+  --spacing-heading-card: 0.04em;
+  --spacing-tagline: 0.15em;
+  --spacing-nav-btn: 0.7px;
+}
+
+/* Tablet Typography */
+@media (max-width: 1024px) {
+  :root {
+    --heading-hero: 54px;
+    --heading-section: 34px;
+    --heading-card: 24px;
+    --tagline-hero: 22px;
+  }
+}
+
+/* Mobile Typography */
+@media (max-width: 768px) {
+  :root {
+    --heading-hero: clamp(34px, 8vw, 42px);
+    --heading-section: clamp(24px, 5.5vw, 30px);
+    --heading-card: clamp(19px, 4.5vw, 22px);
+    --tagline-hero: clamp(16px, 3.8vw, 20px);
+    --text-body-size: 15.5px;
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -45,7 +97,10 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  font-weight: 400;
+  line-height: 1.75;
   background-color: var(--cream);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -59,15 +114,69 @@ body {
 }
 
 /* ═══════════════════════════════════════
-   TYPOGRAPHY
+   GLOBAL TYPOGRAPHY STYLES
 ═══════════════════════════════════════ */
-.font-heading { font-family: 'Source Serif 4', serif; }
+.font-heading {
+  font-family: var(--font-heading) !important;
+}
 
-h1, h2, h3, h4 {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 500;
-  line-height: 1.12;
+.font-sans {
+  font-family: var(--font-sans) !important;
+}
+
+h1, .hero-heading {
+  font-family: var(--font-heading);
+  font-size: var(--heading-hero);
+  font-weight: 700;
+  letter-spacing: var(--spacing-heading-hero);
+  line-height: 1.15;
   color: var(--ink);
+}
+
+h2, .section-heading {
+  font-family: var(--font-heading);
+  font-size: var(--heading-section);
+  font-weight: 700;
+  letter-spacing: var(--spacing-heading-section);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+h3, h4, .card-heading, .form-heading {
+  font-family: var(--font-heading);
+  font-size: var(--heading-card);
+  font-weight: 700;
+  letter-spacing: var(--spacing-heading-card);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.hero-tagline {
+  font-family: var(--font-sans) !important;
+  font-size: var(--tagline-hero) !important;
+  font-weight: 400 !important;
+  letter-spacing: var(--spacing-tagline) !important;
+  line-height: 1.35;
+}
+
+p, .body-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Navigation & Buttons */
+nav a, .nav-link, button, .btn-gold, .btn-outline-gold, .btn-outline-hero, .hero-ctasbtn {
+  font-family: var(--font-sans);
+  font-size: var(--text-nav);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-nav-btn);
+}
+
+input, select, textarea, label {
+  font-family: var(--font-sans);
 }
 
 /* ═══════════════════════════════════════
@@ -89,15 +198,14 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  font-family: 'Inter', sans-serif;
-  font-size: 10.5px;
+  font-family: var(--font-sans);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
 }
-.section-label::before,
-.section-label::after {
+.section-label::before {
   content: '';
   display: block;
   width: 28px;
@@ -106,7 +214,12 @@ h1, h2, h3, h4 {
   opacity: 0.7;
 }
 .section-label::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
   background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0.7;
 }
 
 .gold-line {
@@ -132,12 +245,12 @@ h1, h2, h3, h4 {
   gap: 10px;
   background: var(--gold);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: 500;
+  letter-spacing: var(--spacing-nav-btn);
   text-transform: uppercase;
-  padding: 18px 44px;
+  padding: 16px 40px;
   border: none;
   overflow: hidden;
   text-decoration: none;
@@ -160,12 +273,12 @@ h1, h2, h3, h4 {
   gap: 10px;
   background: transparent;
   color: var(--gold);
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: 500;
+  letter-spacing: var(--spacing-nav-btn);
   text-transform: uppercase;
-  padding: 17px 44px;
+  padding: 15px 40px;
   border: 1px solid rgba(249,168,25,0.5);
   text-decoration: none;
   transition: all 0.4s ease;
@@ -181,12 +294,12 @@ h1, h2, h3, h4 {
   gap: 10px;
   background: transparent;
   color: var(--white);
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--font-sans);
+  font-size: var(--text-btn);
+  font-weight: 500;
+  letter-spacing: var(--spacing-nav-btn);
   text-transform: uppercase;
-  padding: 17px 44px;
+  padding: 15px 40px;
   border: 1px solid rgba(255,255,255,0.6);
   text-decoration: none;
   transition: all 0.4s ease;
@@ -406,18 +519,9 @@ h1, h2, h3, h4 {
   /* Contact grid gap */
   .contact-grid        { gap: 48px !important; }
 
-  /* Footer grid */
-  .footer-grid         { grid-template-columns: 1fr 1fr !important; }
-
   /* Testimonials */
   .testimonial-wrap    { padding: 36px 24px !important; }
 
   /* Philosophy */
   .philosophy-inner    { padding: 60px 20px !important; flex-direction: column !important; text-align: center !important; align-items: center !important; }
-  .philosophy-quote    { font-size: 26px !important; }
-}
-
-@media (max-width: 480px) {
-  .footer-grid         { grid-template-columns: 1fr !important; }
-  .hero-heading        { font-size: 52px !important; }
 }

@@ -87,9 +87,10 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
           />
 
           <h3 style={{
-            fontFamily: 'Source Serif 4, serif',
-            fontSize: 'clamp(20px, 1.8vw, 28px)',
-            fontWeight: 500, lineHeight: 1.15,
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'var(--heading-card)',
+            fontWeight: 700, lineHeight: 1.25,
+            letterSpacing: 'var(--spacing-heading-card)',
             color: '#F7F8FA', marginBottom: 10,
           }}>
             {item.title}
@@ -99,10 +100,10 @@ export default function ServiceCard({ item, index, fullWidth = false }) {
             animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
             transition={{ duration: 0.35 }}
             style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 13, fontWeight: 300,
+              fontFamily: 'var(--font-sans)',
+              fontSize: '15px', fontWeight: 400,
               lineHeight: 1.65,
-              color: 'rgba(247,248,250,0.65)',
+              color: 'rgba(247,248,250,0.75)',
             }}
           >
             {item.desc}

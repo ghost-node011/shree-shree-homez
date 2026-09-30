@@ -33,14 +33,15 @@ export default function AccessibilityStatement() {
               style={{ marginBottom: 40 }}
             >
               <h2 style={{
-                fontFamily: 'Source Serif 4, serif', fontSize: 24, fontWeight: 500,
+                fontFamily: 'var(--font-heading)', fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#002B42', marginBottom: 12,
               }}>
                 {s.title}
               </h2>
               <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 300,
-                lineHeight: 1.8, color: 'rgba(0,43,66,0.68)',
+                fontFamily: 'var(--font-sans)', fontSize: 'var(--text-body-size)', fontWeight: 400,
+                lineHeight: 1.8, color: 'rgba(0,43,66,0.75)',
               }}>
                 {s.body}
               </p>

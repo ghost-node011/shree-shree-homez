@@ -97,12 +97,12 @@ export default function Testimonials() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.1 }}
                   style={{
-                    fontFamily: 'Source Serif 4, serif',
-                    fontWeight: 600,
-                    fontSize: 'clamp(30px, 4.2vw, 54px)',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 700,
+                    fontSize: 'var(--heading-section)',
                     lineHeight: 1.15,
                     color: '#FFFFFF',
-                    letterSpacing: '-0.01em',
+                    letterSpacing: 'var(--spacing-heading-section)',
                   }}
                 >
                   What People Say<br />About Us
@@ -127,7 +127,7 @@ export default function Testimonials() {
                 }}>
                   <span style={{
                     transform: 'rotate(45deg)',
-                    fontFamily: 'Source Serif 4, serif',
+                    fontFamily: 'var(--font-heading)',
                     fontWeight: 700,
                     fontSize: 26,
                     color: '#fff',

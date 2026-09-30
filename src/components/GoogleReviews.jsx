@@ -76,7 +76,7 @@ function ReviewCard({ review, index }) {
       {/* Ghost quotation mark */}
       <div style={{
         position: 'absolute', top: -18, right: 12,
-        fontFamily: 'Source Serif 4, serif',
+        fontFamily: 'var(--font-heading)',
         fontSize: 100, fontWeight: 700,
         color: 'rgba(249,168,25,0.06)',
         lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
@@ -91,7 +91,7 @@ function ReviewCard({ review, index }) {
             background: 'linear-gradient(135deg, rgba(249,168,25,0.22), rgba(249,168,25,0.08))',
             border: '1px solid rgba(249,168,25,0.35)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'Source Serif 4, serif', fontSize: 16, color: '#C98209',
+            fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, color: '#C98209',
             flexShrink: 0,
           }}>
             {review.name.charAt(0)}
@@ -168,7 +168,7 @@ export default function GoogleReviews() {
       }} />
       <div style={{
         position: 'absolute', top: '2%', left: '3%',
-        fontFamily: 'Source Serif 4, serif',
+        fontFamily: 'var(--font-heading)',
         fontSize: 'min(28vw, 380px)', fontWeight: 700,
         color: 'rgba(249,168,25,0.035)',
         lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
@@ -194,9 +194,11 @@ export default function GoogleReviews() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(34px, 4vw, 58px)',
-              fontWeight: 400, color: '#002B42', marginBottom: 32,
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#002B42', marginBottom: 32,
             }}
           >
             Trusted by <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Our Clients</span>
@@ -218,7 +220,7 @@ export default function GoogleReviews() {
           >
             <GoogleG size={34} />
             <div style={{ width: 1, height: 44, background: 'rgba(249,168,25,0.2)' }} />
-            <span style={{ fontFamily: 'Source Serif 4, serif', fontSize: 44, color: '#F9A819', lineHeight: 1 }}>
+            <span style={{ fontFamily: 'var(--font-heading)', fontSize: 44, fontWeight: 700, color: '#F9A819', lineHeight: 1 }}>
               4.9
             </span>
             <div style={{ textAlign: 'left' }}>

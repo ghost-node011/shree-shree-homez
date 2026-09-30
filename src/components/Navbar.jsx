@@ -91,8 +91,8 @@ export default function Navbar() {
             <Link key={n.to} to={n.to} data-cursor
               style={{
                 background: 'none', border: 'none',
-                fontFamily: 'Inter, sans-serif', fontSize: 11,
-                fontWeight: 500, letterSpacing: '0.18em',
+                fontFamily: 'var(--font-sans)', fontSize: 'var(--text-nav)',
+                fontWeight: 500, letterSpacing: 'var(--spacing-nav-btn)',
                 textTransform: 'uppercase',
                 color: textColor,
                 textDecoration: 'none',
@@ -164,8 +164,10 @@ export default function Navbar() {
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)} data-cursor
                 style={{
                   background: 'none', border: 'none',
-                  fontFamily: 'Source Serif 4, serif',
-                  fontSize: 30, fontWeight: 400,
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 16, fontWeight: 500,
+                  letterSpacing: 'var(--spacing-nav-btn)',
+                  textTransform: 'uppercase',
                   color: 'rgba(247,248,250,0.85)',
                   textAlign: 'left', textDecoration: 'none',
                   transition: 'color 0.3s',

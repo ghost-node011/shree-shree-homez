@@ -93,8 +93,9 @@ export default function Founder() {
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <p style={{
-                        fontFamily: 'Source Serif 4, serif',
-                        fontSize: 22, fontWeight: 500,
+                        fontFamily: 'var(--font-heading)',
+                        fontSize: 'var(--heading-card)', fontWeight: 700,
+                        letterSpacing: 'var(--spacing-heading-card)',
                         color: '#F7F8FA', marginBottom: 6,
                       }}>
                         Yashank Arora
@@ -128,8 +129,8 @@ export default function Founder() {
                   }}
                 >
                   <span style={{
-                    fontFamily: 'Source Serif 4, serif',
-                    fontStyle: 'italic', fontWeight: 600,
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 700,
                     fontSize: 22, color: '#F9A819',
                   }}>
                     YA
@@ -159,8 +160,8 @@ export default function Founder() {
                     Trusted By
                   </p>
                   <p style={{
-                    fontFamily: 'Source Serif 4, serif',
-                    fontSize: 17, fontWeight: 600,
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: 17, fontWeight: 700,
                     color: '#002B42', lineHeight: 1,
                   }}>
                     500+ Families
@@ -175,8 +176,9 @@ export default function Founder() {
                 gap: 12,
               }}>
                 <p style={{
-                  fontFamily: 'Source Serif 4, serif',
-                  fontSize: 16, fontWeight: 500,
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 16, fontWeight: 700,
+                  letterSpacing: 'var(--spacing-heading-card)',
                   color: '#002B42',
                 }}>
                   Yashank Arora
@@ -227,9 +229,9 @@ export default function Founder() {
                         <Icon size={15} color="#F9A819" strokeWidth={1.75} />
                       </motion.div>
                       <div style={{
-                        fontFamily: 'Source Serif 4, serif',
+                        fontFamily: 'var(--font-heading)',
                         fontSize: 'clamp(18px, 1.6vw, 22px)',
-                        fontWeight: 400, color: '#F9A819', lineHeight: 1,
+                        fontWeight: 700, color: '#F9A819', lineHeight: 1,
                       }}>
                         {s.val}
                       </div>
@@ -268,9 +270,10 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.1 }}
               style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 'clamp(32px, 3.5vw, 52px)',
-                fontWeight: 400, lineHeight: 1.15,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-section)',
+                fontWeight: 700, lineHeight: 1.15,
+                letterSpacing: 'var(--spacing-heading-section)',
                 color: '#002B42', marginBottom: 8,
               }}
             >
@@ -282,9 +285,10 @@ export default function Founder() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.15 }}
               style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 'clamp(32px, 3.5vw, 52px)',
-                fontWeight: 300, fontStyle: 'italic',
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-section)',
+                fontWeight: 700, fontStyle: 'italic',
+                letterSpacing: 'var(--spacing-heading-section)',
                 color: '#F9A819', marginBottom: 36,
               }}
             >
@@ -301,7 +305,7 @@ export default function Founder() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
                 background: '#01476E', border: 'none',
-                padding: '13px 24px', marginBottom: 32,
+                padding: '14px 28px', marginBottom: 32,
                 cursor: 'pointer',
               }}
             >
@@ -314,8 +318,8 @@ export default function Founder() {
                 <Play size={10} color="#002B42" fill="#002B42" strokeWidth={0} />
               </span>
               <span style={{
-                fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600,
-                letterSpacing: '0.16em', textTransform: 'uppercase',
+                fontFamily: 'var(--font-sans)', fontSize: 'var(--text-btn)', fontWeight: 500,
+                letterSpacing: 'var(--spacing-nav-btn)', textTransform: 'uppercase',
                 color: '#F7F8FA',
               }}>
                 Watch Our Story
@@ -348,10 +352,10 @@ export default function Founder() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 + i * 0.1 }}
                 style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: 16, fontWeight: 300,
-                  lineHeight: 1.85,
-                  color: 'rgba(0,43,66,0.68)',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'var(--text-body-size)', fontWeight: 400,
+                  lineHeight: 1.75,
+                  color: 'rgba(0,43,66,0.72)',
                   marginBottom: 20,
                 }}
               >
@@ -376,7 +380,7 @@ export default function Founder() {
             >
               <div style={{
                 position: 'absolute', top: -14, left: 12,
-                fontFamily: 'Source Serif 4, serif',
+                fontFamily: 'var(--font-heading)',
                 fontSize: 90, fontWeight: 700,
                 color: 'rgba(249,168,25,0.08)',
                 lineHeight: 1, pointerEvents: 'none', userSelect: 'none',
@@ -384,16 +388,18 @@ export default function Founder() {
                 "
               </div>
               <p style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 21, fontStyle: 'italic',
-                color: '#002B42', lineHeight: 1.4,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
+                color: '#002B42', lineHeight: 1.35,
                 position: 'relative', marginBottom: 18,
               }}>
                 At Sri Sri Homz, every relationship matters.
               </p>
               <p style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontStyle: 'italic', fontSize: 17,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 14, fontWeight: 600,
+                letterSpacing: '0.05em',
                 color: '#F9A819', position: 'relative',
               }}>
                 — Yashank Arora

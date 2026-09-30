@@ -69,11 +69,11 @@ export default function Footer() {
             </motion.div>
             <p
               style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: 14,
-                fontWeight: 300,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-body-size)',
+                fontWeight: 400,
                 lineHeight: 1.75,
-                color: 'rgba(247,248,250,0.68)',
+                color: 'rgba(247,248,250,0.72)',
                 margin: 0,
               }}
             >
@@ -213,10 +213,12 @@ export default function Footer() {
                     to={l.to}
                     data-cursor
                     style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: 14,
-                      fontWeight: 400,
-                      color: 'rgba(247,248,250,0.72)',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'var(--text-nav)',
+                      fontWeight: 500,
+                      letterSpacing: 'var(--spacing-nav-btn)',
+                      textTransform: 'uppercase',
+                      color: 'rgba(247,248,250,0.75)',
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',

@@ -93,9 +93,11 @@ export default function Achievements() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(36px, 4vw, 62px)',
-              fontWeight: 400, color: '#F7F8FA',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#F7F8FA',
               marginBottom: 20,
             }}
           >
@@ -108,9 +110,9 @@ export default function Achievements() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 16, fontWeight: 300,
-              color: 'rgba(247,248,250,0.55)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-body-size)', fontWeight: 400,
+              color: 'rgba(247,248,250,0.7)',
               maxWidth: 560, margin: '0 auto',
               lineHeight: 1.7,
             }}
@@ -217,8 +219,9 @@ export default function Achievements() {
               </div>
 
               <h3 style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 24, fontWeight: 500,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#F7F8FA', marginBottom: 8,
                 lineHeight: 1.2,
               }}>
@@ -338,9 +341,9 @@ export default function Achievements() {
                 Government Certified
               </p>
               <h3 style={{
-                fontFamily: 'Source Serif 4, serif',
-                fontSize: 21, fontWeight: 600,
-                letterSpacing: '0.03em',
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)', fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#F7F8FA', marginBottom: 12,
                 position: 'relative',
               }}>

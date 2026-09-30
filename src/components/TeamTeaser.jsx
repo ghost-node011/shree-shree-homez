@@ -42,9 +42,11 @@ export default function TeamTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.85, delay: 0.1 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(34px, 4vw, 56px)',
-              fontWeight: 400, color: '#F7F8FA',
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#F7F8FA',
             }}
           >
             The People Behind <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homz</span>
@@ -84,19 +86,19 @@ export default function TeamTeaser() {
                   background: 'rgba(249,168,25,0.08)',
                   border: '2px solid rgba(249,168,25,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'Source Serif 4, serif', fontSize: 34, color: '#F9A819',
+                  fontFamily: 'var(--font-heading)', fontSize: 34, fontWeight: 700, color: '#F9A819',
                   margin: '0 auto',
                 }}>
                   YA
                 </div>
               )}
             </div>
-            <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: 20, fontWeight: 500, color: '#F7F8FA', marginBottom: 4 }}>
+            <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--heading-card)', fontWeight: 700, letterSpacing: 'var(--spacing-heading-card)', color: '#F7F8FA', marginBottom: 4 }}>
               Yashank Arora
             </p>
             <p style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 600,
-              letterSpacing: '0.18em', textTransform: 'uppercase', color: '#F9A819',
+              fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 600,
+              letterSpacing: '0.12em', textTransform: 'uppercase', color: '#F9A819',
             }}>
               Founder & CEO
             </p>
@@ -130,10 +132,10 @@ export default function TeamTeaser() {
                 }}>
                   <d.Icon size={18} color="#F9A819" strokeWidth={1.75} />
                 </div>
-                <h3 style={{ fontFamily: 'Source Serif 4, serif', fontSize: 17, fontWeight: 500, color: '#F7F8FA', marginBottom: 8 }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, letterSpacing: 'var(--spacing-heading-card)', color: '#F7F8FA', marginBottom: 8 }}>
                   {d.title}
                 </h3>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 12.5, fontWeight: 300, lineHeight: 1.6, color: 'rgba(247,248,250,0.5)' }}>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 400, lineHeight: 1.6, color: 'rgba(247,248,250,0.65)' }}>
                   {d.desc}
                 </p>
               </motion.div>

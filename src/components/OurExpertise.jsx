@@ -43,9 +43,11 @@ export default function OurExpertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 'clamp(30px, 3.5vw, 44px)',
-              fontWeight: 500, color: '#002B42', marginBottom: 18,
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'var(--heading-section)',
+              fontWeight: 700,
+              letterSpacing: 'var(--spacing-heading-section)',
+              color: '#002B42', marginBottom: 18,
             }}
           >
             Our Expertise
@@ -56,9 +58,11 @@ export default function OurExpertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
             style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 16, fontWeight: 300,
-              color: 'rgba(0,43,66,0.6)', maxWidth: 540, margin: '0 auto',
-              lineHeight: 1.7,
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-body-size)',
+              fontWeight: 400,
+              color: 'rgba(0,43,66,0.65)', maxWidth: 580, margin: '0 auto',
+              lineHeight: 1.75,
             }}
           >
             At Sri Sri Homz, we focus on what matters most — delivering real
@@ -94,21 +98,29 @@ export default function OurExpertise() {
                 <item.Icon size={22} color="#F9A819" strokeWidth={1.6} />
               </div>
               <h3 style={{
-                fontFamily: 'Source Serif 4, serif', fontSize: 21, fontWeight: 500,
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'var(--heading-card)',
+                fontWeight: 700,
+                letterSpacing: 'var(--spacing-heading-card)',
                 color: '#F9A819', marginBottom: 14,
               }}>
                 {item.title}
               </h3>
               <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 300,
-                lineHeight: 1.75, color: 'rgba(0,43,66,0.6)', marginBottom: 26,
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-body-size)',
+                fontWeight: 400,
+                lineHeight: 1.75, color: 'rgba(0,43,66,0.65)', marginBottom: 26,
               }}>
                 {item.desc}
               </p>
               <Link to="/services" data-cursor style={{
                 display: 'inline-flex', alignItems: 'center', gap: 4,
-                fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
-                letterSpacing: '0.1em', textTransform: 'uppercase',
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--text-nav)',
+                fontWeight: 500,
+                letterSpacing: 'var(--spacing-nav-btn)',
+                textTransform: 'uppercase',
                 color: '#002B42', textDecoration: 'none',
               }}>
                 Learn More <ChevronRight size={15} />
