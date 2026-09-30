@@ -5,10 +5,10 @@ import emailjs from 'emailjs-com'
 import { Clock, Phone, Mail, MapPin } from 'lucide-react'
 
 const INFO = [
-  { Icon: Clock,  value: 'Monday - Saturday, 10:00 AM - 07:30 PM' },
+  { Icon: Clock,  value: 'Monday - Saturday, 10:00 AM - 08:00 PM' },
   { Icon: Phone,  value: '098100 12254', href: 'tel:+919810012254' },
   { Icon: Mail,   value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
-  { Icon: MapPin, value: 'B-24, Rampuri, Block B, Surya Nagar,\nGhaziabad, Uttar Pradesh 201011' },
+  { Icon: MapPin, value: 'B-24, Block B, Surya Nagar,\nGhaziabad, Uttar Pradesh 201011' },
 ]
 
 const REQUIREMENTS = [
