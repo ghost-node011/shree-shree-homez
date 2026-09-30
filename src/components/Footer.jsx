@@ -64,7 +64,7 @@ export default function Footer() {
               <img
                 src="/logo-bg.png"
                 alt="Sri Sri Homz"
-                style={{ height: 58, width: 'auto', display: 'block', marginLeft: -6 }}
+                style={{ height: 88, width: 'auto', display: 'block', marginLeft: -6 }}
               />
             </motion.div>
             <p

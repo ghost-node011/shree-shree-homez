@@ -39,13 +39,13 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false) }, [pathname])
 
-  /* On mobile always 60px; on desktop 90→68 */
-  const navH = mobile ? 60 : (scrolled ? 68 : 90)
+  /* On mobile 76px; on desktop 120→96px (scrolled) */
+  const navH = mobile ? 76 : (scrolled ? 96 : 120)
 
   const isHome = pathname === '/'
   const transparent = isHome && !scrolled
 
-  const textColor = 'rgba(255,255,255,0.85)'
+  const textColor = 'rgba(255,255,255,0.94)'
   const textColorHover = '#F9A819'
   const barColor = '#FFFFFF'
 
@@ -58,13 +58,13 @@ export default function Navbar() {
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 900,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: `0 clamp(16px, 5vw, 80px)`,
+          padding: `0 clamp(20px, 5.5vw, 90px)`,
           height: navH,
           background: transparent
-            ? 'linear-gradient(180deg, rgba(0,20,32,0.55) 0%, rgba(0,20,32,0.1) 100%)'
+            ? 'linear-gradient(180deg, rgba(0,20,32,0.65) 0%, rgba(0,20,32,0.12) 100%)'
             : '#002B42',
-          boxShadow: !transparent && scrolled ? '0 2px 20px rgba(0,0,0,0.2)' : 'none',
-          borderBottom: transparent ? 'none' : '1px solid rgba(249,168,25,0.12)',
+          boxShadow: !transparent && scrolled ? '0 4px 24px rgba(0,0,0,0.25)' : 'none',
+          borderBottom: transparent ? 'none' : '1px solid rgba(249,168,25,0.16)',
           transition: 'height 0.4s ease, box-shadow 0.4s ease, background 0.4s ease',
         }}
       >
@@ -78,7 +78,7 @@ export default function Navbar() {
             src="/logo-bg.png"
             alt="Sri Sri Homz"
             style={{
-              height: mobile ? 48 : (scrolled ? 58 : 68),
+              height: mobile ? 66 : (scrolled ? 84 : 102),
               width: 'auto', display: 'block',
               transition: 'height 0.4s ease',
             }}
@@ -86,13 +86,13 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div style={{ alignItems: 'center', gap: 28 }} className="nav-desktop">
+        <div style={{ alignItems: 'center', gap: 36 }} className="nav-desktop">
           {NAV.map(n => (
             <Link key={n.to} to={n.to} data-cursor
               style={{
                 background: 'none', border: 'none',
-                fontFamily: 'var(--font-sans)', fontSize: 'var(--text-nav)',
-                fontWeight: 500, letterSpacing: 'var(--spacing-nav-btn)',
+                fontFamily: 'var(--font-sans)', fontSize: 16.5,
+                fontWeight: 600, letterSpacing: '0.9px',
                 textTransform: 'uppercase',
                 color: textColor,
                 textDecoration: 'none',
@@ -107,9 +107,9 @@ export default function Navbar() {
 
           {/* Social icons */}
           <div style={{
-            display: 'flex', gap: 14,
+            display: 'flex', gap: 16,
             borderLeft: '1px solid rgba(255,255,255,0.25)',
-            paddingLeft: 20,
+            paddingLeft: 22,
           }}>
             {SOCIALS.map(({ Icon, href, label }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" data-cursor
@@ -118,7 +118,7 @@ export default function Navbar() {
                 onMouseEnter={e => e.currentTarget.style.color = textColorHover}
                 onMouseLeave={e => e.currentTarget.style.color = textColor}
               >
-                <Icon size={16} strokeWidth={1.75} />
+                <Icon size={18} strokeWidth={1.8} />
               </a>
             ))}
           </div>

@@ -55,7 +55,7 @@ export default function Preloader({ onDone }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22,1,0.36,1] }}
-            style={{ height: 90, marginBottom: 56, position: 'relative', zIndex: 1 }}
+            style={{ height: 115, marginBottom: 56, position: 'relative', zIndex: 1 }}
           />
 
           {/* Progress track */}
