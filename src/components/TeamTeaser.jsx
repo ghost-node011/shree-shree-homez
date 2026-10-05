@@ -49,7 +49,7 @@ export default function TeamTeaser() {
               color: '#F7F8FA',
             }}
           >
-            The People Behind <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homz</span>
+            The People Behind <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homzz</span>
           </motion.h2>
         </div>
 
@@ -72,7 +72,7 @@ export default function TeamTeaser() {
               {!photoFailed ? (
                 <img
                   src="/yashank.png"
-                  alt="Yashank Arora — Founder, Sri Sri Homz"
+                  alt="Yashank Arora — Founder, Sri Sri Homzz"
                   onError={() => setPhotoFailed(true)}
                   style={{
                     width: 180, height: 180, borderRadius: '50%',

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Play, ExternalLink } from 'lucide-react'
 
-// Sri Sri Homz promotional video & Instagram Reel
+// Sri Sri Homzz promotional video & Instagram Reel
 export const INSTAGRAM_REEL_ID = 'DY4bsNGuzZr'
 export const INSTAGRAM_REEL_URL = 'https://www.instagram.com/reel/DY4bsNGuzZr/?stkn=MXJuYXJ0cTJvc3h1NA=='
 export const DEFAULT_POSTER = '/reel-thumb.jpg'
@@ -63,7 +63,7 @@ function LightboxModal({ open, onClose, reelId = INSTAGRAM_REEL_ID, videoId = nu
                 fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600,
                 letterSpacing: '0.1em', textTransform: 'uppercase', color: '#F9A819',
               }}>
-                Sri Sri Homz · Story
+                Sri Sri Homzz · Story
               </span>
               <button
                 onClick={onClose}
@@ -88,7 +88,7 @@ function LightboxModal({ open, onClose, reelId = INSTAGRAM_REEL_ID, videoId = nu
             <div style={{ flex: 1, width: '100%', height: '100%', position: 'relative', background: '#000' }}>
               <iframe
                 src={embedUrl}
-                title="Sri Sri Homz Video"
+                title="Sri Sri Homzz Video"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 allowFullScreen
                 style={{ width: '100%', height: '100%', display: 'block', border: 0 }}

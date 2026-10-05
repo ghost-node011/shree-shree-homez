@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const REVIEWS = [
   {
     name: 'Anjali Mehta', rating: 5, date: '2 weeks ago',
-    text: "We were overwhelmed looking for a builder floor in Noida until we spoke to the Sri Sri Homz team. They walked us through every option honestly, never pushed us toward the highest-commission property, and stayed available even after the deal closed. Genuinely different from every other agent we'd met.",
+    text: "We were overwhelmed looking for a builder floor in Noida until we spoke to the Sri Sri Homzz team. They walked us through every option honestly, never pushed us toward the highest-commission property, and stayed available even after the deal closed. Genuinely different from every other agent we'd met.",
   },
   {
     name: 'Rohit Bansal', rating: 5, date: '1 month ago',
@@ -17,7 +17,7 @@ const REVIEWS = [
   },
   {
     name: 'Deepak Chauhan', rating: 5, date: '2 months ago',
-    text: "As an NRI investing from abroad, I needed someone I could fully trust with site visits, paperwork, and negotiations. Sri Sri Homz handled everything transparently and sent regular updates with photos and videos. Closed a great deal in Sector 150.",
+    text: "As an NRI investing from abroad, I needed someone I could fully trust with site visits, paperwork, and negotiations. Sri Sri Homzz handled everything transparently and sent regular updates with photos and videos. Closed a great deal in Sector 150.",
   },
   {
     name: 'Priyanka Rawat', rating: 5, date: '3 months ago',

@@ -12,7 +12,7 @@
 }
 
 /* ═══════════════════════════════════════
-   LUXURY DESIGN TOKENS — SRI SRI HOMZ
+   LUXURY DESIGN TOKENS — SRI SRI HOMZZ
 ═══════════════════════════════════════ */
 :root {
   /* Colors */
@@ -88,7 +88,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none !important;
+}
+
+a, button, [role="button"] {
+  cursor: pointer;
 }
 
 html {
@@ -492,7 +495,6 @@ input, select, textarea, label {
 
 @media (max-width: 768px) {
   .section-py { padding-top: 72px; padding-bottom: 72px; }
-  html, * { cursor: auto !important; }
 
   /* Hero */
   .hero-stats          { display: none !important; }

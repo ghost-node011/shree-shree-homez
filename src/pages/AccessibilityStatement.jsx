@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero'
 const SECTIONS = [
   {
     title: 'Our Commitment',
-    body: 'Sri Sri Homz is committed to ensuring digital accessibility for people of all abilities. We continually work to improve the user experience for everyone and apply relevant accessibility standards.',
+    body: 'Sri Sri Homzz is committed to ensuring digital accessibility for people of all abilities. We continually work to improve the user experience for everyone and apply relevant accessibility standards.',
   },
   {
     title: 'Measures We Take',
@@ -12,7 +12,7 @@ const SECTIONS = [
   },
   {
     title: 'Feedback',
-    body: 'If you encounter any accessibility barriers while using this website, please let us know so we can address them. We welcome your feedback at info@srisrihomz.com or 098100 12254.',
+    body: 'If you encounter any accessibility barriers while using this website, please let us know so we can address them. We welcome your feedback at info@srisrihomzz.com or 098100 12254.',
   },
 ]
 

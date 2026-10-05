@@ -12,9 +12,9 @@ const NAV = [
 ]
 
 const SOCIALS = [
-  { Icon: Instagram, href: 'https://instagram.com/srisrihomz', label: 'Instagram' },
-  { Icon: Youtube,   href: 'https://youtube.com/@srisrihomz',  label: 'YouTube' },
-  { Icon: Facebook,  href: 'https://facebook.com/srisrihomz',  label: 'Facebook' },
+  { Icon: Instagram, href: 'https://instagram.com/srisri_homzz', label: 'Instagram' },
+  { Icon: Youtube,   href: 'https://youtube.com/@srisrihomzz',  label: 'YouTube' },
+  { Icon: Facebook,  href: 'https://facebook.com/srisrihomzz',  label: 'Facebook' },
 ]
 
 const isMobileDevice = () => window.innerWidth < 1024
@@ -76,7 +76,7 @@ export default function Navbar() {
         >
           <img
             src="/logo-bg.png"
-            alt="Sri Sri Homz"
+            alt="Sri Sri Homzz"
             style={{
               height: mobile ? 66 : (scrolled ? 84 : 102),
               width: 'auto', display: 'block',

@@ -51,7 +51,7 @@ export default function Preloader({ onDone }) {
 
           {/* Logo */}
           <motion.img
-            src="/logo-bg.png" alt="Sri Sri Homz"
+            src="/logo-bg.png" alt="Sri Sri Homzz"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22,1,0.36,1] }}

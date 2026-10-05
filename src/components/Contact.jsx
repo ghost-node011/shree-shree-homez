@@ -28,7 +28,7 @@ export default function Contact() {
       await emailjs.send(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
-        { ...form, to_name: 'Sri Sri Homz' },
+        { ...form, to_name: 'Sri Sri Homzz' },
         'YOUR_PUBLIC_KEY',
       )
       setStatus('success')
@@ -140,7 +140,7 @@ export default function Contact() {
             {[
               { Icon: Phone, label: 'Phone', value: '098100 12254 / 080627 57621', href: 'tel:+919810012254' },
               { Icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919810012254' },
-              { Icon: Mail, label: 'Email', value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
+              { Icon: Mail, label: 'Email', value: 'info@srisrihomzz.com', href: 'mailto:info@srisrihomzz.com' },
               { Icon: MapPin, label: 'Address', value: 'B-24, Block B, Surya Nagar, Ghaziabad, Uttar Pradesh 201011', href: null },
               { Icon: Clock, label: 'Hours', value: '10:00 AM – 08:00 PM · All Days Open', href: null },
             ].map((item, i) => (
@@ -327,7 +327,7 @@ export default function Contact() {
           }}
         >
           <iframe
-            title="Sri Sri Homz office location"
+            title="Sri Sri Homzz office location"
             src="https://www.google.com/maps?q=B-24+Block+B+Surya+Nagar+Ghaziabad+Uttar+Pradesh+201011&output=embed"
             width="100%"
             height="380"

@@ -127,7 +127,7 @@ export default function Philosophy() {
             margin: 0,
           }}
         >
-          Yashank Arora — Founder, Sri Sri Homz
+          Yashank Arora — Founder, Sri Sri Homzz
         </motion.p>
 
         <div style={{ height: 48 }} />

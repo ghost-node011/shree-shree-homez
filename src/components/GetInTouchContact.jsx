@@ -7,7 +7,7 @@ import { Clock, Phone, Mail, MapPin } from 'lucide-react'
 const INFO = [
   { Icon: Clock,  value: 'Monday - Saturday, 10:00 AM - 08:00 PM' },
   { Icon: Phone,  value: '098100 12254', href: 'tel:+919810012254' },
-  { Icon: Mail,   value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
+  { Icon: Mail,   value: 'info@srisrihomzz.com', href: 'mailto:info@srisrihomzz.com' },
   { Icon: MapPin, value: 'B-24, Block B, Surya Nagar,\nGhaziabad, Uttar Pradesh 201011' },
 ]
 
@@ -33,7 +33,7 @@ export default function GetInTouchContact() {
       await emailjs.send(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
-        { ...form, to_name: 'Sri Sri Homz' },
+        { ...form, to_name: 'Sri Sri Homzz' },
         'YOUR_PUBLIC_KEY',
       )
       setStatus('success')
@@ -97,7 +97,7 @@ export default function GetInTouchContact() {
             fontFamily: 'var(--font-sans)', fontSize: 'var(--text-body-size)', fontWeight: 400,
             lineHeight: 1.8, color: 'rgba(0,43,66,0.75)', marginBottom: 18,
           }}>
-            At Sri Sri Homz, we are more than just a real estate company. We are
+            At Sri Sri Homzz, we are more than just a real estate company. We are
             rooted in honesty, guided by relationships, and committed to serving
             our clients with transparency at every step.
           </p>

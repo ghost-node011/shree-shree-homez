@@ -20,11 +20,11 @@ const SECTIONS = [
   },
   {
     title: 'Your Rights',
-    body: 'You may request access to, correction of, or deletion of your personal information at any time by contacting us at info@srisrihomz.com.',
+    body: 'You may request access to, correction of, or deletion of your personal information at any time by contacting us at info@srisrihomzz.com.',
   },
   {
     title: 'Contact Us',
-    body: 'For any questions about this Privacy Policy, write to us at info@srisrihomz.com or call 098100 12254.',
+    body: 'For any questions about this Privacy Policy, write to us at info@srisrihomzz.com or call 098100 12254.',
   },
 ]
 

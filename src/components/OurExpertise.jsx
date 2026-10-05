@@ -65,7 +65,7 @@ export default function OurExpertise() {
               lineHeight: 1.75,
             }}
           >
-            At Sri Sri Homz, we focus on what matters most — delivering real
+            At Sri Sri Homzz, we focus on what matters most — delivering real
             estate and construction solutions that work for you.
           </motion.p>
         </div>

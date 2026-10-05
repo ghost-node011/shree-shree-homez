@@ -38,12 +38,12 @@ export default function About() {
               color: '#002B42', marginBottom: 24,
             }}
           >
-            About Sri Sri Homz
+            About Sri Sri Homzz
           </motion.h2>
 
           {[
-            'Welcome to Sri Sri Homz, your trusted partner in Delhi NCR\'s real estate market. Founded by Yashank Arora, we specialize in simplifying real estate and construction by offering a transparent, hands-on approach to property buying, selling, and building.',
-            'At Sri Sri Homz, we aim to provide long-term advisory to our clients, offering carefully selected opportunities and end-to-end support. Our team is committed to making your property journey as seamless and successful as possible.',
+            'Welcome to Sri Sri Homzz, your trusted partner in Delhi NCR\'s real estate market. Founded by Yashank Arora, we specialize in simplifying real estate and construction by offering a transparent, hands-on approach to property buying, selling, and building.',
+            'At Sri Sri Homzz, we aim to provide long-term advisory to our clients, offering carefully selected opportunities and end-to-end support. Our team is committed to making your property journey as seamless and successful as possible.',
             'We cater to families and investors across Delhi NCR with a keen interest in real estate and construction. Whether you\'re a first-time buyer or looking to expand your portfolio, we\'re here to guide you every step of the way.',
           ].map((para, i) => (
             <motion.p

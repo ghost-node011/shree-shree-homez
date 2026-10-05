@@ -80,7 +80,7 @@ export default function WhyUs() {
                 color: '#002B42',
               }}
             >
-              The Sri Sri Homz<br />
+              The Sri Sri Homzz<br />
               <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Difference</span>
             </motion.h2>
           </div>

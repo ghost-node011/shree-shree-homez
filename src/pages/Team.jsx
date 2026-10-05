@@ -37,7 +37,7 @@ export default function Team() {
       <PageHero
         eyebrow="Our Team"
         title="The People Behind"
-        accent="Sri Sri Homz"
+        accent="Sri Sri Homzz"
         subtitle="A small, hands-on team spanning sales, legal, construction, and client support — every one of them working toward the same founding principle: honest guidance, first."
       />
 

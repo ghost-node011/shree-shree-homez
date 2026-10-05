@@ -25,7 +25,7 @@ export default function SocialSection() {
     <div style={{ background: '#FFFFFF', padding: '80px clamp(24px,6vw,120px)' }}>
       <div style={{ maxWidth: 1300, margin: '0 auto' }}>
         <motion.a
-          href="https://instagram.com/srisrihomz"
+          href="https://instagram.com/srisri_homzz"
           target="_blank" rel="noopener noreferrer" data-cursor
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function SocialSection() {
         >
           <span style={{ color: '#F9A819' }}><InstagramGlyph /></span>
           <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 18, fontWeight: 400 }}>
-            /srisrihomz
+            /srisri_homzz
           </span>
         </motion.a>
 
@@ -51,7 +51,7 @@ export default function SocialSection() {
           {POSTS.map((p, i) => (
             <motion.a
               key={i}
-              href="https://instagram.com/srisrihomz"
+              href="https://instagram.com/srisri_homzz"
               target="_blank" rel="noopener noreferrer" data-cursor
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

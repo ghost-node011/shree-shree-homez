@@ -4,11 +4,11 @@ import PageHero from '../components/PageHero'
 const SECTIONS = [
   {
     title: 'Acceptance of Terms',
-    body: 'By using this website or engaging Sri Sri Homz for real estate or construction services, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.',
+    body: 'By using this website or engaging Sri Sri Homzz for real estate or construction services, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.',
   },
   {
     title: 'Our Services',
-    body: 'Sri Sri Homz provides real estate advisory, buying and selling assistance, investment guidance, and construction and project management services across Delhi NCR. All property listings, pricing, and availability are subject to change without notice.',
+    body: 'Sri Sri Homzz provides real estate advisory, buying and selling assistance, investment guidance, and construction and project management services across Delhi NCR. All property listings, pricing, and availability are subject to change without notice.',
   },
   {
     title: 'No Guarantee of Outcome',
@@ -24,11 +24,11 @@ const SECTIONS = [
   },
   {
     title: 'Intellectual Property',
-    body: 'All content on this website — including text, images, and branding — belongs to Sri Sri Homz unless otherwise credited, and may not be reproduced without permission.',
+    body: 'All content on this website — including text, images, and branding — belongs to Sri Sri Homzz unless otherwise credited, and may not be reproduced without permission.',
   },
   {
     title: 'Limitation of Liability',
-    body: 'Sri Sri Homz is not liable for indirect or consequential losses arising from the use of this website or from third-party developer, legal, or financial decisions made in connection with our advisory services.',
+    body: 'Sri Sri Homzz is not liable for indirect or consequential losses arising from the use of this website or from third-party developer, legal, or financial decisions made in connection with our advisory services.',
   },
   {
     title: 'Changes to These Terms',
@@ -36,7 +36,7 @@ const SECTIONS = [
   },
   {
     title: 'Contact Us',
-    body: 'For any questions about these Terms & Conditions, write to us at info@srisrihomz.com or call 098100 12254.',
+    body: 'For any questions about these Terms & Conditions, write to us at info@srisrihomzz.com or call 098100 12254.',
   },
 ]
 

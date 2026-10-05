@@ -14,7 +14,7 @@ const JOURNEY = [
   {
     icon: Flag,
     title: 'The Beginning',
-    desc: 'Yashank Arora founded Sri Sri Homz on a simple belief: people deserve honest guidance while making the biggest financial decisions of their lives.',
+    desc: 'Yashank Arora founded Sri Sri Homzz on a simple belief: people deserve honest guidance while making the biggest financial decisions of their lives.',
   },
   {
     icon: Users2,
@@ -24,7 +24,7 @@ const JOURNEY = [
   {
     icon: Award,
     title: 'Industry Recognition',
-    desc: 'Premier developers — SOBHA, Godrej, Prestige, Civitech — began recognizing Sri Sri Homz for performance, partnership, and trust.',
+    desc: 'Premier developers — SOBHA, Godrej, Prestige, Civitech — began recognizing Sri Sri Homzz for performance, partnership, and trust.',
   },
   {
     icon: TrendingUp,

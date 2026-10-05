@@ -63,7 +63,7 @@ export default function Founder() {
                 {!photoFailed ? (
                   <img
                     src="/yashank.png"
-                    alt="Yashank Arora — Founder, Sri Sri Homz"
+                    alt="Yashank Arora — Founder, Sri Sri Homzz"
                     onError={() => setPhotoFailed(true)}
                     style={{
                       aspectRatio: '3/4',
@@ -107,7 +107,7 @@ export default function Founder() {
                         textTransform: 'uppercase',
                         color: 'rgba(249,168,25,0.7)',
                       }}>
-                        Founder, Sri Sri Homz
+                        Founder, Sri Sri Homzz
                       </p>
                     </div>
                   </div>
@@ -292,7 +292,7 @@ export default function Founder() {
                 color: '#F9A819', marginBottom: 36,
               }}
             >
-              Sri Sri Homz
+              Sri Sri Homzz
             </motion.h2>
 
             <motion.button
@@ -342,7 +342,7 @@ export default function Founder() {
             {[
               'Real estate and construction are not just businesses for me — they are about helping people build a better future.',
               'Yashank grew up in Delhi NCR watching families navigate one of the biggest decisions of their lives — buying a home — often without anyone in their corner they could fully trust. That gap is what eventually pulled him into real estate, and years of hands-on experience across residential, commercial, and construction projects followed.',
-              'I started Sri Sri Homz with the belief that people deserve honest guidance while making some of the biggest financial and emotional decisions of their lives.',
+              'I started Sri Sri Homzz with the belief that people deserve honest guidance while making some of the biggest financial and emotional decisions of their lives.',
               'Our goal is not just to sell properties or construct buildings. Our goal is to create trust, deliver value, and help people build long-term wealth and meaningful spaces.',
             ].map((para, i) => (
               <motion.p
@@ -394,7 +394,7 @@ export default function Founder() {
                 color: '#002B42', lineHeight: 1.35,
                 position: 'relative', marginBottom: 18,
               }}>
-                At Sri Sri Homz, every relationship matters.
+                At Sri Sri Homzz, every relationship matters.
               </p>
               <p style={{
                 fontFamily: 'var(--font-sans)',

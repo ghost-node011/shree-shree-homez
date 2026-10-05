@@ -49,7 +49,7 @@ export default function Hero() {
             color: '#FFFFFF', margin: 0,
           }}
         >
-          Sri Sri Homz
+          Sri Sri Homzz
         </motion.h1>
 
         <motion.p

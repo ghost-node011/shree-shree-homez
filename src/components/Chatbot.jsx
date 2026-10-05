@@ -2,14 +2,15 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 /* ─── Contact details — update these ─── */
-const PHONE    = '+919999999999'
-const WHATSAPP = '+919999999999'
-const EMAIL    = 'info@srisrihomz.com'
+const PHONE         = '+919810012254'
+const PHONE_DISPLAY = '+91 98100 12254'
+const WHATSAPP      = '919810012254'
+const EMAIL         = 'info@srisrihomzz.com'
 
 /* ─── Conversation flow (decision tree) ─── */
 const FLOW = {
   start: {
-    bot: "Welcome to Sri Sri Homz. I'm here to help you find the perfect property or construction solution.\n\nWhat brings you here today?",
+    bot: "Welcome to Sri Sri Homzz. I'm here to help you find the perfect property or construction solution.\n\nWhat brings you here today?",
     options: [
       { label: '🏠  Buy a Property',      next: 'buy_type',      key: 'intent', val: 'Buying Property' },
       { label: '🏗  Construction Project', next: 'construct_type', key: 'intent', val: 'Construction' },
@@ -139,7 +140,7 @@ function buildSummaryText(data) {
 }
 
 function buildWAText(data) {
-  const lines = ['Hi Sri Sri Homz, I am interested in:']
+  const lines = ['Hi Sri Sri Homzz, I am interested in:']
   Object.entries({
     intent: 'Enquiry', propertyType: 'Property Type', constructType: 'Project',
     plotSize: 'Plot Size', investGoal: 'Goal', budget: 'Budget',
@@ -166,7 +167,7 @@ function TypingDots() {
 /* ─── Contact action buttons ─── */
 function ContactButtons({ data }) {
   const waText = buildWAText(data)
-  const subject = encodeURIComponent(`Property Enquiry – Sri Sri Homz`)
+  const subject = encodeURIComponent(`Property Enquiry – Sri Sri Homzz`)
   const body    = encodeURIComponent(
     Object.entries({ Intent: data.intent, Type: data.propertyType || data.constructType,
       Budget: data.budget, Location: data.location, Timeline: data.timeline })
@@ -184,7 +185,7 @@ function ContactButtons({ data }) {
     {
       icon: '📞',
       label: 'Call Now',
-      sub: PHONE.replace('+91', '+91 '),
+      sub: PHONE_DISPLAY,
       color: '#F9A819',
       href: `tel:${PHONE}`,
     },
@@ -474,7 +475,7 @@ export default function Chatbot() {
               }}>🏠</div>
               <div style={{ flex: 1 }}>
                 <p style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, letterSpacing: '0.04em', color: '#F7F8FA' }}>
-                  Sri Sri Homz
+                  Sri Sri Homzz
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>
                   <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4ADE80' }} />
@@ -594,7 +595,7 @@ export default function Chatbot() {
                 fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 300,
                 color: 'rgba(247,248,250,0.25)', letterSpacing: '0.08em',
               }}>
-                Powered by Sri Sri Homz · Built on Truth
+                Powered by Sri Sri Homzz · Built on Truth
               </p>
             </div>
 

@@ -33,7 +33,7 @@ export default function VideoSection() {
               color: '#F7F8FA',
             }}
           >
-            A Closer Look at <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homz</span>
+            A Closer Look at <span style={{ fontStyle: 'italic', color: '#F9A819' }}>Sri Sri Homzz</span>
           </motion.h2>
         </div>
 

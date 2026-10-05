@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Cursor from './components/Cursor'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -24,7 +23,6 @@ function App() {
       <Preloader onDone={() => setLoaded(true)} />
       <div style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.7s ease', background: '#060D18' }}>
         <ScrollToTop />
-        <Cursor />
         <Navbar />
         <Chatbot />
         <main>

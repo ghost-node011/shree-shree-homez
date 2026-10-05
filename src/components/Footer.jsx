@@ -17,15 +17,15 @@ const LEGAL_LINKS = [
 ]
 
 const SOCIALS = [
-  { Icon: Instagram, href: 'https://instagram.com/srisrihomz', label: 'Instagram' },
-  { Icon: Youtube,   href: 'https://youtube.com/@srisrihomz',  label: 'YouTube' },
-  { Icon: Facebook,  href: 'https://facebook.com/srisrihomz',  label: 'Facebook' },
+  { Icon: Instagram, href: 'https://instagram.com/srisri_homzz', label: 'Instagram' },
+  { Icon: Youtube,   href: 'https://youtube.com/@srisrihomzz',  label: 'YouTube' },
+  { Icon: Facebook,  href: 'https://facebook.com/srisrihomzz',  label: 'Facebook' },
 ]
 
 const CONTACT_INFO = [
   { Icon: Clock,  value: 'Monday - Saturday,\n10:00 AM - 08:00 PM' },
   { Icon: Phone,  value: '098100 12254', href: 'tel:+919810012254' },
-  { Icon: Mail,   value: 'info@srisrihomz.com', href: 'mailto:info@srisrihomz.com' },
+  { Icon: Mail,   value: 'info@srisrihomzz.com', href: 'mailto:info@srisrihomzz.com' },
   { Icon: MapPin, value: 'B-24, Block B,\nSurya Nagar, Ghaziabad, UP 201011' },
 ]
 
@@ -63,7 +63,7 @@ export default function Footer() {
             >
               <img
                 src="/logo-bg.png"
-                alt="Sri Sri Homz"
+                alt="Sri Sri Homzz"
                 style={{ height: 88, width: 'auto', display: 'block', marginLeft: -6 }}
               />
             </motion.div>
@@ -362,7 +362,7 @@ export default function Footer() {
               margin: 0,
             }}
           >
-            © {new Date().getFullYear()} by Sri Sri Homz.
+            © {new Date().getFullYear()} by Sri Sri Homzz.
           </p>
 
           <div

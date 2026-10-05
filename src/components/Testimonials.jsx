@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 const REVIEWS = [
   {
-    quote: 'Working with Sri Sri Homz was a completely different experience from typical real estate consulting. The guidance was honest, transparent, and investment-focused from day one.',
+    quote: 'Working with Sri Sri Homzz was a completely different experience from typical real estate consulting. The guidance was honest, transparent, and investment-focused from day one.',
     name: 'Rahul Mehra',
     type: 'Homebuyer, Noida',
     image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1920&q=80',
@@ -26,7 +26,7 @@ const REVIEWS = [
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
   },
   {
-    quote: 'We trusted Sri Sri Homz with our house construction project, and the execution was seamless. Timely updates, transparent costing, and quality work made the entire experience stress-free.',
+    quote: 'We trusted Sri Sri Homzz with our house construction project, and the execution was seamless. Timely updates, transparent costing, and quality work made the entire experience stress-free.',
     name: 'Priya Agarwal',
     type: 'Independent House Owner',
     image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80',
