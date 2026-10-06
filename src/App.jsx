@@ -10,6 +10,7 @@ import AboutPage from './pages/About'
 import ServicesPage from './pages/Services'
 import TeamPage from './pages/Team'
 import GalleryPage from './pages/Gallery'
+import PodcastPage from './pages/Podcast'
 import ContactPage from './pages/Contact'
 import PrivacyPolicyPage from './pages/PrivacyPolicy'
 import AccessibilityStatementPage from './pages/AccessibilityStatement'
@@ -32,6 +33,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/podcast" element={<PodcastPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/accessibility-statement" element={<AccessibilityStatementPage />} />
