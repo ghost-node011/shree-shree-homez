@@ -62,7 +62,7 @@ export default function Navbar() {
           padding: `0 clamp(20px, 5.5vw, 90px)`,
           height: navH,
           background: transparent
-            ? 'linear-gradient(180deg, rgba(0,20,32,0.65) 0%, rgba(0,20,32,0.12) 100%)'
+            ? 'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 100%)'
             : '#002B42',
           boxShadow: !transparent && scrolled ? '0 4px 24px rgba(0,0,0,0.25)' : 'none',
           borderBottom: transparent ? 'none' : '1px solid rgba(249,168,25,0.16)',

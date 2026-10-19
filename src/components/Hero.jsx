@@ -22,10 +22,11 @@ export default function Hero() {
         />
       </picture>
 
-      {/* Dark navy gradient overlay for text legibility */}
+      {/* Whisper-light gradient: zero fog, maximum clarity & crispness */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, rgba(0,20,32,0.65) 0%, rgba(0,20,32,0.2) 35%, rgba(0,20,32,0.15) 60%, rgba(0,20,32,0.65) 100%), linear-gradient(90deg, rgba(0,20,32,0.4) 0%, rgba(0,20,32,0.1) 45%, transparent 100%)',
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 18%, transparent 85%, rgba(0,0,0,0.2) 100%)',
+        pointerEvents: 'none',
       }} />
 
       {/* Content — shifted up into the empty sky space above the buildings */}
@@ -48,6 +49,7 @@ export default function Hero() {
             letterSpacing: 'var(--spacing-heading-hero)',
             textTransform: 'uppercase',
             color: '#FFFFFF', margin: 0,
+            textShadow: '0 2px 18px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.85)',
           }}
         >
           Sri Sri Homzz
@@ -63,8 +65,9 @@ export default function Hero() {
             fontSize: 'var(--tagline-hero)',
             fontWeight: 400,
             letterSpacing: 'var(--spacing-tagline)',
-            color: 'rgba(255,255,255,0.92)',
+            color: 'rgba(255,255,255,0.95)',
             marginTop: 18, marginBottom: 36,
+            textShadow: '0 2px 14px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.8)',
           }}
         >
           Divine Home, Divine People
