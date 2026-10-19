@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import heroBg from '../assets/hero-bg.jpg'
 
 export default function PageHero({ eyebrow, title, accent, subtitle }) {
   return (
@@ -9,7 +10,7 @@ export default function PageHero({ eyebrow, title, accent, subtitle }) {
       padding: '110px clamp(24px,6vw,120px) 56px',
     }}>
       <img
-        src="/laptop-hero.png"
+        src={heroBg}
         alt=""
         aria-hidden="true"
         style={{

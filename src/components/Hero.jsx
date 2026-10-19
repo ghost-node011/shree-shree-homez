@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import heroBg from '../assets/hero-bg.jpg'
 
 export default function Hero() {
   return (
@@ -8,10 +9,10 @@ export default function Hero() {
     }}>
       {/* Full-bleed photo */}
       <picture>
-        <source media="(max-width: 900px)" srcSet="/mobile-hero.png" />
+        <source media="(max-width: 900px)" srcSet={heroBg} />
         <img
-          src="/laptop-hero.png"
-          alt="Delhi NCR skyline"
+          src={heroBg}
+          alt="Delhi NCR skyline at sunset"
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
