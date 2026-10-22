@@ -31,10 +31,10 @@ export default function GetInTouchContact() {
     setLoading(true)
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_yigba8n',
+        'template_vjhf06c',
         { ...form, to_name: 'Sri Sri Homzz' },
-        'YOUR_PUBLIC_KEY',
+        'ZQTE0LUmMR85itQTp',
       )
       setStatus('success')
       setForm({ name: '', email: '', phone: '', requirement: '', consent: false })

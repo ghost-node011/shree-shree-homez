@@ -26,10 +26,10 @@ export default function Contact() {
     setLoading(true)
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_yigba8n',
+        'template_hr0aeve',
         { ...form, to_name: 'Sri Sri Homzz' },
-        'YOUR_PUBLIC_KEY',
+        'ZQTE0LUmMR85itQTp',
       )
       setStatus('success')
       setForm({ name: '', phone: '', email: '', service: '', message: '', consent: false })
