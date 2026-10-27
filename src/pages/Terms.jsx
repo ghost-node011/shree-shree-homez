@@ -36,7 +36,7 @@ const SECTIONS = [
   },
   {
     title: 'Contact Us',
-    body: 'For any questions about these Terms & Conditions, write to us at info@srisrihomzz.com or call 098100 12254.',
+    body: 'For any questions about these Terms & Conditions, write to us at srisriestate@gmail.com or call 098100 12254.',
   },
 ]
 

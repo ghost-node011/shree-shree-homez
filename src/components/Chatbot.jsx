@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const PHONE         = '+919810012254'
 const PHONE_DISPLAY = '+91 98100 12254'
 const WHATSAPP      = '919810012254'
-const EMAIL         = 'info@srisrihomzz.com'
+const EMAIL         = 'srisriestate@gmail.com'
 
 /* ─── Conversation flow (decision tree) ─── */
 const FLOW = {

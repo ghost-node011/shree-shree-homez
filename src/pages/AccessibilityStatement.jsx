@@ -12,7 +12,7 @@ const SECTIONS = [
   },
   {
     title: 'Feedback',
-    body: 'If you encounter any accessibility barriers while using this website, please let us know so we can address them. We welcome your feedback at info@srisrihomzz.com or 098100 12254.',
+    body: 'If you encounter any accessibility barriers while using this website, please let us know so we can address them. We welcome your feedback at srisriestate@gmail.com or 098100 12254.',
   },
 ]
 

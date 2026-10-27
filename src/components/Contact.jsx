@@ -140,7 +140,7 @@ export default function Contact() {
             {[
               { Icon: Phone, label: 'Phone', value: '098100 12254 / 080627 57621', href: 'tel:+919810012254' },
               { Icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919810012254' },
-              { Icon: Mail, label: 'Email', value: 'info@srisrihomzz.com', href: 'mailto:info@srisrihomzz.com' },
+              { Icon: Mail, label: 'Email', value: 'srisriestate@gmail.com', href: 'mailto:srisriestate@gmail.com' },
               { Icon: MapPin, label: 'Address', value: 'B-24, Block B, Surya Nagar, Ghaziabad, Uttar Pradesh 201011', href: null },
               { Icon: Clock, label: 'Hours', value: '10:00 AM – 08:00 PM · All Days Open', href: null },
             ].map((item, i) => (

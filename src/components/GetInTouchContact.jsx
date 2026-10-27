@@ -7,7 +7,7 @@ import { Clock, Phone, Mail, MapPin } from 'lucide-react'
 const INFO = [
   { Icon: Clock,  value: 'Monday - Saturday, 10:00 AM - 08:00 PM' },
   { Icon: Phone,  value: '098100 12254', href: 'tel:+919810012254' },
-  { Icon: Mail,   value: 'info@srisrihomzz.com', href: 'mailto:info@srisrihomzz.com' },
+  { Icon: Mail,   value: 'srisriestate@gmail.com', href: 'mailto:srisriestate@gmail.com' },
   { Icon: MapPin, value: 'B-24, Block B, Surya Nagar,\nGhaziabad, Uttar Pradesh 201011' },
 ]
 
